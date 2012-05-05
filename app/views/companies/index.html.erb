@@ -3,6 +3,7 @@
 <table>
   <tr>
     <th>Name</th>
+    <th>Description</th>
     <th>Url</th>
     <th>Funding</th>
     <th>Employees</th>
@@ -14,6 +15,7 @@
 <% @companies.each do |company| %>
   <tr>
     <td><%= company.name %></td>
+    <td><%= company.description %></td>
     <td><%= company.url %></td>
     <td><%= company.funding %></td>
     <td><%= company.employees %></td>
