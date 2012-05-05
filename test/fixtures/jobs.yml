@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  company_id: 1
+  title: MyText
+  url: MyText
+  technical: false
+  type: false
+
+two:
+  company_id: 1
+  title: MyText
+  url: MyText
+  technical: false
+  type: false
