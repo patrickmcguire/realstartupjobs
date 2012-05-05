@@ -1,0 +1,16 @@
+common: &common
+  adapter: postgresql
+  username: realstartupjobs 
+  password: calculus # from psql setup, see Postgresql
+
+development:
+  <<: *common
+  database: realstartupjobs_dev 
+
+test:
+  <<: *common
+  database: realstartupjobs_test
+
+production:
+  <<: *common
+  database: realstartupjobs
