@@ -1,4 +1,14 @@
 Realstartupjobs::Application.routes.draw do
+  resources :saved_jobs
+
+  resources :hidden_jobs
+
+  resources :categories
+
+  resources :tags
+
+  devise_for :users
+
   resources :jobs
 
   resources :companies

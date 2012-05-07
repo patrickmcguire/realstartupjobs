@@ -7,7 +7,7 @@ gem 'rails', '3.2.3'
 
 gem 'pg'
 gem 'typhoeus'
-gem 'rspec'
+gem 'rspec-rails'
 gem 'json'
 gem 'therubyrhino'
 gem 'delayed_job'
@@ -25,7 +25,7 @@ end
 
 gem 'devise'
 gem 'jquery-rails'
-
+gem 'ccsv'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

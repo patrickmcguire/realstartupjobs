@@ -1,0 +1,25 @@
+<%= form_for(@hidden_job) do |f| %>
+  <% if @hidden_job.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@hidden_job.errors.count, "error") %> prohibited this hidden_job from being saved:</h2>
+
+      <ul>
+      <% @hidden_job.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :job_id %><br />
+    <%= f.number_field :job_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
