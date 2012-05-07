@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120506203043) do
+ActiveRecord::Schema.define(:version => 20120507033409) do
 
   create_table "categories", :force => true do |t|
     t.text     "category"
@@ -35,12 +36,27 @@ ActiveRecord::Schema.define(:version => 20120506203043) do
     t.text     "blog_url"
   end
 
+  create_table "hidden_jobs", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "job_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "jobs", :force => true do |t|
     t.integer  "company_id"
     t.text     "title"
     t.text     "url"
     t.boolean  "technical"
     t.boolean  "type"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.datetime "last_updated"
+  end
+
+  create_table "saved_jobs", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "job_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

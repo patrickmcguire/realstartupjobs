@@ -1,30 +1,29 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = @job.class -%>
+<h1><%=t '.title', :default => model_class.model_name.human %></h1>
 
-<p>
-  <b>Company:</b>
-  <%= @job.company_id %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:company_id) %>:</strong></dt>
+  <dd><%= @job.company_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:title) %>:</strong></dt>
+  <dd><%= @job.title %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:url) %>:</strong></dt>
+  <dd><%= @job.url %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:technical) %>:</strong></dt>
+  <dd><%= @job.technical %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:type) %>:</strong></dt>
+  <dd><%= @job.type %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:last_updated) %>:</strong></dt>
+  <dd><%= @job.last_updated %></dd>
+</dl>
 
-<p>
-  <b>Title:</b>
-  <%= @job.title %>
-</p>
-
-<p>
-  <b>Url:</b>
-  <%= @job.url %>
-</p>
-
-<p>
-  <b>Technical:</b>
-  <%= @job.technical %>
-</p>
-
-<p>
-  <b>Type:</b>
-  <%= @job.type %>
-</p>
-
-
-<%= link_to 'Edit', edit_job_path(@job) %> |
-<%= link_to 'Back', jobs_path %>
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              jobs_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_job_path(@job), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              job_path(@job),
+              :method => 'delete',
+              :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+              :class => 'btn btn-danger' %>
+</div>
