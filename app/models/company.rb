@@ -1,6 +1,7 @@
 class Company < ActiveRecord::Base
   has_many :jobs
-  attr_accessible :employees, :funding, :name, :url, :jobs, :description, :funding_string
+  has_many :company_tags
+  has_many :tags, :through => :company_tags
   
   def funding_string
     if funding > 1000000

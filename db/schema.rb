@@ -10,21 +10,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120506203043) do
-
-  create_table "categories", :force => true do |t|
-    t.text     "category"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
+ActiveRecord::Schema.define(:version => 20120513051938) do
 
   create_table "companies", :force => true do |t|
     t.text     "name"
     t.text     "url"
     t.integer  "funding"
     t.integer  "employees"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
     t.text     "description"
     t.boolean  "hiring"
     t.text     "jobs_url"
@@ -33,6 +27,22 @@ ActiveRecord::Schema.define(:version => 20120506203043) do
     t.datetime "founded"
     t.text     "twitter_name"
     t.text     "blog_url"
+    t.text     "category"
+    t.text     "crunchbase_url"
+  end
+
+  create_table "company_tags", :force => true do |t|
+    t.integer  "company_id"
+    t.integer  "tag_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "hidden_jobs", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "job_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "jobs", :force => true do |t|
@@ -45,10 +55,40 @@ ActiveRecord::Schema.define(:version => 20120506203043) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "saved_jobs", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "job_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "tags", :force => true do |t|
     t.text     "tag"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "temp_companies", :force => true do |t|
+    t.text     "company_name"
+    t.text     "company_url"
+    t.text     "company_hiring"
+    t.text     "company_jobs_url"
+    t.text     "nocrunchbase"
+    t.text     "name"
+    t.text     "overview"
+    t.text     "homepage_url"
+    t.text     "employees"
+    t.text     "category"
+    t.text     "description"
+    t.text     "founded_year"
+    t.text     "founded_month"
+    t.text     "money_raised"
+    t.text     "crunchbase_url"
+    t.text     "tag_list"
+    t.text     "twitter_name"
+    t.text     "blog_url"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
   create_table "users", :force => true do |t|

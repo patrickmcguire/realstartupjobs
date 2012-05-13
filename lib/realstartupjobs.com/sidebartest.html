@@ -1,0 +1,390 @@
+        <link href="assets/css/bootstrap.css" rel="stylesheet">
+	<link href="assets/css/DT_bootstrap.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="assets/css/uniform.default.css" rel="stylesheet">
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="assets/js/jquery.dataTables.js"></script>
+	<script src="assets/js/DT_boodtstrap.js"></script>
+	<script src="assets/js/jquery.uniform.js"></script>
+	<script src="assets/js/jquery.vertical.js"></script>
+	
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <style>
+      .highlight { background:yellow; }
+</style>
+
+ <script>
+ 
+  $(document).ready(function(){
+    //call plugin 
+	$("label.checkbox").click(function(){
+		//alert("click");
+		      $(this).toggleClass("highlight");
+
+	});
+	
+  </script>
+		<script type="text/javascript" charset="utf-8">
+			/* Custom filtering function which will filter data in column four between two values */
+			$.fn.dataTableExt.afnFiltering.push(
+				function( oSettings, aData, iDataIndex ) {
+					var iMin = document.getElementById('min').value * 1;
+					var iMax = document.getElementById('max').value * 1;
+					var iVersion = aData[4] == "-" ? 0 : aData[4]*1;
+					if ( iMin == "" && iMax == "" )
+					{
+						return true;
+					}
+					else if ( iMin == "" && iVersion < iMax )
+					{
+						return true;
+					}
+					else if ( iMin < iVersion && "" == iMax )
+					{
+						return true;
+					}
+					else if ( iMin < iVersion && iVersion < iMax )
+					{
+						return true;
+					}
+					return false;
+				}
+			);
+			
+			$(document).ready(function() {
+				/* Initialise datatables */
+				var oTable = $('#example').dataTable();
+				
+				/* Add event listeners to the two range filtering inputs */
+				$('#min').keyup( function() { oTable.fnDraw(); } );
+				$('#max').keyup( function() { oTable.fnDraw(); } );
+			} );
+		</script>
+
+        <div class="span3">
+          <div class="well sidebar-nav">
+          	 					<table border="0" cellspacing="5" cellpadding="5">
+				<tr>
+					<td>Minimum engine version:</td>
+					<td><input type="text" id="min" name="min"></td>
+				</tr>
+				<tr>
+					<td>Maximum engine version:</td>
+					<td><input type="text" id="max" name="max"></td>
+				</tr>
+			</table>
+
+          	 	<legend class="filterTitle jobFilter">Show me jobs that are</legend>
+	     		<div id="jobFilters" class="filterContent">
+			              	<form class="form-horizontal">  
+
+			            <div id="techFilter" class="control-group">
+			            <fieldset>
+			            	<label class="control-label" for="techfilter">Technical Ability</label>
+				            <div class="controls techFilter">
+					            <label class="checkbox checkboxlabel" id="tech10">
+									<input type="checkbox"> Very Technical
+	  							</label>
+					            <label class="checkbox">
+									<input type="checkbox" value="0"> Somewhat Technical
+	  							</label>
+					            <label class="checkbox">
+									<input type="checkbox" value="0"> Minimally Technical 
+	  							</label>
+				            </div>
+				        </fieldset>
+			       		</div>
+			            <div id="techFilter" class="control-group">
+			            <fieldset>
+			            	<label class="control-label" for="techfilter">Technical Ability</label>
+				            <div class="controls techFilter">
+					            <label class="checkbox" id="tech10">
+									<input type="checkbox"> Very Technical
+	  							</label>
+					            <label class="checkbox">
+									<input type="checkbox" alue="0"> Somewhat Technical
+	  							</label>
+					            <label class="checkbox">
+									<input type="checkbox" value="0"> Minimally Technical 
+	  							</label>
+				            </div>
+				        </fieldset>
+			       		</div>
+			  
+		          	
+		        		          
+		        </div><!-- end filtering based on job type  -->
+				
+				<legend class="filterTitle companyFilter">Filter by company info</legend>
+				<div id="companyFilter" class="filterContent">
+		            	<div id="fundingFilter" class="control-group">
+			            	<label class="control-label" for="funding">Funding</label>
+				            <div class="controls">
+				            </div>
+		         		 </div>
+		          		<div class="control-group">
+		            		<label class="control-label" for="funding">Employees</label>
+			           	 	<div class="controls">
+			            	</div>
+		         		 </div>
+		          		<div class="control-group">
+		            		<label class="control-label" for="funding">Established</label>
+			            	<div class="controls">
+			           		</div>
+		          		</div>
+		         </div><!-- end company info -->
+          </form>  
+
+          </div><!--/.well -->
+        </div><!--/span-->
+        <div class="span9">
+			<div id="demo">
+<table cellpadding="0" cellspacing="0" border="0" class="display" id="example">
+	<thead>
+		<tr>
+			<th>Rendering engine</th>
+			<th>Browser</th>
+			<th>Platform(s)</th>
+			<th>Engine version</th>
+			<th>CSS grade</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="gradeX">
+			<td>Trident</td>
+			<td>Internet
+				 Explorer 4.0</td>
+			<td>Win 95+</td>
+			<td class="center">4</td>
+			<td class="center">X</td>
+		</tr>
+		<tr class="gradeC">
+			<td>Trident</td>
+			<td>Internet
+				 Explorer 5.0</td>
+			<td>Win 95+</td>
+			<td class="center">5</td>
+			<td class="center">C</td>
+		</tr>
+		<tr class="gradeA">
+			<td>Trident</td>
+			<td>Internet
+				 Explorer 5.5</td>
+			<td>Win 95+</td>
+			<td class="center">5.5</td>
+			<td class="center">A</td>
+		</tr>
+		<tr class="gradeA">
+			<td>Trident</td>
+			<td>Internet
+				 Explorer 6</td>
+			<td>Win 98+</td>
+			<td class="center">6</td>
+			<td class="center">A</td>
+		</tr>
+		<tr class="gradeA">
+			<td>Trident</td>
+			<td>Internet Explorer 7</td>
+			<td>Win XP SP2+</td>
+			<td class="center">7</td>
+			<td class="center">A</td>
+		</tr>
+		<tr class="gradeA">
+			<td>Trident</td>
+			<td>AOL browser (AOL desktop)</td>
+			<td>Win XP</td>
+			<td class="center">6</td>
+			<td class="center">A</td>
+		</tr>
+		<tr class="gradeA">
+			<td>Gecko</td>
+			<td>Firefox 1.0</td>
+			<td>Win 98+ / OSX.2+</td>
+			<td class="center">1.7</td>
+			<td class="center">A</td>
+		</tr>
+		<tr class="gradeA">
+			<td>Gecko</td>
+			<td>Firefox 1.5</td>
+			<td>Win 98+ / OSX.2+</td>
+			<td class="center">1.8</td>
+			<td class="center">A</td>
+		</tr>
+		<tr class="gradeA">
+			<td>Gecko</td>
+			<td>Firefox 2.0</td>
+			<td>Win 98+ / OSX.2+</td>
+			<td class="center">1.8</td>
+			<td class="center">A</td>
+		</tr>
+		<tr class="gradeA">
+			<td>Gecko</td>
+			<td>Firefox 3.0</td>
+			<td>Win 2k+ / OSX.3+</td>
+			<td class="center">1.9</td>
+			<td class="center">A</td>
+		</tr>
+		<tr class="gradeA">
+			<td>Gecko</td>
+			<td>Camino 1.0</td>
+			<td>OSX.2+</td>
+			<td class="center">1.8</td>
+			<td class="center">A</td>
+		</tr>
+		<tr class="gradeA">
+			<td>Gecko</td>
+			<td>Camino 1.5</td>
+			<td>OSX.3+</td>
+			<td class="center">1.8</td>
+			<td class="center">A</td>
+		</tr>
+		<tr class="gradeA">
+			<td>Gecko</td>
+			<td>Netscape 7.2</td>
+			<td>Win 95+ / Mac OS 8.6-9.2</td>
+			<td class="center">1.7</td>
+			<td class="center">A</td>
+		</tr>
+		<tr class="gradeA">
+			<td>Gecko</td>
+			<td>Netscape Browser 8</td>
+			<td>Win 98SE+</td>
+			<td class="center">1.7</td>
+			<td class="center">A</td>
+		</tr>
+		<tr class="gradeA">
+			<td>Gecko</td>
+			<td>Netscape Navigator 9</td>
+			<td>Win 98+ / OSX.2+</td>
+			<td class="center">1.8</td>
+			<td class="center">A</td>
+		</tr>
+		<tr class="gradeA">
+			<td>Gecko</td>
+			<td>Mozilla 1.0</td>
+			<td>Win 95+ / OSX.1+</td>
+			<td class="center">1</td>
+			<td class="center">A</td>
+		</tr>
+		<tr class="gradeA">
+			<td>Gecko</td>
+			<td>Mozilla 1.1</td>
+			<td>Win 95+ / OSX.1+</td>
+			<td class="center">1.1</td>
+			<td class="center">A</td>
+		</tr>
+		<tr class="gradeA">
+			<td>Gecko</td>
+			<td>Mozilla 1.2</td>
+			<td>Win 95+ / OSX.1+</td>
+			<td class="center">1.2</td>
+			<td class="center">4</td>
+		</tr>
+		<tr class="gradeA">
+			<td>Gecko</td>
+			<td>Mozilla 1.3</td>
+			<td>Win 95+ / OSX.1+</td>
+			<td class="center">1.3</td>
+			<td class="center">6</td>
+		</tr>
+		<tr class="gradeA">
+			<td>Gecko</td>
+			<td>Mozilla 1.4</td>
+			<td>Win 95+ / OSX.1+</td>
+			<td class="center">1.4</td>
+			<td class="center">A</td>
+		</tr>
+		<tr class="gradeA">
+			<td>Gecko</td>
+			<td>Mozilla 1.5</td>
+			<td>Win 95+ / OSX.1+</td>
+			<td class="center">1.5</td>
+			<td class="center">A</td>
+		</tr>
+		<tr class="gradeA">
+			<td>Gecko</td>
+			<td>Mozilla 1.6</td>
+			<td>Win 95+ / OSX.1+</td>
+			<td class="center">1.6</td>
+			<td class="center">A</td>
+		</tr>
+		<tr class="gradeA">
+			<td>Gecko</td>
+			<td>Mozilla 1.7</td>
+			<td>Win 98+ / OSX.1+</td>
+			<td class="center">1.7</td>
+			<td class="center">A</td>
+		</tr>
+		<tr class="gradeA">
+			<td>Gecko</td>
+			<td>Mozilla 1.8</td>
+			<td>Win 98+ / OSX.1+</td>
+			<td class="center">1.8</td>
+			<td class="center">A</td>
+		</tr>
+		<tr class="gradeA">
+			<td>Gecko</td>
+			<td>Seamonkey 1.1</td>
+			<td>Win 98+ / OSX.2+</td>
+			<td class="center">1.8</td>
+			<td class="center">A</td>
+		</tr>
+		<tr class="gradeA">
+			<td>Gecko</td>
+			<td>Epiphany 2.20</td>
+			<td>Gnome</td>
+			<td class="center">1.8</td>
+			<td class="center">A</td>
+		</tr>
+		<tr class="gradeA">
+			<td>Webkit</td>
+			<td>Safari 1.2</td>
+			<td>OSX.3</td>
+			<td class="center">125.5</td>
+			<td class="center">A</td>
+		</tr>
+		<tr class="gradeA">
+			<td>Webkit</td>
+			<td>Safari 1.3</td>
+			<td>OSX.3</td>
+			<td class="center">312.8</td>
+			<td class="center">A</td>
+		</tr>
+		<tr class="gradeA">
+			<td>Webkit</td>
+			<td>Safari 2.0</td>
+			<td>OSX.4+</td>
+			<td class="center">419.3</td>
+			<td class="center">A</td>
+		</tr>
+		<tr class="gradeA">
+			<td>Webkit</td>
+			<td>Safari 3.0</td>
+			<td>OSX.4+</td>
+			<td class="center">522.1</td>
+			<td class="center">A</td>
+		</tr>
+		<tr class="gradeA">
+			<td>Webkit</td>
+			<td>OmniWeb 5.5</td>
+			<td>OSX.4+</td>
+			<td class="center">420</td>
+			<td class="center">A</td>
+		</tr>
+		<tr class="gradeA">
+			<td>Webkit</td>
+			<td>iPod Touch / iPhone</td>
+			<td>iPod</td>
+			<td class="center">420.1</td>
+			<td class="center">A</td>
+		</tr>
+		<tr class="gradeA">
+			<td>Webkit</td>
+			<td>S60</td>
+			<td>S60</td>
+			<td class="center">413</td>
+			<td class="center">A</td>
+		</tr>
+		</tbody>
+		</div>

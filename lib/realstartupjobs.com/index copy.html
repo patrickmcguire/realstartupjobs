@@ -1,0 +1,325 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Startup Jobs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Noah Pryor">
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+	<link href="assets/css/DT_bootstrap.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="assets/css/uniform.default.css" rel="stylesheet">
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="assets/js/jquery.dataTables.js"></script>
+	<script src="assets/js/DT_bootstrap.js"></script>
+	<script src="assets/js/jquery.uniform.js"></script>
+	<script src="assets/js/jqueryui.custom.min.js"></script>
+
+
+
+
+    <!-- Le styles -->
+
+<style>
+	#feedback { font-size: 1.4em; }
+	.selectable .ui-selecting { background: #5BB75B; }
+	.selectable .ui-selected { background: #5BB75B; color: white; }
+	.selectable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+	.selectable li { margin: 3px; padding: 0.4em; font-size: 1.4em; height: 18px; }
+	</style>
+	<script>
+	$(function() {
+					$( ".selectable" ).buttonset();
+
+	});
+
+	</script>
+
+
+
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 9px;
+      }
+    </style>
+
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="assets/css/uniform.default.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+   
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">Startup Jobs in NYC</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Feedback</a></li>
+            </ul>
+            <p class="navbar-text pull-right">Logged in as <a href="#">username</a></p>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+    
+      <div class="row-fluid">
+        <div class="span3">
+          <div class="well sidebar-nav">
+          	 <form class="form-horizontal">  
+          	 <fieldset>
+          	 		
+          	 	<legend class="filterTitle jobFilter">Filter by position info</legend>
+	     			<div id="jobFilters" class="filterContent">
+			            <div id="techFilter" class="control-group">
+			            	<label class="control-label" for="techfilter">Technical Ability</label>
+				            <div class="controls">
+<ol class="selectable">
+				              <label class="checkbox">
+				                <input type="checkbox" name="funding1" value="option1">
+				                Engineers only              </label>
+				              <label class="checkbox">
+				                <input type="checkbox" name="funding2" value="option2">
+				                Some technical skills
+				              </label>
+				              <label class="checkbox">
+				                <input type="checkbox" name="optionsCheckboxList3" value="option3">
+				                No tech skills required
+				              </label>
+
+	<li class="ui-widget-content">Item 1</li>
+	<li class="ui-widget-content">Item 2</li>
+	<li class="ui-widget-content">Item 3</li>
+	<li class="ui-widget-content">Item 4</li>
+	<li class="ui-widget-content">Item 5</li>
+	<li class="ui-widget-content">Item 6</li>
+	<li class="ui-widget-content">Item 7</li>
+</ol>
+				              <label class="checkbox">
+				                <input type="checkbox" name="funding1" value="option1">
+				                Engineers only              </label>
+				              <label class="checkbox">
+				                <input type="checkbox" name="funding2" value="option2">
+				                Some technical skills
+				              </label>
+				              <label class="checkbox">
+				                <input type="checkbox" name="optionsCheckboxList3" value="option3">
+				                No tech skills required
+				              </label>
+				            </div>
+			          </div>
+		          <div class="control-group">
+		            	<label class="control-label" for="jobType">Job Type</label>
+			            <div class="controls">
+			              <label class="checkbox">
+			                <input type="checkbox" name="jobType" value="option1">
+			                Unpaid internship
+			              </label>
+			              <label class="checkbox">
+			                <input type="checkbox" name="jobType" value="option1">
+			                Paid internship
+			              </label>
+			              <label class="checkbox">
+			                <input type="checkbox" name="jobType" value="option1">
+			                Full time entry-level
+			              </label>
+			                <label class="checkbox">
+			                <input type="checkbox" name="jobType" value="option1">
+			                Full time experienced 
+			              </label>			         
+			            </div>
+		          </div>
+		          		          
+		         </div><!-- end job filter -->
+				
+				<legend class="filterTitle companyFilter">Filter by company info</legend>
+				<div id="companyFilter" class="filterContent">
+		            <div id="fundingFilter" class="control-group">
+		            	<label class="control-label" for="funding">Funding</label>
+			            <div class="controls">
+			              <label class="checkbox fundingOption">
+			                <input type="checkbox" name="funding1" value="option1">
+			                <$250,000              </label>
+			              <label class="checkbox fundingOption">
+			                <input type="checkbox" name="funding2" value="option2">
+			                $250,000-$2,000,000
+			              </label>
+			              <label class="checkbox">
+			                <input type="checkbox" name="optionsCheckboxList3" value="option3">
+			                $2,000,000+
+			              </label>
+			            </div>
+		          </div>
+		          <div class="control-group">
+		            	<label class="control-label" for="funding">Employees</label>
+			            <div class="controls">
+			              <label class="checkbox">
+			                <input type="checkbox" name="funding1" value="option1">
+			                1 to 5              </label>
+			              <label class="checkbox">
+			                <input type="checkbox" name="funding2" value="option2">
+			                6-10
+			              </label>
+			              <label class="checkbox">
+			                <input type="checkbox" name="optionsCheckboxList3" value="option3">
+			                11-20
+			              </label>
+			            </div>
+		          </div>
+		          		          <div class="control-group">
+		            	<label class="control-label" for="funding">Established</label>
+			            <div class="controls">
+			              <label class="checkbox">
+			                <input type="checkbox" name="funding1" value="option1">
+			                Less than a year ago             </label>
+			              <label class="checkbox">
+			                <input type="checkbox" name="funding2" value="option2">
+			                1 to 5 years
+			              </label>
+			              <label class="checkbox">
+			                <input type="checkbox" name="optionsCheckboxList3" value="option3">
+			                More than 5
+			              </label>
+			            </div>
+		          </div>
+		         </div><!-- end company info -->
+				<p>
+        <button class="btn btn-large">Save</button>
+        <button class="btn btn-large btn-danger">Clear</button>
+        <button class="btn btn-large btn-primary"><i class="icon-search icon-white"></i> Search</button>
+
+      </p>
+	          </fieldset>
+          </form>  
+
+          </div><!--/.well -->
+        </div><!--/span-->
+        <div class="span6">
+              <h2>Sweet! We found 343 jobs for you</h2>
+              <p><span class="label label-info">Engineers Only</span> <span class="label label-important">Entry Level</span></p>
+              <p></p>
+<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered pretty" id="example">
+	<thead>
+		<tr>
+			<th>Date Posted</th>
+			<th>Company</th>
+			<th>Position</th>
+			<th>Type</th>
+			<th># Employees</th>
+			<th>Funding</th>
+			<th>Founded</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="gradeA"><td>12/13/2011</td><td>Altavista</td><td>Sales and Marketing</td><td>Full Time </td><td>56</td><td>453059</td><td>07/01/11</td></tr><tr class="gradeA"><td>04/04/2012</td><td>Sibelius</td><td>Legal Department</td><td> Internship </td><td>89</td><td>412657</td><td>01/15/10</td></tr><tr class="gradeA"><td>04/24/2011</td><td>Adobe</td><td>Advertising</td><td> Internship </td><td>13</td><td>817628</td><td>06/12/05</td></tr><tr class="gradeA"><td>08/04/2011</td><td>Finale</td><td>Finances</td><td> Internship </td><td>228</td><td>112194</td><td>02/21/11</td></tr><tr class="gradeA"><td>03/17/2012</td><td>Microsoft</td><td>Payroll</td><td>Full Time </td><td>157</td><td>246237</td><td>01/13/05</td></tr><tr class="gradeA"><td>01/14/2012</td><td>Adobe</td><td>Legal Department</td><td> Internship </td><td>133</td><td>307684</td><td>10/08/06</td></tr><tr class="gradeA"><td>05/03/2011</td><td>Cakewalk</td><td>Asset Management</td><td>Full Time </td><td>200</td><td>954718</td><td>10/29/09</td></tr><tr class="gradeA"><td>11/08/2011</td><td>Cakewalk</td><td>Advertising</td><td> Internship </td><td>178</td><td>170801</td><td>05/26/05</td></tr><tr class="gradeA"><td>01/03/2012</td><td>Microsoft</td><td>Tech Support</td><td> Internship </td><td>172</td><td>776384</td><td>08/01/08</td></tr><tr class="gradeA"><td>11/20/2011</td><td>Microsoft</td><td>Tech Support</td><td>Full Time </td><td>240</td><td>542110</td><td>10/18/04</td></tr><tr class="gradeA"><td>07/18/2011</td><td>Apple Systems</td><td>Media Relations</td><td> Internship </td><td>30</td><td>297770</td><td>04/09/07</td></tr><tr class="gradeA"><td>09/13/2011</td><td>Macromedia</td><td>Asset Management</td><td>Full Time </td><td>144</td><td>890563</td><td>07/04/10</td></tr><tr class="gradeA"><td>02/07/2012</td><td>Chami</td><td>Legal Department</td><td> Internship </td><td>240</td><td>511512</td><td>07/16/05</td></tr><tr class="gradeA"><td>03/07/2012</td><td>Apple Systems</td><td>Accounting</td><td>Full Time </td><td>54</td><td>724077</td><td>04/05/10</td></tr><tr class="gradeA"><td>12/12/2011</td><td>Yahoo</td><td>Finances</td><td>Full Time </td><td>203</td><td>893755</td><td>06/16/09</td></tr><tr class="gradeA"><td>01/15/2012</td><td>Borland</td><td>Tech Support</td><td> Internship </td><td>246</td><td>536321</td><td>08/14/06</td></tr><tr class="gradeA"><td>08/03/2011</td><td>Cakewalk</td><td>Legal Department</td><td> Internship </td><td>249</td><td>708340</td><td>06/18/10</td></tr><tr class="gradeA"><td>05/09/2011</td><td>Apple Systems</td><td>Finances</td><td>Full Time </td><td>217</td><td>658683</td><td>01/24/07</td></tr><tr class="gradeA"><td>01/15/2012</td><td>Sibelius</td><td>Media Relations</td><td>Full Time </td><td>211</td><td>988523</td><td>06/10/05</td></tr><tr class="gradeA"><td>06/05/2011</td><td>Cakewalk</td><td>Public Relations</td><td> Internship </td><td>135</td><td>651464</td><td>07/01/08</td></tr><tr class="gradeA"><td>08/30/2011</td><td>Borland</td><td>Human Resources</td><td>Full Time </td><td>117</td><td>949973</td><td>12/02/11</td></tr><tr class="gradeA"><td>10/29/2011</td><td>Finale</td><td>Public Relations</td><td> Internship </td><td>224</td><td>496824</td><td>12/07/06</td></tr><tr class="gradeA"><td>01/19/2012</td><td>Altavista</td><td>Finances</td><td>Full Time </td><td>218</td><td>571464</td><td>06/06/06</td></tr><tr class="gradeA"><td>08/30/2011</td><td>Altavista</td><td>Customer Service</td><td>Full Time </td><td>147</td><td>875893</td><td>04/11/07</td></tr><tr class="gradeA"><td>02/21/2012</td><td>Cakewalk</td><td>Quality Assurance</td><td> Internship </td><td>243</td><td>517989</td><td>02/17/05</td></tr><tr class="gradeA"><td>09/13/2011</td><td>Cakewalk</td><td>Research and Development</td><td>Full Time </td><td>89</td><td>453920</td><td>08/26/09</td></tr><tr class="gradeA"><td>03/28/2012</td><td>Yahoo</td><td>Media Relations</td><td>Full Time </td><td>211</td><td>611727</td><td>01/19/08</td></tr><tr class="gradeA"><td>06/27/2011</td><td>Lycos</td><td>Asset Management</td><td> Internship </td><td>11</td><td>95483</td><td>07/04/06</td></tr><tr class="gradeA"><td>09/06/2011</td><td>Cakewalk</td><td>Accounting</td><td>Full Time </td><td>239</td><td>932169</td><td>07/17/07</td></tr><tr class="gradeA"><td>01/23/2012</td><td>Borland</td><td>Public Relations</td><td>Full Time </td><td>31</td><td>508113</td><td>02/04/06</td></tr><tr class="gradeA"><td>04/18/2011</td><td>Borland</td><td>Customer Service</td><td> Internship </td><td>64</td><td>35546</td><td>11/12/06</td></tr><tr class="gradeA"><td>03/22/2012</td><td>Lavasoft</td><td>Accounting</td><td>Full Time </td><td>6</td><td>139681</td><td>02/16/05</td></tr><tr class="gradeA"><td>07/01/2011</td><td>Altavista</td><td>Accounting</td><td> Internship </td><td>98</td><td>864133</td><td>05/20/07</td></tr><tr class="gradeA"><td>06/16/2011</td><td>Sibelius</td><td>Sales and Marketing</td><td> Internship </td><td>25</td><td>532610</td><td>05/03/08</td></tr><tr class="gradeA"><td>08/11/2011</td><td>Lycos</td><td>Public Relations</td><td>Full Time </td><td>134</td><td>480952</td><td>11/01/09</td></tr><tr class="gradeA"><td>05/12/2011</td><td>Lavasoft</td><td>Finances</td><td>Full Time </td><td>221</td><td>430324</td><td>12/20/06</td></tr><tr class="gradeA"><td>10/09/2011</td><td>Macromedia</td><td>Sales and Marketing</td><td>Full Time </td><td>242</td><td>538169</td><td>03/10/10</td></tr><tr class="gradeA"><td>01/29/2012</td><td>Macromedia</td><td>Human Resources</td><td>Full Time </td><td>112</td><td>393214</td><td>08/01/06</td></tr><tr class="gradeA"><td>01/23/2012</td><td>Sibelius</td><td>Media Relations</td><td>Full Time </td><td>5</td><td>167725</td><td>11/13/06</td></tr><tr class="gradeA"><td>08/28/2011</td><td>Altavista</td><td>Payroll</td><td>Full Time </td><td>72</td><td>726062</td><td>01/19/11</td></tr><tr class="gradeA"><td>08/13/2011</td><td>Finale</td><td>Quality Assurance</td><td>Full Time </td><td>70</td><td>294285</td><td>03/12/10</td></tr><tr class="gradeA"><td>03/31/2012</td><td>Lavasoft</td><td>Advertising</td><td> Internship </td><td>159</td><td>650507</td><td>05/04/09</td></tr><tr class="gradeA"><td>03/20/2012</td><td>Cakewalk</td><td>Research and Development</td><td>Full Time </td><td>192</td><td>60258</td><td>11/16/05</td></tr><tr class="gradeA"><td>12/23/2011</td><td>Altavista</td><td>Sales and Marketing</td><td>Full Time </td><td>140</td><td>881088</td><td>04/17/08</td></tr><tr class="gradeA"><td>08/09/2011</td><td>Microsoft</td><td>Legal Department</td><td>Full Time </td><td>97</td><td>521857</td><td>02/27/08</td></tr><tr class="gradeA"><td>08/30/2011</td><td>Yahoo</td><td>Advertising</td><td> Internship </td><td>185</td><td>788243</td><td>11/03/09</td></tr><tr class="gradeA"><td>08/21/2011</td><td>Macromedia</td><td>Asset Management</td><td> Internship </td><td>43</td><td>619924</td><td>01/23/09</td></tr><tr class="gradeA"><td>12/09/2011</td><td>Altavista</td><td>Advertising</td><td> Internship </td><td>12</td><td>656196</td><td>12/29/11</td></tr><tr class="gradeA"><td>01/23/2012</td><td>Lycos</td><td>Public Relations</td><td> Internship </td><td>129</td><td>664280</td><td>10/15/11</td></tr><tr class="gradeA"><td>02/17/2012</td><td>Yahoo</td><td>Legal Department</td><td> Internship </td><td>175</td><td>454908</td><td>06/17/08</td></tr><tr class="gradeA"><td>06/23/2011</td><td>Cakewalk</td><td>Public Relations</td><td> Internship </td><td>86</td><td>164856</td><td>12/22/05</td></tr><tr class="gradeA"><td>05/16/2011</td><td>Cakewalk</td><td>Customer Service</td><td> Internship </td><td>58</td><td>733558</td><td>06/11/09</td></tr><tr class="gradeA"><td>09/24/2011</td><td>Apple Systems</td><td>Legal Department</td><td>Full Time </td><td>49</td><td>903530</td><td>07/15/09</td></tr><tr class="gradeA"><td>11/18/2011</td><td>Macromedia</td><td>Human Resources</td><td>Full Time </td><td>228</td><td>505942</td><td>03/12/11</td></tr><tr class="gradeA"><td>06/16/2011</td><td>Lavasoft</td><td>Research and Development</td><td>Full Time </td><td>99</td><td>527040</td><td>11/28/11</td></tr><tr class="gradeA"><td>01/15/2012</td><td>Lycos</td><td>Advertising</td><td>Full Time </td><td>87</td><td>468013</td><td>10/23/04</td></tr><tr class="gradeA"><td>07/23/2011</td><td>Finale</td><td>Customer Relations</td><td> Internship </td><td>182</td><td>468938</td><td>07/06/08</td></tr><tr class="gradeA"><td>06/13/2011</td><td>Lavasoft</td><td>Public Relations</td><td> Internship </td><td>177</td><td>358921</td><td>02/04/07</td></tr><tr class="gradeA"><td>05/15/2011</td><td>Macromedia</td><td>Payroll</td><td>Full Time </td><td>51</td><td>247678</td><td>12/23/06</td></tr><tr class="gradeA"><td>01/09/2012</td><td>Lycos</td><td>Accounting</td><td> Internship </td><td>131</td><td>985985</td><td>04/15/09</td></tr><tr class="gradeA"><td>06/23/2011</td><td>Yahoo</td><td>Quality Assurance</td><td> Internship </td><td>17</td><td>149306</td><td>12/21/09</td></tr><tr class="gradeA"><td>05/01/2011</td><td>Google</td><td>Quality Assurance</td><td> Internship </td><td>64</td><td>735614</td><td>12/26/07</td></tr><tr class="gradeA"><td>10/16/2011</td><td>Sibelius</td><td>Tech Support</td><td>Full Time </td><td>132</td><td>91096</td><td>12/02/09</td></tr><tr class="gradeA"><td>09/17/2011</td><td>Finale</td><td>Finances</td><td>Full Time </td><td>105</td><td>663625</td><td>05/17/10</td></tr><tr class="gradeA"><td>03/22/2012</td><td>Borland</td><td>Finances</td><td> Internship </td><td>89</td><td>769228</td><td>06/19/05</td></tr><tr class="gradeA"><td>08/19/2011</td><td>Adobe</td><td>Human Resources</td><td>Full Time </td><td>197</td><td>685526</td><td>01/09/07</td></tr><tr class="gradeA"><td>02/19/2012</td><td>Microsoft</td><td>Media Relations</td><td>Full Time </td><td>53</td><td>640058</td><td>12/19/09</td></tr><tr class="gradeA"><td>06/18/2011</td><td>Google</td><td>Customer Relations</td><td>Full Time </td><td>71</td><td>132727</td><td>02/09/08</td></tr><tr class="gradeA"><td>10/28/2011</td><td>Altavista</td><td>Human Resources</td><td>Full Time </td><td>228</td><td>775773</td><td>01/20/06</td></tr><tr class="gradeA"><td>03/19/2012</td><td>Microsoft</td><td>Tech Support</td><td>Full Time </td><td>218</td><td>78288</td><td>09/29/07</td></tr><tr class="gradeA"><td>06/07/2011</td><td>Sibelius</td><td>Sales and Marketing</td><td>Full Time </td><td>60</td><td>327851</td><td>01/31/07</td></tr><tr class="gradeA"><td>05/07/2011</td><td>Lavasoft</td><td>Customer Service</td><td> Internship </td><td>16</td><td>363841</td><td>11/14/06</td></tr><tr class="gradeA"><td>05/12/2011</td><td>Google</td><td>Quality Assurance</td><td> Internship </td><td>113</td><td>423697</td><td>11/01/11</td></tr><tr class="gradeA"><td>11/23/2011</td><td>Apple Systems</td><td>Media Relations</td><td>Full Time </td><td>45</td><td>294779</td><td>10/27/09</td></tr><tr class="gradeA"><td>05/22/2011</td><td>Macromedia</td><td>Advertising</td><td>Full Time </td><td>125</td><td>312286</td><td>12/23/08</td></tr><tr class="gradeA"><td>08/30/2011</td><td>Chami</td><td>Payroll</td><td>Full Time </td><td>59</td><td>637747</td><td>07/20/05</td></tr><tr class="gradeA"><td>05/22/2011</td><td>Lycos</td><td>Media Relations</td><td>Full Time </td><td>100</td><td>980028</td><td>05/10/06</td></tr><tr class="gradeA"><td>03/13/2012</td><td>Cakewalk</td><td>Advertising</td><td>Full Time </td><td>1</td><td>711818</td><td>11/10/09</td></tr><tr class="gradeA"><td>08/12/2011</td><td>Altavista</td><td>Payroll</td><td>Full Time </td><td>182</td><td>626618</td><td>08/26/07</td></tr><tr class="gradeA"><td>04/10/2012</td><td>Google</td><td>Accounting</td><td> Internship </td><td>127</td><td>336012</td><td>05/08/05</td></tr><tr class="gradeA"><td>11/13/2011</td><td>Finale</td><td>Human Resources</td><td>Full Time </td><td>144</td><td>472566</td><td>07/08/11</td></tr><tr class="gradeA"><td>02/26/2012</td><td>Lavasoft</td><td>Tech Support</td><td>Full Time </td><td>166</td><td>481776</td><td>09/30/06</td></tr><tr class="gradeA"><td>04/27/2011</td><td>Borland</td><td>Finances</td><td> Internship </td><td>53</td><td>313154</td><td>09/15/06</td></tr><tr class="gradeA"><td>01/16/2012</td><td>Borland</td><td>Quality Assurance</td><td> Internship </td><td>18</td><td>898793</td><td>05/14/07</td></tr><tr class="gradeA"><td>06/12/2011</td><td>Cakewalk</td><td>Legal Department</td><td> Internship </td><td>28</td><td>301238</td><td>05/20/06</td></tr><tr class="gradeA"><td>06/26/2011</td><td>Chami</td><td>Public Relations</td><td>Full Time </td><td>215</td><td>116351</td><td>01/31/08</td></tr><tr class="gradeA"><td>12/20/2011</td><td>Altavista</td><td>Asset Management</td><td> Internship </td><td>63</td><td>353262</td><td>11/01/10</td></tr><tr class="gradeA"><td>07/03/2011</td><td>Finale</td><td>Asset Management</td><td> Internship </td><td>93</td><td>832703</td><td>03/15/10</td></tr><tr class="gradeA"><td>04/11/2012</td><td>Altavista</td><td>Sales and Marketing</td><td> Internship </td><td>201</td><td>945117</td><td>01/26/12</td></tr><tr class="gradeA"><td>12/25/2011</td><td>Chami</td><td>Quality Assurance</td><td>Full Time </td><td>123</td><td>885938</td><td>10/22/08</td></tr><tr class="gradeA"><td>07/19/2011</td><td>Cakewalk</td><td>Media Relations</td><td> Internship </td><td>100</td><td>199613</td><td>10/18/06</td></tr><tr class="gradeA"><td>05/21/2011</td><td>Lavasoft</td><td>Public Relations</td><td>Full Time </td><td>103</td><td>342726</td><td>09/06/09</td></tr><tr class="gradeA"><td>12/16/2011</td><td>Sibelius</td><td>Customer Relations</td><td> Internship </td><td>104</td><td>410837</td><td>04/24/09</td></tr><tr class="gradeA"><td>11/21/2011</td><td>Lavasoft</td><td>Finances</td><td> Internship </td><td>176</td><td>608262</td><td>10/09/07</td></tr><tr class="gradeA"><td>12/29/2011</td><td>Altavista</td><td>Advertising</td><td> Internship </td><td>34</td><td>194304</td><td>01/31/08</td></tr><tr class="gradeA"><td>09/06/2011</td><td>Sibelius</td><td>Quality Assurance</td><td>Full Time </td><td>46</td><td>56208</td><td>01/04/06</td></tr><tr class="gradeA"><td>02/18/2012</td><td>Macromedia</td><td>Tech Support</td><td> Internship </td><td>31</td><td>99050</td><td>07/05/08</td></tr><tr class="gradeA"><td>05/25/2011</td><td>Borland</td><td>Media Relations</td><td> Internship </td><td>54</td><td>121183</td><td>09/15/09</td></tr><tr class="gradeA"><td>06/09/2011</td><td>Finale</td><td>Public Relations</td><td> Internship </td><td>154</td><td>194428</td><td>11/09/10</td></tr><tr class="gradeA"><td>05/31/2011</td><td>Google</td><td>Accounting</td><td>Full Time </td><td>227</td><td>247382</td><td>09/06/09</td></tr><tr class="gradeA"><td>08/07/2011</td><td>Sibelius</td><td>Accounting</td><td>Full Time </td><td>190</td><td>729090</td><td>10/07/04</td></tr><tr class="gradeA"><td>03/17/2012</td><td>Adobe</td><td>Human Resources</td><td>Full Time </td><td>16</td><td>214681</td><td>07/09/08</td></tr><tr class="gradeA"><td>11/24/2011</td><td>Finale</td><td>Research and Development</td><td>Full Time </td><td>188</td><td>572969</td><td>08/19/06</td></tr><tr class="gradeA"><td>03/31/2012</td><td>Cakewalk</td><td>Media Relations</td><td> Internship </td><td>109</td><td>204270</td><td>12/31/04</td></tr><tr class="gradeA"><td>01/09/2012</td><td>Macromedia</td><td>Payroll</td><td> Internship </td><td>39</td><td>626534</td><td>09/11/07</td></tr><tr class="gradeA"><td>07/01/2011</td><td>Sibelius</td><td>Asset Management</td><td> Internship </td><td>131</td><td>262059</td><td>03/13/11</td></tr><tr class="gradeA"><td>06/04/2011</td><td>Macromedia</td><td>Customer Service</td><td> Internship </td><td>46</td><td>658630</td><td>12/09/09</td></tr><tr class="gradeA"><td>07/05/2011</td><td>Google</td><td>Human Resources</td><td>Full Time </td><td>150</td><td>853123</td><td>08/05/09</td></tr><tr class="gradeA"><td>06/02/2011</td><td>Cakewalk</td><td>Media Relations</td><td>Full Time </td><td>202</td><td>128459</td><td>09/23/08</td></tr><tr class="gradeA"><td>06/13/2011</td><td>Adobe</td><td>Quality Assurance</td><td> Internship </td><td>202</td><td>296062</td><td>06/20/10</td></tr><tr class="gradeA"><td>03/04/2012</td><td>Chami</td><td>Media Relations</td><td>Full Time </td><td>239</td><td>397811</td><td>10/24/09</td></tr><tr class="gradeA"><td>12/13/2011</td><td>Lycos</td><td>Tech Support</td><td>Full Time </td><td>126</td><td>608953</td><td>12/12/09</td></tr><tr class="gradeA"><td>12/05/2011</td><td>Macromedia</td><td>Finances</td><td>Full Time </td><td>208</td><td>635340</td><td>09/12/08</td></tr><tr class="gradeA"><td>06/24/2011</td><td>Chami</td><td>Legal Department</td><td> Internship </td><td>44</td><td>969822</td><td>04/12/10</td></tr><tr class="gradeA"><td>11/02/2011</td><td>Microsoft</td><td>Finances</td><td> Internship </td><td>207</td><td>329245</td><td>05/17/06</td></tr><tr class="gradeA"><td>04/29/2011</td><td>Macromedia</td><td>Finances</td><td>Full Time </td><td>37</td><td>178093</td><td>07/25/10</td></tr><tr class="gradeA"><td>08/21/2011</td><td>Lycos</td><td>Asset Management</td><td>Full Time </td><td>235</td><td>120163</td><td>12/19/08</td></tr><tr class="gradeA"><td>01/26/2012</td><td>Lycos</td><td>Legal Department</td><td> Internship </td><td>222</td><td>438482</td><td>01/04/07</td></tr><tr class="gradeA"><td>11/23/2011</td><td>Finale</td><td>Sales and Marketing</td><td> Internship </td><td>222</td><td>276540</td><td>11/13/11</td></tr><tr class="gradeA"><td>06/13/2011</td><td>Adobe</td><td>Advertising</td><td> Internship </td><td>249</td><td>139793</td><td>12/10/08</td></tr><tr class="gradeA"><td>10/01/2011</td><td>Finale</td><td>Sales and Marketing</td><td>Full Time </td><td>92</td><td>638463</td><td>12/03/08</td></tr><tr class="gradeA"><td>05/16/2011</td><td>Yahoo</td><td>Accounting</td><td>Full Time </td><td>148</td><td>159793</td><td>10/23/11</td></tr><tr class="gradeA"><td>12/04/2011</td><td>Lavasoft</td><td>Quality Assurance</td><td> Internship </td><td>79</td><td>250636</td><td>07/10/06</td></tr><tr class="gradeA"><td>04/03/2012</td><td>Cakewalk</td><td>Quality Assurance</td><td> Internship </td><td>139</td><td>922123</td><td>09/14/11</td></tr><tr class="gradeA"><td>07/11/2011</td><td>Yahoo</td><td>Legal Department</td><td> Internship </td><td>122</td><td>798450</td><td>06/09/07</td></tr><tr class="gradeA"><td>11/12/2011</td><td>Finale</td><td>Accounting</td><td> Internship </td><td>112</td><td>373816</td><td>04/08/05</td></tr><tr class="gradeA"><td>09/18/2011</td><td>Chami</td><td>Advertising</td><td>Full Time </td><td>51</td><td>476174</td><td>06/02/11</td></tr><tr class="gradeA"><td>02/17/2012</td><td>Sibelius</td><td>Quality Assurance</td><td> Internship </td><td>107</td><td>68140</td><td>10/29/10</td></tr><tr class="gradeA"><td>11/25/2011</td><td>Chami</td><td>Human Resources</td><td>Full Time </td><td>95</td><td>285649</td><td>08/31/10</td></tr><tr class="gradeA"><td>04/01/2012</td><td>Borland</td><td>Human Resources</td><td> Internship </td><td>234</td><td>627386</td><td>01/01/05</td></tr><tr class="gradeA"><td>07/13/2011</td><td>Apple Systems</td><td>Public Relations</td><td>Full Time </td><td>134</td><td>192123</td><td>02/09/05</td></tr><tr class="gradeA"><td>11/27/2011</td><td>Cakewalk</td><td>Sales and Marketing</td><td> Internship </td><td>90</td><td>666445</td><td>06/06/11</td></tr><tr class="gradeA"><td>10/02/2011</td><td>Altavista</td><td>Quality Assurance</td><td>Full Time </td><td>40</td><td>170006</td><td>11/20/05</td></tr><tr class="gradeA"><td>12/15/2011</td><td>Yahoo</td><td>Quality Assurance</td><td>Full Time </td><td>10</td><td>256249</td><td>09/23/09</td></tr><tr class="gradeA"><td>05/26/2011</td><td>Google</td><td>Quality Assurance</td><td>Full Time </td><td>65</td><td>912197</td><td>08/28/05</td></tr><tr class="gradeA"><td>02/02/2012</td><td>Google</td><td>Customer Relations</td><td> Internship </td><td>224</td><td>100499</td><td>09/24/06</td></tr><tr class="gradeA"><td>11/02/2011</td><td>Altavista</td><td>Research and Development</td><td> Internship </td><td>43</td><td>248498</td><td>09/28/05</td></tr><tr class="gradeA"><td>04/18/2011</td><td>Adobe</td><td>Payroll</td><td>Full Time </td><td>242</td><td>921524</td><td>12/26/10</td></tr><tr class="gradeA"><td>01/09/2012</td><td>Google</td><td>Customer Service</td><td> Internship </td><td>161</td><td>720791</td><td>10/27/04</td></tr><tr class="gradeA"><td>08/05/2011</td><td>Yahoo</td><td>Sales and Marketing</td><td>Full Time </td><td>138</td><td>268017</td><td>07/07/11</td></tr><tr class="gradeA"><td>02/02/2012</td><td>Lavasoft</td><td>Accounting</td><td> Internship </td><td>192</td><td>311012</td><td>10/13/08</td></tr><tr class="gradeA"><td>10/24/2011</td><td>Yahoo</td><td>Payroll</td><td>Full Time </td><td>92</td><td>171711</td><td>01/07/12</td></tr><tr class="gradeA"><td>04/19/2011</td><td>Borland</td><td>Sales and Marketing</td><td>Full Time </td><td>108</td><td>718741</td><td>12/02/07</td></tr><tr class="gradeA"><td>05/29/2011</td><td>Chami</td><td>Public Relations</td><td>Full Time </td><td>98</td><td>823926</td><td>04/10/06</td></tr><tr class="gradeA"><td>07/24/2011</td><td>Microsoft</td><td>Research and Development</td><td> Internship </td><td>232</td><td>446677</td><td>02/20/10</td></tr><tr class="gradeA"><td>02/21/2012</td><td>Sibelius</td><td>Customer Relations</td><td> Internship </td><td>140</td><td>467151</td><td>11/19/10</td></tr><tr class="gradeA"><td>02/23/2012</td><td>Google</td><td>Human Resources</td><td> Internship </td><td>110</td><td>157247</td><td>12/06/09</td></tr><tr class="gradeA"><td>03/27/2012</td><td>Yahoo</td><td>Accounting</td><td> Internship </td><td>10</td><td>36203</td><td>09/16/11</td></tr><tr class="gradeA"><td>09/25/2011</td><td>Adobe</td><td>Research and Development</td><td>Full Time </td><td>122</td><td>113974</td><td>11/13/07</td></tr><tr class="gradeA"><td>07/26/2011</td><td>Sibelius</td><td>Public Relations</td><td>Full Time </td><td>87</td><td>580221</td><td>01/18/06</td></tr>
+	</tbody>
+</table>
+        </div><!--/span-->
+        <div class="span3">
+ 		<div class="accordion" id="accordion2">
+            <div class="accordion-group">
+              <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                  Recently viewed jobs
+                </a>
+              </div>
+              <div id="collapseOne" class="accordion-body collapse in">
+                <div class="accordion-inner">
+<ol id="selectable">
+	<li class="ui-widget-content">Item 1</li>
+	<li class="ui-widget-content">Item 2</li>
+	<li class="ui-widget-content">Item 3</li>
+	<li class="ui-widget-content">Item 4</li>
+	<li class="ui-widget-content">Item 5</li>
+	<li class="ui-widget-content">Item 6</li>
+	<li class="ui-widget-content">Item 7</li>
+</ol>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-group">
+              <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                  Saved Searches
+                </a>
+              </div>
+              <div id="collapseOne" class="accordion-body collapse in">
+                <div class="accordion-inner">
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                </div>
+              </div>
+            </div>
+
+<div class="accordion-group">
+              <div class="accordion-heading">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                  Saved Jobs
+                </a>
+              </div>
+              <div id="collapseOne" class="accordion-body collapse in">
+                <div class="accordion-inner">
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                </div>
+              </div>
+            </div>
+            </div>
+          </div><!--/.well -->
+</div>
+        </div><!--/row-->
+      
+      
+      
+      
+      
+      <div class="row-fluid">
+
+      <hr>
+
+      <footer>
+        <p>&copy; Company 2012</p>
+      </footer>
+
+    </div><!--/.fluid-container-->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!--script src="assets/js/jquery.js"></script> -->
+    <script src="assets/js/bootstrap-transition.js"></script>
+    <script src="assets/js/bootstrap-alert.js"></script>
+    <script src="assets/js/bootstrap-modal.js"></script>
+    <script src="assets/js/bootstrap-dropdown.js"></script>
+    <script src="assets/js/bootstrap-scrollspy.js"></script>
+    <script src="assets/js/bootstrap-tab.js"></script>
+    <script src="assets/js/bootstrap-tooltip.js"></script>
+    <script src="assets/js/bootstrap-popover.js"></script>
+    <script src="assets/js/bootstrap-button.js"></script>
+    <script src="assets/js/bootstrap-collapse.js"></script>
+    <script src="assets/js/bootstrap-carousel.js"></script>
+    <script src="assets/js/bootstrap-typeahead.js"></script>
+
+
+  </body>
+</html>

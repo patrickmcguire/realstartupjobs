@@ -1,0 +1,976 @@
+<html>
+<table id="myTable" border='1'>
+<thead>
+	<tr>
+		<th>cid</th>
+		<th>Name</th>
+		<th>overview</th>
+		<th>homepage_url</th>
+		<th>number of employees</th>
+		<th> Category Codes</th>
+		<th>description</th>
+		<th> Founded year</th>
+		<th> founded month </th>
+		<th> total money raised</th>
+		<th>Crunchbase url</th>
+		<th>tag_list</th>
+		<th>twitter</th>
+		<th>blog_url</th>
+		<th>blog_feed_url</th>
+		<th> </th>
+</tr></thead>
+  <tbody>
+    <tr>...</tr>
+    <tr>...</tr>
+  </tbody>
+  <tr>...</tr>
+</table>
+</html>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="http://www.kunalbabre.com/projects/table2CSV.js" > </script> 
+
+<script type="text/javascript">
+/* * Creativyst(tm) CSV converter
+ *   (www.creativyst.com)
+ * 
+ * (C) Copyright 2002-2003, Creativyst, Inc.
+ * 
+ * Permission is hereby granted to use,
+ * distribute, and change this file for any
+ * reason, provided this entire comment remains
+ * intact with the work.
+ * 
+ *
+*/
+
+/*JSCPragma:StartCompress
+*/
+var lsz = 299;
+
+var cid = Array([lsz]);
+var companyname = Array([lsz]);
+
+
+cid[1] = "1";
+companyname[1] = "1800postcards.com";
+
+cid[2] = "2";
+companyname[2] = "20x200";
+
+cid[3] = "3";
+companyname[3] = "2findlocal";
+
+cid[4] = "4";
+companyname[4] = "accompl-sh";
+
+cid[5] = "5";
+companyname[5] = "adafruit-industries";
+
+cid[6] = "6";
+companyname[6] = "adaptly";
+
+cid[7] = "7";
+companyname[7] = "adcade";
+
+cid[8] = "8";
+companyname[8] = "admarketplace";
+
+cid[9] = "9";
+companyname[9] = "admeld";
+
+cid[10] = "10";
+companyname[10] = "adsafe";
+
+cid[11] = "11";
+companyname[11] = "ahalife";
+
+cid[12] = "12";
+companyname[12] = "allmenus";
+
+cid[13] = "13";
+companyname[13] = "angelsoft";
+
+cid[14] = "14";
+companyname[14] = "animoto";
+
+cid[15] = "15";
+companyname[15] = "appaddictive";
+
+cid[16] = "16";
+companyname[16] = "appboy";
+
+cid[17] = "17";
+companyname[17] = "appnexus";
+
+cid[18] = "18";
+companyname[18] = "art-sy";
+
+cid[19] = "19";
+companyname[19] = "artsicle";
+
+cid[20] = "20";
+companyname[20] = "atavist";
+
+cid[21] = "21";
+companyname[21] = "atlantic-metro-communications";
+
+cid[22] = "22";
+companyname[22] = "augmate";
+
+cid[23] = "23";
+companyname[23] = "aviary";
+
+cid[24] = "24";
+companyname[24] = "axialmarket";
+
+cid[25] = "25";
+companyname[25] = "backstory";
+
+cid[26] = "26";
+companyname[26] = "balance-media";
+
+cid[27] = "27";
+companyname[27] = "banters";
+
+cid[28] = "28";
+companyname[28] = "barrel";
+
+cid[29] = "29";
+companyname[29] = "beenverified";
+
+cid[30] = "30";
+companyname[30] = "behance";
+
+cid[31] = "31";
+companyname[31] = "bestvendor";
+
+cid[32] = "32";
+companyname[32] = "betterment";
+
+cid[33] = "33";
+companyname[33] = "biodigital";
+
+cid[34] = "34";
+companyname[34] = "birchbox";
+
+cid[35] = "35";
+companyname[35] = "bitly";
+
+cid[36] = "36";
+companyname[36] = "bloomberg";
+
+cid[37] = "37";
+companyname[37] = "blue-fountain-media";
+
+cid[38] = "38";
+companyname[38] = "bookish";
+
+cid[39] = "39";
+companyname[39] = "brandmini";
+
+cid[40] = "40";
+companyname[40] = "buddymedia";
+
+cid[41] = "41";
+companyname[41] = "building link";
+
+cid[42] = "42";
+companyname[42] = "bundle";
+
+cid[43] = "43";
+companyname[43] = "businessreel";
+
+cid[44] = "44";
+companyname[44] = "businessweek";
+
+cid[45] = "45";
+companyname[45] = "buzzfeed";
+
+cid[46] = "46";
+companyname[46] = "capture your flag";
+
+cid[47] = "47";
+companyname[47] = "carrot-creative";
+
+cid[48] = "48";
+companyname[48] = "centzy";
+
+cid[49] = "49";
+companyname[49] = "challengepost";
+
+cid[50] = "50";
+companyname[50] = "charideem";
+
+cid[51] = "51";
+companyname[51] = "chartbeat";
+
+cid[52] = "52";
+companyname[52] = "cheapism-com";
+
+cid[53] = "53";
+companyname[53] = "cheetahmail";
+
+cid[54] = "54";
+companyname[54] = "cinchcast";
+
+cid[55] = "55";
+companyname[55] = "city.com media llc";
+
+cid[56] = "56";
+companyname[56] = "citypockets";
+
+cid[57] = "57";
+companyname[57] = "clothes horse";
+
+cid[58] = "58";
+companyname[58] = "collective[i]";
+
+cid[59] = "59";
+companyname[59] = "comixology";
+
+cid[60] = "60";
+companyname[60] = "conductor";
+
+cid[61] = "61";
+companyname[61] = "consmr";
+
+cid[62] = "62";
+companyname[62] = "contently";
+
+cid[63] = "63";
+companyname[63] = "coursekit";
+
+cid[64] = "64";
+companyname[64] = "craftcoffee";
+
+cid[65] = "65";
+companyname[65] = "crisp-wireless";
+
+cid[66] = "66";
+companyname[66] = "crowdtap";
+
+cid[67] = "67";
+companyname[67] = "custora";
+
+cid[68] = "68";
+companyname[68] = "datemyschool";
+
+cid[69] = "69";
+companyname[69] = "designer pages";
+
+cid[70] = "70";
+companyname[70] = "dj booth";
+
+cid[71] = "71";
+companyname[71] = "dm services inc";
+
+cid[72] = "72";
+companyname[72] = "docracy";
+
+cid[73] = "73";
+companyname[73] = "doesthatmakesense-com";
+
+cid[74] = "74";
+companyname[74] = "doodle.ly";
+
+cid[75] = "75";
+companyname[75] = "dosomething.org";
+
+cid[76] = "76";
+companyname[76] = "dotgo";
+
+cid[77] = "77";
+companyname[77] = "dropmark";
+
+cid[78] = "78";
+companyname[78] = "dynamicoxygen";
+
+cid[79] = "79";
+companyname[79] = "efficiency-2-0";
+
+cid[80] = "80";
+companyname[80] = "energyhub";
+
+cid[81] = "81";
+companyname[81] = "estimize";
+
+cid[82] = "82";
+companyname[82] = "etsy";
+
+cid[83] = "83";
+companyname[83] = "everyoneâ€™s mixtape";
+
+cid[84] = "84";
+companyname[84] = "better-advertising";
+
+cid[85] = "85";
+companyname[85] = "extension-entertainment";
+
+cid[86] = "86";
+companyname[86] = "examville.com";
+
+cid[87] = "87";
+companyname[87] = "eztexting";
+
+cid[88] = "88";
+companyname[88] = "faithstreet";
+
+cid[89] = "89";
+companyname[89] = "fancy hands";
+
+cid[90] = "90";
+companyname[90] = "fashism";
+
+cid[91] = "91";
+companyname[91] = "fathom";
+
+cid[92] = "92";
+companyname[92] = "fiftythree";
+
+cid[93] = "93";
+companyname[93] = "fitocracy";
+
+cid[94] = "94";
+companyname[94] = "flavorpill";
+
+cid[95] = "95";
+companyname[95] = "float";
+
+cid[96] = "96";
+companyname[96] = "fogcreek";
+
+cid[97] = "97";
+companyname[97] = "food+tech connect";
+
+cid[98] = "98";
+companyname[98] = "food52";
+
+cid[99] = "99";
+companyname[99] = "forrst";
+
+cid[100] = "100";
+companyname[100] = "foursquare";
+
+cid[101] = "101";
+companyname[101] = "franchisehelp";
+
+cid[102] = "102";
+companyname[102] = "freedirect-media";
+
+cid[103] = "103";
+companyname[103] = "friendseat";
+
+cid[104] = "104";
+companyname[104] = "gallerama";
+
+cid[105] = "105";
+companyname[105] = "gamechanger-media";
+
+cid[106] = "106";
+companyname[106] = "games for change";
+
+cid[107] = "107";
+companyname[107] = "general-assembly";
+
+cid[108] = "108";
+companyname[108] = "getglue";
+
+cid[109] = "109";
+companyname[109] = "grade spotter";
+
+cid[110] = "110";
+companyname[110] = "gramercyone";
+
+cid[111] = "111";
+companyname[111] = "the-greatist";
+
+cid[112] = "112";
+companyname[112] = "group commerce";
+
+cid[113] = "113";
+companyname[113] = "grouper";
+
+cid[114] = "114";
+companyname[114] = "grovo";
+
+cid[115] = "115";
+companyname[115] = "hara partners";
+
+cid[116] = "116";
+companyname[116] = "harvest";
+
+cid[117] = "117";
+companyname[117] = "hashable";
+
+cid[118] = "118";
+companyname[118] = "holstee";
+
+cid[119] = "119";
+companyname[119] = "honestly now";
+
+cid[120] = "120";
+companyname[120] = "hotlist";
+
+cid[121] = "121";
+companyname[121] = "hourly";
+
+cid[122] = "122";
+companyname[122] = "howaboutwe.com";
+
+cid[123] = "123";
+companyname[123] = "hunch";
+
+cid[124] = "124";
+companyname[124] = "icehook systems";
+
+cid[125] = "125";
+companyname[125] = "ideeli";
+
+cid[126] = "126";
+companyname[126] = "igougo";
+
+cid[127] = "127";
+companyname[127] = "immersivelabs";
+
+cid[128] = "128";
+companyname[128] = "indabamusic";
+
+cid[129] = "129";
+companyname[129] = "ingk labs";
+
+cid[130] = "130";
+companyname[130] = "intent-media";
+
+cid[131] = "131";
+companyname[131] = "intro labs";
+
+cid[132] = "132";
+companyname[132] = "jetsetter";
+
+cid[133] = "133";
+companyname[133] = "jibe";
+
+cid[134] = "134";
+companyname[134] = "joor";
+
+cid[135] = "135";
+companyname[135] = "jux";
+
+cid[136] = "136";
+companyname[136] = "kaptur";
+
+cid[137] = "137";
+companyname[137] = "kargo";
+
+cid[138] = "138";
+companyname[138] = "kikin";
+
+cid[139] = "139";
+companyname[139] = "kiwi interactive";
+
+cid[140] = "140";
+companyname[140] = "knewton";
+
+cid[141] = "141";
+companyname[141] = "know your meme";
+
+cid[142] = "142";
+companyname[142] = "krossover-intelligence";
+
+cid[143] = "143";
+companyname[143] = "the-lean-startup-machine";
+
+cid[144] = "144";
+companyname[144] = "lifebooker-com";
+
+cid[145] = "145";
+companyname[145] = "liveintent";
+
+cid[146] = "146";
+companyname[146] = "livestream";
+
+cid[147] = "147";
+companyname[147] = "local response";
+
+cid[148] = "148";
+companyname[148] = "longtail-video";
+
+cid[149] = "149";
+companyname[149] = "loosecubes";
+
+cid[150] = "150";
+companyname[150] = "lot18";
+
+cid[151] = "151";
+companyname[151] = "magnify";
+
+cid[152] = "152";
+companyname[152] = "market publique";
+
+cid[153] = "153";
+companyname[153] = "marketsharing";
+
+cid[154] = "154";
+companyname[154] = "marquee media";
+
+cid[155] = "155";
+companyname[155] = "media6degrees";
+
+cid[156] = "156";
+companyname[156] = "mediamath";
+
+cid[157] = "157";
+companyname[157] = "meetup";
+
+cid[158] = "158";
+companyname[158] = "memrise";
+
+cid[159] = "159";
+companyname[159] = "mimeo";
+
+cid[160] = "160";
+companyname[160] = "lascaux-co";
+
+cid[161] = "161";
+companyname[161] = "mobile commons";
+
+cid[162] = "162";
+companyname[162] = "mongodb";
+
+cid[163] = "163";
+companyname[163] = "moonit";
+
+cid[164] = "164";
+companyname[164] = "moovatom, inc.";
+
+cid[165] = "165";
+companyname[165] = "movable ink";
+
+cid[166] = "166";
+companyname[166] = "muck rack";
+
+cid[167] = "167";
+companyname[167] = "my-city-way";
+
+cid[168] = "168";
+companyname[168] = "my-bank-tracker";
+
+cid[169] = "169";
+companyname[169] = "myfreeconcert";
+
+cid[170] = "170";
+companyname[170] = "naked apartments";
+
+cid[171] = "171";
+companyname[171] = "neighborhoodr";
+
+cid[172] = "172";
+companyname[172] = "never liked it anyway";
+
+cid[173] = "173";
+companyname[173] = "new work city";
+
+cid[174] = "174";
+companyname[174] = "news-me";
+
+cid[175] = "175";
+companyname[175] = "newsblur";
+
+cid[176] = "176";
+companyname[176] = "newscred";
+
+cid[177] = "177";
+companyname[177] = "next-jump";
+
+cid[178] = "178";
+companyname[178] = "nosql weekly";
+
+cid[179] = "179";
+companyname[179] = "nrelate";
+
+cid[180] = "180";
+companyname[180] = "ny convergence";
+
+cid[181] = "181";
+companyname[181] = "nyi";
+
+cid[182] = "182";
+companyname[182] = "offerpop";
+
+cid[183] = "183";
+companyname[183] = "onepager";
+
+cid[184] = "184";
+companyname[184] = "onswipe";
+
+cid[185] = "185";
+companyname[185] = "opensky";
+
+cid[186] = "186";
+companyname[186] = "oyster-hotel-reviews";
+
+cid[187] = "187";
+companyname[187] = "panelfly";
+
+cid[188] = "188";
+companyname[188] = "paperless-post";
+
+cid[189] = "189";
+companyname[189] = "parse.ly";
+
+cid[190] = "190";
+companyname[190] = "peekyou";
+
+cid[191] = "191";
+companyname[191] = "peeriscope";
+
+cid[192] = "192";
+companyname[192] = "perpetually";
+
+cid[193] = "193";
+companyname[193] = "personal democracy forum";
+
+cid[194] = "194";
+companyname[194] = "piictu";
+
+cid[195] = "195";
+companyname[195] = "pixable";
+
+cid[196] = "196";
+companyname[196] = "plyfe";
+
+cid[197] = "197";
+companyname[197] = "posthelpers";
+
+cid[198] = "198";
+companyname[198] = "privco";
+
+cid[199] = "199";
+companyname[199] = "producteev";
+
+cid[200] = "200";
+companyname[200] = "promediacorp";
+
+cid[201] = "201";
+companyname[201] = "quirky";
+
+cid[202] = "202";
+companyname[202] = "readability";
+
+cid[203] = "203";
+companyname[203] = "readability";
+
+cid[204] = "204";
+companyname[204] = "recomparison";
+
+cid[205] = "205";
+companyname[205] = "universal-record-database";
+
+cid[206] = "206";
+companyname[206] = "redrover";
+
+cid[207] = "207";
+companyname[207] = "refined hype";
+
+cid[208] = "208";
+companyname[208] = "refinery29";
+
+cid[209] = "209";
+companyname[209] = "rentenna";
+
+cid[210] = "210";
+companyname[210] = "renthop";
+
+cid[211] = "211";
+companyname[211] = "reputation observer";
+
+cid[212] = "212";
+companyname[212] = "ride the city";
+
+cid[213] = "213";
+companyname[213] = "rightsflow";
+
+cid[214] = "214";
+companyname[214] = "roboinvest";
+
+cid[215] = "215";
+companyname[215] = "sailthru";
+
+cid[216] = "216";
+companyname[216] = "savored";
+
+cid[217] = "217";
+companyname[217] = "sayforexample, inc";
+
+cid[218] = "218";
+companyname[218] = "schoology";
+
+cid[219] = "219";
+companyname[219] = "seamless receipts";
+
+cid[220] = "220";
+companyname[220] = "seatgeek";
+
+cid[221] = "221";
+companyname[221] = "send word now";
+
+cid[222] = "222";
+companyname[222] = "sense-networks";
+
+cid[223] = "223";
+companyname[223] = "shapeways";
+
+cid[224] = "224";
+companyname[224] = "shopkeep-com";
+
+cid[225] = "225";
+companyname[225] = "shorty awards";
+
+cid[226] = "226";
+companyname[226] = "showme";
+
+cid[227] = "227";
+companyname[227] = "showmelocal inc.";
+
+cid[228] = "228";
+companyname[228] = "sidetour";
+
+cid[229] = "229";
+companyname[229] = "signpost";
+
+cid[230] = "230";
+companyname[230] = "singleplatform";
+
+cid[231] = "231";
+companyname[231] = "skillshare";
+
+cid[232] = "232";
+companyname[232] = "slader";
+
+cid[233] = "233";
+companyname[233] = "smartling";
+
+cid[234] = "234";
+companyname[234] = "snapgoods";
+
+cid[235] = "235";
+companyname[235] = "social fresh";
+
+cid[236] = "236";
+companyname[236] = "socialflow";
+
+cid[237] = "237";
+companyname[237] = "sociocast";
+
+cid[238] = "238";
+companyname[238] = "solvate";
+
+cid[239] = "239";
+companyname[239] = "sonar";
+
+cid[240] = "240";
+companyname[240] = "songtrust";
+
+cid[241] = "241";
+companyname[241] = "songza";
+
+cid[242] = "242";
+companyname[242] = "sortprice";
+
+cid[243] = "243";
+companyname[243] = "spinlister";
+
+cid[244] = "244";
+companyname[244] = "sponsorhub";
+
+cid[245] = "245";
+companyname[245] = "sponsored ads, inc.";
+
+cid[246] = "246";
+companyname[246] = "squarespace";
+
+cid[247] = "247";
+companyname[247] = "stamped";
+
+cid[248] = "248";
+companyname[248] = "storyville";
+
+cid[249] = "249";
+companyname[249] = "stray boots";
+
+cid[250] = "250";
+companyname[250] = "streeteasy";
+
+cid[251] = "251";
+companyname[251] = "stylecaster";
+
+cid[252] = "252";
+companyname[252] = "tlists";
+
+cid[253] = "253";
+companyname[253] = "svpply";
+
+cid[254] = "254";
+companyname[254] = "tapedition";
+
+cid[255] = "255";
+companyname[255] = "tastesavant";
+
+cid[256] = "256";
+companyname[256] = "the echo system";
+
+cid[257] = "257";
+companyname[257] = "the icon deposit";
+
+cid[258] = "258";
+companyname[258] = "theladders";
+
+cid[259] = "259";
+companyname[259] = "the mindriot";
+
+cid[260] = "260";
+companyname[260] = "the webby awards";
+
+cid[261] = "261";
+companyname[261] = "thrillist-com";
+
+cid[262] = "262";
+companyname[262] = "thumb";
+
+cid[263] = "263";
+companyname[263] = "timehop";
+
+cid[264] = "264";
+companyname[264] = "tip or skip";
+
+cid[265] = "265";
+companyname[265] = "totsy";
+
+cid[266] = "266";
+companyname[266] = "toura";
+
+cid[267] = "267";
+companyname[267] = "tracks";
+
+cid[268] = "268";
+companyname[268] = "tradecard";
+
+cid[269] = "269";
+companyname[269] = "turnto-network";
+
+cid[270] = "270";
+companyname[270] = "tutorspree";
+
+cid[271] = "271";
+companyname[271] = "twitrpix";
+
+cid[272] = "272";
+companyname[272] = "txtimpact";
+
+cid[273] = "273";
+companyname[273] = "uncommon-goods";
+
+cid[274] = "274";
+companyname[274] = "under 30 ceo";
+
+cid[275] = "275";
+companyname[275] = "unigo";
+
+cid[276] = "276";
+companyname[276] = "unroll.me";
+
+cid[277] = "277";
+companyname[277] = "vimeo";
+
+cid[278] = "278";
+companyname[278] = "visual-revenue";
+
+cid[279] = "279";
+companyname[279] = "voxel-dot-net";
+
+cid[280] = "280";
+companyname[280] = "voxy";
+
+cid[281] = "281";
+companyname[281] = "vyou";
+
+cid[282] = "282";
+companyname[282] = "waitaway";
+
+cid[283] = "283";
+companyname[283] = "wanderfly";
+
+cid[284] = "284";
+companyname[284] = "want!";
+
+cid[285] = "285";
+companyname[285] = "warby-parker";
+
+cid[286] = "286";
+companyname[286] = "well+good";
+
+cid[287] = "287";
+companyname[287] = "wickedfire";
+
+cid[288] = "288";
+companyname[288] = "winito";
+
+cid[289] = "289";
+companyname[289] = "xcubicle";
+
+cid[290] = "290";
+companyname[290] = "xtify";
+
+cid[291] = "291";
+companyname[291] = "yaptrackers";
+
+cid[292] = "292";
+companyname[292] = "ycharts";
+
+cid[293] = "293";
+companyname[293] = "yext";
+
+cid[294] = "294";
+companyname[294] = "yipit";
+
+cid[295] = "295";
+companyname[295] = "yodle";
+
+cid[296] = "296";
+companyname[296] = "yog";
+
+cid[297] = "297";
+companyname[297] = "zeel";
+
+cid[298] = "298";
+companyname[298] = "zocdoc";
+
+
+
+</script>
+<script>
+$(document).ready(function() {
+
+	$.each(companyname, function(key, company) { 
+
+		$.getJSON("http://api.crunchbase.com/v/1/company/"+company+".js?callback=?", function(data) {
+		 	
+		 	 var name = data.name;
+
+		       $("#myTable > tbody:last").append('<tr><td>'+key+'</td><td>' + data.name + '</td><td>' + data.overview +'</td><td>'+ data.homepage_url +'</td><td>'+ data.number_of_employees +'</td><td>'+data.category_code+'</td><td>'+data.description+'</td><td>'+data.founded_year+'</td><td>'+data.founded_month+'</td><td>'+data.total_money_raised+'</td><td>'+data.crunchbase_url+'</td><td>'+data.tag_list+'</td><td>'+data.twitter_username+'</td><td>'+data.blog_url+'</td><td>'+data.blog_feed_url+'</td></tr>');
+		
+		   	
+		   	
+		 });
+
+	
+	});
+
+$.delay(20000).table2CSV();
+
+});
+
+
+
+</script>

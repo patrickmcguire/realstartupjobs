@@ -32,78 +32,92 @@ def show_str_comp(s1, s2)
   puts cmp_array.join(" ") 
 end
 
+def convert_to_pennies(funding)
+  if funding =~ /.*M.*/
+   funding = funding[1,0]
+   funding = funding.to_f
+   funding *= 1000000
+   return funding
+  elsif funding =~ /.K.*/
+   funding = funding[1,0]
+   funding = funding.to_f
+   funding *= 1000
+   return funding
+  else
+    return funding
+  end
+end
+
 namespace :crunchbase do
   task :populate => :environment do
     require 'cgi'
     filename = ARGV[1] #first is the rake task!
     puts filename
     parsed = Array.new
-
-    Ccsv.foreach(filename) do |ar|
+    require 'csv'
+    TempCompany.all.each do |temp_company|
       fields = Hash.new
-      fields[:id] = ar.shift || ''
-      fields[:company_hiring] = ar.shift || ''
-      fields[:company_jobs_url] = ar.shift || ''
+      fields[:company_hiring] = temp_company[:company_hiring] == 1 ? true : false
+      fields[:company_jobs_url] = temp_company[:company_jobs_url]
       
-      nocrunchbase = ar.shift || ''
+      nocrunchbase = temp_company[:nocrunchbase]
       if 'FALSE' == nocrunchbase
         fields[:crunchbase] = false
       else
         fields[:crunchbase] = true
       end
 
-      fields[:company_name] = ar.shift || ''
-      fields[:company_overview] = ar.shift || ''
-      fields[:company_url] = ar.shift || ''
-      fields[:number_of_employees] = ar.shift || ''
-      fields[:category] = ar.shift || ''
-      fields[:description] = ar.shift || ''
-      fields[:founded_year] = ar.shift || ''
-      fields[:founded_month] = ar.shift || ''
-      fields[:money_raised] = ar.shift || ''
-      fields[:crunchbase_url] = ar.shift || ''
-      fields[:tag_list] = ar.shift || ''
-      fields[:twitter_name] = ar.shift || ''
-      fields[:blog_url] = ar.shift || ''
+      fields[:company_name] = temp_company[:company_name]
+      fields[:company_overview] = temp_company[:company_overview]
+      fields[:company_url] = temp_company[:company_url]
+      fields[:number_of_employees] = temp_company[:number_of_employees]
+      fields[:category] = temp_company[:category]
+      fields[:description] = temp_company[:description]
+      
+      founded_year = (temp_company[:founded_year]).to_i
+      founded_month = (temp_company[:founded_month]).to_i
+      puts founded_year
+      puts founded_month
+      if (0 != founded_year)
+        if (0 != founded_month)
+          fields[:founded] = Date.new(founded_year, founded_month)
+        else
+          fields[:founded] = Date.new(founded_year)
+        end
+      else
+        founded = nil
+      end
+      fields[:money_raised] = temp_company[:money_raised]
+      fields[:crunchbase_url] = temp_company[:crunchbase_url]
+      fields[:tag_list] = temp_company[:tag_list]
+      fields[:twitter_name] = temp_company[:twitter_name]
+      fields[:blog_url] = temp_company[:blog_url]
       parsed << fields
     end  
-
-    hydra = Typhoeus::Hydra.new(:max_concurrency => 20)
-    companies = Array.new
-
-    parsed.each do |p|
-      request = Typhoeus::Request.new('http://api.crunchbase.com/v/1/search.js', :params => {
-        :query => CGI::escape(p[:company_name])
-      })
-      request.on_complete do |response|
-        puts "====== #{p[:company_name]} ======="
-        json_result = response.body
-        begin
-          parsed_result = JSON.parse(json_result)
-        rescue
-          next
-        end
-        results = parsed_result['results']
-        if !results
-          puts "fail"
-        else
-          results.each do |r|
-            next unless p[:company_name] && r['name']
-            if !name_compare(p[:company_name], r['name'])
-              puts "#{p[:company]} != #{r['name']}"
-              puts "#{processed_name(p[:company])} != #{processed_name(r['name'])}"
-              show_str_comp(processed_name(p[:company_name]), processed_name(r['name']))
-              next
-            end
-            company = Company.find_or_create_by_name(p[:company_name])
-            company.overview = r['overview']
-            company.save!
-          end
-        end
+  
+    parsed.each do |fields|
+      c = Company.new
+      c.crunchbase = fields[:crunchbase]
+      c.hiring = fields[:crunchbase_hiring]
+      c.description = fields[:description].gsub(/\\n/, "\n")
+      c.blog_url = fields[:blog_url]
+      c.name = fields[:company_name]
+      c.jobs_url = fields[:company_jobs_url]
+      c.twitter_name = fields[:twitter_name]
+      c.category = fields[:category]
+      c.employees = fields[:number_of_employees]
+      c.crunchbase_url = fields[:crunchbase_url]
+      
+      c.funding = convert_to_pennies(fields[:money_raised])
+      c.url = fields[:company_url]
+      c.overview = fields[:company_overiew]
+      c.save!
+      
+      fields[:tag_list].split(',').each do |tag|
+        c.tags += [Tag.find_or_create_by_tag(tag)]
       end
-      hydra.queue(request)
+      c.save!
     end
-    hydra.run
   end
 end
 #:employees, :funding, :name, :url, :jobs, :description
