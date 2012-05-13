@@ -31,6 +31,42 @@
     <%= f.label :employees %><br />
     <%= f.number_field :employees %>
   </div>
+  <div class="field">
+  	<%= f.label :hiring %>
+  	<%= f.check_box :hiring %>
+  </div>
+	<div class="field">
+		<%= f.label :jobs_url %>
+		<%= f.text_field :jobs_url %>
+	</div>
+	<div class="field">
+		<%= f.label :overview %>
+		<%= f.text_field :overview %>
+	</div>
+	<div class="field">
+		<%= f.label :crunchbase %>
+		<%= f.check_box :crunchbase %>
+	</div>
+	<div class="field">
+		<%= f.label :founded %>
+		<%= f.text_field :founded %>
+	</div>
+	<div class="field">
+		<%= f.label :twitter_name %>
+		<%= f.text_field :twitter_name %>
+	</div>
+	<div class"field">
+		<%= f.label :blog_url %>
+		<%= f.text_field :blog_url %>
+	</div>
+	<div class="category">
+		<%= f.label :category %>
+		<%= f.text_field :category %>
+	</div>
+	<div class="field">
+		<%= f.label :crunchbase_url %>
+		<%= f.text_field :crunchbase_url %>
+	</div>
   <div class="actions">
     <%= f.submit %>
   </div>

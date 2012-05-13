@@ -34,15 +34,15 @@ end
 
 def convert_to_pennies(funding)
   if funding =~ /.*M.*/
-   funding = funding[1,0]
-   funding = funding.to_f
-   funding *= 1000000
-   return funding
-  elsif funding =~ /.K.*/
-   funding = funding[1,0]
-   funding = funding.to_f
-   funding *= 1000
-   return funding
+    funding = funding[1,1]
+    funding = funding.to_f
+    funding *= 1000000
+    return funding
+  elsif funding =~ /.*K.*/
+    funding = funding[1,1]
+    funding = funding.to_f
+    funding *= 1000
+    return funding
   else
     return funding
   end
@@ -114,6 +114,9 @@ namespace :crunchbase do
       c.save!
       
       fields[:tag_list].split(',').each do |tag|
+        if tag =~ /^ /
+          tag = tag[1,0]
+        end
         c.tags += [Tag.find_or_create_by_tag(tag)]
       end
       c.save!
