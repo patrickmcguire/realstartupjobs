@@ -25,4 +25,3 @@
 //= require bootstrap-typeahead.js
 //= require bootstrap-popover.js
 //= require_tree ../../../vendor/assets/javascripts
-//= require_tree .

@@ -51,8 +51,9 @@ ActiveRecord::Schema.define(:version => 20120513051938) do
     t.text     "url"
     t.boolean  "technical"
     t.boolean  "type"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.datetime "last_updated"
   end
 
   create_table "saved_jobs", :force => true do |t|

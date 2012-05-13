@@ -11,6 +11,8 @@ gem 'rspec-rails'
 gem 'json'
 gem 'therubyrhino'
 gem 'delayed_job'
+gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
