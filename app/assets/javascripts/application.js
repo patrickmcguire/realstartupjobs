@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require twitter/bootstrap
 //= require jquery.dataTables.js
 //= require bootstrap-alert.js
 //= require bootstrap-button.js
