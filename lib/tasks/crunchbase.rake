@@ -42,12 +42,29 @@ namespace :crunchbase do
     Ccsv.foreach(filename) do |ar|
       fields = Hash.new
       fields[:id] = ar.shift || ''
-      fields[:company] = ar.shift || ''
-      fields[:company_url] = ar.shift || ''
       fields[:company_hiring] = ar.shift || ''
       fields[:company_jobs_url] = ar.shift || ''
-      fields[:added] = ar.shift || ''
-      fields[:company_notes] = ar.shift || ''
+      
+      nocrunchbase = ar.shift || ''
+      if 'FALSE' == nocrunchbase
+        fields[:crunchbase] = false
+      else
+        fields[:crunchbase] = true
+      end
+
+      fields[:company_name] = ar.shift || ''
+      fields[:company_overview] = ar.shift || ''
+      fields[:company_url] = ar.shift || ''
+      fields[:number_of_employees] = ar.shift || ''
+      fields[:category] = ar.shift || ''
+      fields[:description] = ar.shift || ''
+      fields[:founded_year] = ar.shift || ''
+      fields[:founded_month] = ar.shift || ''
+      fields[:money_raised] = ar.shift || ''
+      fields[:crunchbase_url] = ar.shift || ''
+      fields[:tag_list] = ar.shift || ''
+      fields[:twitter_name] = ar.shift || ''
+      fields[:blog_url] = ar.shift || ''
       parsed << fields
     end  
 
@@ -56,10 +73,10 @@ namespace :crunchbase do
 
     parsed.each do |p|
       request = Typhoeus::Request.new('http://api.crunchbase.com/v/1/search.js', :params => {
-        :query => CGI::escape(p[:company])
+        :query => CGI::escape(p[:company_name])
       })
       request.on_complete do |response|
-        puts "====== #{p[:company]} ======="
+        puts "====== #{p[:company_name]} ======="
         json_result = response.body
         begin
           parsed_result = JSON.parse(json_result)
@@ -71,16 +88,16 @@ namespace :crunchbase do
           puts "fail"
         else
           results.each do |r|
-            next unless p[:company] && r['name']
-            if !name_compare(p[:company], r['name'])
+            next unless p[:company_name] && r['name']
+            if !name_compare(p[:company_name], r['name'])
               puts "#{p[:company]} != #{r['name']}"
               puts "#{processed_name(p[:company])} != #{processed_name(r['name'])}"
-              show_str_comp(processed_name(p[:company]), processed_name(r['name']))
+              show_str_comp(processed_name(p[:company_name]), processed_name(r['name']))
               next
             end
-            company = Company.find_or_create_by_name(p[:company])
+            company = Company.find_or_create_by_name(p[:company_name])
             company.overview = r['overview']
-            company.save
+            company.save!
           end
         end
       end

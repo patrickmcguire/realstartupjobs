@@ -1,31 +1,51 @@
-<h1>Listing jobs</h1>
-
-<table>
-  <tr>
-    <th>Company</th>
-    <th>Title</th>
-    <th>Url</th>
-    <th>Technical</th>
-    <th>Type</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @jobs.each do |job| %>
-  <tr>
-    <td><%= job.company_id %></td>
-    <td><%= job.title %></td>
-    <td><%= job.url %></td>
-    <td><%= job.technical %></td>
-    <td><%= job.type %></td>
-    <td><%= link_to 'Show', job %></td>
-    <td><%= link_to 'Edit', edit_job_path(job) %></td>
-    <td><%= link_to 'Destroy', job, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+<% content_for :head do %>
+<style>
+	.sidebar-nav select, input {
+		width: 150px;
+	}
+</style>
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Job', new_job_path %>
+<div class="container" style="margin-top:60px;" width='940'>
+	<div class="row">
+		<div class="span3">
+			<div class="well sidebar-nav">
+				<form class="">
+					<fieldset>
+						<div id="techfiltersidebar" class="control-group">
+							<label class="control-label" for="techfiltersidebar">Show only technical jobs?</label>
+							<div class="controls">
+								<p id="technicalFilter"></p>
+							</div>
+						</div>
+						<div id="typefiltersidebar" class="control-group">
+							<label class="control-label" for="typefiltersidebar">What kind of position?</label>
+							<div class="controls">
+								<p id="typeFilter"></p>
+							</div>
+						</div>
+						<div id="titleFiltersidebar" class="control-group">
+							<label class="control-label" for="typefiltersidebar">Search by Job Title</label>
+							<div class="controls">
+								<p id="titleFilter"></p>
+							</div>
+						</div>
+						<div id="companyFiltersidebar" class="control-group">
+							<label class="control-label" for="companyFiltersidebar">Search by Company</label>
+							<div class="controls">
+								<p id="companyFilter"></p>
+							</div>
+						</div>
+					</fieldset>
+				</form>
+			</div>
+			<!-- end side bar !-->
+		</div>
+		<div class="span9">
+			<h1>Find a job you love at a vetted startup in NYC </h1>
+			<br>
+		</div>
+		<div>
+			<%= render :template => "jobs/_table" %>
+		</div>
+	</div>
+</div>

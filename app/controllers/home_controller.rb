@@ -6,7 +6,7 @@ class HomeController < ApplicationController
       render :splash
     else
       @user = current_user
-      @jobs = Job.all
+      @jobs = Job.all(:include => :company)
       render :index
     end
   end

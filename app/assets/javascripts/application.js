@@ -12,4 +12,17 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.dataTables.js
+//= require bootstrap-alert.js
+//= require bootstrap-button.js
+//= require bootstrap-carousel.js
+//= require bootstrap-collapse.js
+//= require bootstrap-modal.js
+//= require bootstrap-scrollspy.js
+//= require bootstrap-tab.js
+//= require bootstrap-tooltip.js
+//= require bootstrap-transition.js
+//= require bootstrap-typeahead.js
+//= require bootstrap-popover.js
+//= require_tree ../../../vendor/assets/javascripts
 //= require_tree .
