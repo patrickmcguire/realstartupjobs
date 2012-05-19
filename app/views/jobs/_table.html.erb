@@ -2,7 +2,8 @@
 	<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example" width='100%'>
 		<thead>
 			<tr>
-				<th width="50%">Job Title</th > <th>Type</th>
+				<th width="50%">Job Title</th > 
+					<th>Type</th>
 				<th>Techie Only?</th>
 				<th width="50%">Company Name</th>
 				<th>Est.</th>
@@ -12,24 +13,25 @@
 		</thead>
 		<tbody>
 			<% @jobs.each do |job| %>
+			<tr>
 			<td><%= job.title %></td>
-			<td><%= job.type_string %></td>
-			<td><%= job.technical %></td>
-			<td><%= job.company_name %></td>
-			<td><%= job.company_founded %></td>
-			<td><%= job.company_employees %></td>
-			<td><%= job.company_funding_string %></td>
+			<td><%= job.internship %></td>
+			<td><%= job.technical %></td>	
+			
+			
+			</tr>
 			<% end %>
+			
 		</tbody>
 		<tfoot style="display:none;">
 			<tr>
-				<th>Job Title</th>
-				<th>Internships & Jobs</th>
-				<th>Show Both</th>
-				<th>Company Name</th>
-				<th>Founded</th>
-				<th>Employees</th>
-				<th>Funding</th>
+				<th width="50%">Job Title</th > 
+					<th>Type</th>
+				<th>Techie Only?</th>
+				<th width="50%">Company Name</th>
+				<th>Est.</th>
+				<th># of ppl</th>
+				<th>VC</th>
 			</tr>
 		</tfoot>
 	</table>

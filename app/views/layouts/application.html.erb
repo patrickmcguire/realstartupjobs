@@ -8,16 +8,17 @@
 		<% yield :head %>
 	</head>
 	<body>
-		<p class="notice">
-			<%= notice %>
-		</p>
-		<p class="alert">
-			<%= alert %>
-		</p>
-		<% if user_signed_in? %>
+		
 		<%= render "shared/navbar" %>
-		<% end %>
-		<%= yield %>
-
+		<div class="container">
+			<div class="row">
+			
+				<%= yield %>
+				
+			</div>
+		</div>
 	</body>
+	
+	
+	
 </html>

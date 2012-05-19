@@ -1,24 +1,28 @@
 <h1>Listing companies</h1>
 
-<table>
+<div class="span9">
+	<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example" width='100%'>
   <thead>
-  	<% company = @companies.first %>
-  	<% company.attributes.each do |key, value| %>
-  		<th><%= key %></th>
-  	<% end %>
-  	<th>edit</th>
+		<th>Name</th>
+		<th>Description</th>
+		
+		<th>Funding</th>
+		<th>Employees</th>
   </thead>
 
 	<tbody>
 		<% @companies.each do |company | %>
 			<tr>
-				<% company.attributes.each do |key, value| %>
-  				<th><%= value %></th>
-  			<% end %>
-  			<th><%= link_to "Edit", edit_company_url(company) %></th>
+  				<td><a href='<%= company.url %>'> <%= company.name %></a></td>
+				<td><%= company.description %></td>
+				<td><%= company.funding %></td>
+				<td><%= company.founded %></td>
+				
+				
   		</tr>
-  	<% end %>
-  </tbody>>
+		<% end %>
+
+  </tbody>
 </table>
 
 <br />

@@ -1,23 +1,20 @@
 class Job < ActiveRecord::Base
-  belongs_to :company
-  
-  def type_string
-    type == 0 ? 'Internship' : 'Job'
-  end
+  belongs_to :company 
   
   def company_name
-    company.name
+    company.name.to_s
   end
   
   def company_founded
-    company.founded
+    company.founded.to_s
   end
   
   def company_employees
-    company.employees
+    company.employees.to_s
   end
   
   def company_funding_string
-    company.funding_string
+    company.funding_string.to_s
   end
+  
 end
