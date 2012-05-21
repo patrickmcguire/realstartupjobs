@@ -2,10 +2,15 @@
 <% end %>
 <div class='row'>
 	<div class='span8'>
-		<h1>StartupNYC.org - Jobs at NYC startups that don't sucks'</h1> 
+		<h1>StartupNYC.org - Jobs at NYC startups that don't suck</h1> 
 		
 	</div>
 	<div class='span4'>
-		<%= render :template => "/devise/registrations/new" %>
+		<%= if !user_signed_in?
+	     render :template => "/devise/registrations/new"
+		else
+			"Welcome Registered User"
+		end
+		%>
 	</div>
 
