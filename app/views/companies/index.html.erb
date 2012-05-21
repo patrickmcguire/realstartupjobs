@@ -1,14 +1,27 @@
+<script>$(document).ready(function() {	
+	$('#companytable').dataTable(
+	 {
+		"sDom": "<'row'<'span9'l>r>t<'row'<'span9'i><'span9'>p>",
+		"sPaginationType": "bootstrap",
+		"iDisplayLength": 10,
+		"oLanguage": {
+			"sLengthMenu": ""
+		},
+	
+		});
+	});
+</script>
 <h1>Listing companies</h1>
 
 <div class="span9">
-	<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example" width='100%'>
-  <thead>
+	<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="companytable" width='100%'>
+  	<thead>
 		<th>Name</th>
 		<th>Description</th>
-		
 		<th>Funding</th>
 		<th>Employees</th>
-  </thead>
+		<th># of jobs</th>
+  	</thead>
 
 	<tbody>
 		<% @companies.each do |company | %>
@@ -17,12 +30,17 @@
 				<td><%= company.description %></td>
 				<td><%= company.funding %></td>
 				<td><%= company.founded %></td>
-				
-				
-  		</tr>
+				<td><%= company.jobs.count %></td>
+			</tr>
 		<% end %>
-
-  </tbody>
+	</tbody>
+	<tfoot>
+		<th>Name</th>
+		<th>Description</th>
+		<th>Funding</th>
+		<th>Employees</th>
+		<th> # of jobs </th>
+	</tfoot>	
 </table>
 
 <br />
