@@ -23,6 +23,5 @@ $(document).ready(function() {
 		null,
 		]}
 	);	
- $("a").attr('target','_blank');
 
 });
