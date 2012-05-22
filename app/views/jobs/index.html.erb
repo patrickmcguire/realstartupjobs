@@ -101,11 +101,12 @@ $(document).ready(function() {
 							<td><a href='<%=job.company.url unless job.company.nil? %>'><%= job.company.name unless job.company.nil? %> </a></td>
 							<td><%= job.company.founded unless job.company.nil? %> </td>
 							<td><%= job.company.employees unless job.company.nil? %> </td>
-							<td><%= job.company.funding unless job.company.nil? %> </td>
+							<td><%= job.company.funding_string unless job.company.nil? %> </td>
+						
 						</tr>
 					<% end %>
 
-				</tbody>
+				</tbody>f
 				<tfoot style="display:none;">
 					<tr>
 						<th>Job Title</th > 
