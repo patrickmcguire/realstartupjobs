@@ -40,7 +40,9 @@ class SavedJobsController < ApplicationController
   # POST /saved_jobs
   # POST /saved_jobs.json
   def create
+    job = Job.find(params[:job_id])
     @saved_job = SavedJob.new(params[:saved_job])
+    
 
     respond_to do |format|
       if @saved_job.save
