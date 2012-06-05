@@ -3,6 +3,7 @@ class JobsController < ApplicationController
   # GET /jobs.json
   def index
     @jobs = Job.all
+    @user = current_user
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @jobs }

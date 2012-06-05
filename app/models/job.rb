@@ -1,6 +1,6 @@
 class Job < ActiveRecord::Base
   belongs_to :company 
-  
+  has_many :saved_jobs
   def company_name
     company.name.to_s
   end

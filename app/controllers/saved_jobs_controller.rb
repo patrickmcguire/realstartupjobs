@@ -3,7 +3,6 @@ class SavedJobsController < ApplicationController
   # GET /saved_jobs.json
   def index
     @saved_jobs = SavedJob.all
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @saved_jobs }
@@ -14,7 +13,7 @@ class SavedJobsController < ApplicationController
   # GET /saved_jobs/1.json
   def show
     @saved_job = SavedJob.find(params[:id])
-
+    @job = Job.find(params[:id])
     respond_to do |format|
       format.html # show.html.erb
       format.json { render :json => @saved_job }
@@ -41,8 +40,7 @@ class SavedJobsController < ApplicationController
   # POST /saved_jobs.json
   def create
     job = Job.find(params[:job_id])
-    @saved_job = SavedJob.new(params[:saved_job])
-    
+    @saved_job = SavedJob.create(:job_id => params[:job_id], :user_id => current_user().id)
 
     respond_to do |format|
       if @saved_job.save

@@ -103,7 +103,7 @@ $(document).ready(function() {
 							<td><%= job.company.founded unless job.company.nil? %> </td>
 							<td><%= job.company.employees unless job.company.nil? %> </td>
 							<td><%= job.company.funding_string unless job.company.nil? %> </td>
-							<td><%= button_to 'save job', saved_jobs_path(job_id: job) %></td>
+							<td><%= button_to 'save job', saved_jobs_path(job_id: job, user_id: current_user.id ) %></td>
 						
 						</tr>
 					<% end %>

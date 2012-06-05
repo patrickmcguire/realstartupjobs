@@ -9,7 +9,7 @@
 		<%= if !user_signed_in?
 	     render :template => "/devise/registrations/new"
 		else
-			"Welcome Registered User"
+			current_user.id
 		end
 		%>
 	</div>

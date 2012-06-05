@@ -12,7 +12,7 @@
 <% @saved_jobs.each do |saved_job| %>
   <tr>
     <td><%= saved_job.user_id %></td>
-    <td><%= saved_job.job_id %></td>
+    <td><%= saved_job.job.title %></td>    
     <td><%= link_to 'Show', saved_job %></td>
     <td><%= link_to 'Edit', edit_saved_job_path(saved_job) %></td>
     <td><%= link_to 'Destroy', saved_job, :confirm => 'Are you sure?', :method => :delete %></td>
