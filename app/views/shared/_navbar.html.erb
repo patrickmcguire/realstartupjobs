@@ -22,7 +22,12 @@
 						<a href="mailto:noah@noahpryor.com">Feedback</a>
 					</li>
 					<li>
-						<%= link_to "Signout", destroy_user_session_url, :method => :delete  %>
+						<%= if user_signed_in? 
+								link_to "Signout", destroy_user_session_url, :method => :delete 
+							else
+								link_to "Sign in", new_session_path(resource_name)
+							end
+							 %>
 					</li>
 				</ul>
 				<!--  <p class="navbar-text pull-right">Logged in as <a href="#">username</a></p> -->

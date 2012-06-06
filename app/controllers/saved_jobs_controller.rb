@@ -2,7 +2,7 @@ class SavedJobsController < ApplicationController
   # GET /saved_jobs
   # GET /saved_jobs.json
   def index
-    @saved_jobs = SavedJob.all
+    @saved_jobs = SavedJob.where(:user_id => current_user.id)
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @saved_jobs }

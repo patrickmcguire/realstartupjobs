@@ -2,24 +2,25 @@
 
 <table>
   <tr>
-    <th>User</th>
-    <th>Job</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Job Title</th>
+    <th>Company</th>
+    <th>Founded</th>
+    <th>Employees</th>
+    <th>Funding String</th>
   </tr>
 
 <% @saved_jobs.each do |saved_job| %>
   <tr>
-    <td><%= saved_job.user_id %></td>
-    <td><%= saved_job.job.title %></td>    
-    <td><%= link_to 'Show', saved_job %></td>
-    <td><%= link_to 'Edit', edit_saved_job_path(saved_job) %></td>
-    <td><%= link_to 'Destroy', saved_job, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to saved_job.job.title, saved_job.job.url %></td> 
+	<td><a href='<%= saved_job.job.company.url unless saved_job.job.company.nil? %>'><%= saved_job.job.company.name unless saved_job.job.company.nil? %> </a></td>
+	<td><%= saved_job.job.company.founded unless saved_job.job.company.nil? %> </td>
+	<td><%= saved_job.job.company.employees unless saved_job.job.company.nil? %> </td>
+	<td><%= saved_job.job.company.funding_string unless saved_job.job.company.nil? %> </td>
+
+    <td><%= link_to 'Delete', saved_job, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Saved job', new_saved_job_path %>
