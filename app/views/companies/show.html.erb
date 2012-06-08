@@ -24,7 +24,10 @@
   <b>Employees:</b>
   <%= @company.employees %>
 </p>
-
+<p>
+	Jobs Page:  <%= @company.jobs_url %>
+</p>
+<p>Stage (1-3): <%= @company.stage %><p>
 
 <%= link_to 'Edit', edit_company_path(@company) %> |
 <%= link_to 'Back', companies_path %>
