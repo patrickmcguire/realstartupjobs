@@ -14,13 +14,6 @@
 					<li>
 						<%= link_to "Companies", companies_url %>
 					</li>
-					<li><%= if user_signed_in? 
-						 link_to "Saved Jobs", saved_jobs_url
-						else
-							end
-							 %>
-					</li>
-
 					<li>
 						<%= if user_signed_in? 
 								link_to "Signout", destroy_user_session_url, :method => :delete 
