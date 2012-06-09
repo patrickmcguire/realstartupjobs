@@ -14,13 +14,13 @@
 					<li>
 						<%= link_to "Companies", companies_url %>
 					</li>
-					<li>
-						<%= link_to "Saved Jobs", saved_jobs_url %>
+					<li><%= if user_signed_in? 
+						 link_to "Saved Jobs", saved_jobs_url
+						else
+							end
+							 %>
 					</li>
 					
-					<li>
-						<a href="mailto:noah@noahpryor.com">Feedback</a>
-					</li>
 					<li>
 						<%= if user_signed_in? 
 								link_to "Signout", destroy_user_session_url, :method => :delete 
@@ -29,6 +29,10 @@
 							end
 							 %>
 					</li>
+					<li>
+						<a href="mailto:noah@startupnyc.com">Feedback</a>
+					</li>
+					
 				</ul>
 				<!--  <p class="navbar-text pull-right">Logged in as <a href="#">username</a></p> -->
 			</div><!--/.nav-collapse -->

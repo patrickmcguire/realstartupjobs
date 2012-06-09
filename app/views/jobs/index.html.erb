@@ -87,7 +87,8 @@ $(document).ready(function() {
 				<tbody>
 					<% @jobs.each do |job| %>
 						<tr>
-							<td> <a href='<%= job.url %>'> <%= job.title %></a></td>
+							
+							<td><%= job.id %> <a href='<%= job.url %>'> <%= job.title %></a></td>
 							<td><%= if job.internship == true
 								"Internship"
 							else 
