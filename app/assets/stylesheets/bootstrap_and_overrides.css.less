@@ -1,5 +1,5 @@
 @import "twitter/bootstrap/bootstrap";
-body { padding-top: 60px; }
+body { padding-top: 100px; }
 
 @import "twitter/bootstrap/responsive";
 
@@ -57,8 +57,8 @@ body { padding-top: 60px; }
 
 // Scaffolding
 // -------------------------
-@bodyBackground:        @white;
-@textColor:             @gray;
+@bodyBackground:        #fff;
+@textColor:             @black;
 
 
 // Links
@@ -78,9 +78,9 @@ body { padding-top: 60px; }
 @baseLineHeight:        18px;
 @altFontFamily:         @monoFontFamily;
 
-@headingsFontFamily:    'Telex', sans-serif; // empty to use BS default, @baseFontFamily
-@headingsFontWeight:    bold;    // instead of browser default, bold
-@headingsColor:         #317EAC; // empty to use BS default, @textColor
+@headingsFontFamily:    @serifFontFamily; // empty to use BS default, @baseFontFamily
+@headingsFontWeight:    italics;    // instead of browser default, bold
+@headingsColor:         #000; // empty to use BS default, @textColor
 
 
 // Tables
@@ -163,25 +163,25 @@ body { padding-top: 60px; }
 
 // Hr border color
 // -------------------------
-@hrBorder:                @grayLighter;
+@hrBorder:                @bodyBackground;
 
 
 // Navbar
 // -------------------------
-@navbarHeight:                    40px;
-@navbarBackground:                @linkColor;
-@navbarBackgroundHighlight:       lighten(@linkColor, 10%);
+@navbarHeight:                    100px;
+@navbarBackground:                @bodyBackground;
+@navbarBackgroundHighlight:       @navbarBackground;
 
-@navbarText:                      @grayLighter;
-@navbarLinkColor:                 @grayLighter;
-@navbarLinkColorHover:            @white;
+@navbarText:                      @black;
+@navbarLinkColor:                 @black;
+@navbarLinkColorHover:            @grayDarker;
 @navbarLinkColorActive:           @navbarLinkColorHover;
 @navbarLinkBackgroundHover:       transparent;
-@navbarLinkBackgroundActive:      rgba(0,0,0,.2);
+@navbarLinkBackgroundActive:      transparent;
 
 @navbarSearchBackground:          lighten(@navbarBackground, 25%);
 @navbarSearchBackgroundFocus:     @white;
-@navbarSearchBorder:              darken(@navbarSearchBackground, 30%);
+@navbarSearchBorder:              @bodyBackground;
 @navbarSearchPlaceholderColor:    @white;
 @navbarBrandColor:                @navbarLinkColor;
 
@@ -227,3 +227,43 @@ body { padding-top: 60px; }
 // -------------------------
 @fluidGridColumnWidth:    6.382978723%;
 @fluidGridGutterWidth:    2.127659574%;
+
+.navbar .brand {
+  float: left;
+  display: block;
+  padding: 10px 0px 0px;
+  margin-left: 0px;
+  font-size: 20px;
+  font-weight: 200;
+  line-height: 1;
+  color: #ffffff;
+}
+.navbar .nav > li > a {
+	font-family: @serifFontFamily;
+	font-size: 20px;
+	text-shadow: none;
+	font-style: italic;	
+ 	float: none;
+  	padding: 39px 10px 41px;
+  	line-height: 19px;
+  	color: #000000;
+  	text-decoration: none;
+}	
+.sidebar-nav select, input {
+	width: 150px;
+}
+tfoot
+{
+	display: none;
+}
+.navbar-inner {
+  padding-left: 20px;
+  padding-right: 20px;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#333333', endColorstr='#222222', GradientType=0);
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  -webkit-box-shadow: 0 0px 0px;
+  -moz-box-shadow: 0px;
+  box-shadow: 0px;
+}

@@ -12,7 +12,7 @@ gem 'json'
 gem 'therubyrhino'
 gem 'delayed_job'
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
-
+gem "less", "~> 2.2.1"
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

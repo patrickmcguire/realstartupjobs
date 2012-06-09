@@ -1,4 +1,8 @@
 Realstartupjobs::Application.routes.draw do
+  resources :saved_companies
+
+  resources :user_ids
+
   resources :saved_jobs
 
   resources :hidden_jobs

@@ -157,6 +157,7 @@ DEPENDENCIES
   fastercsv
   jquery-rails
   json
+  less (~> 2.2.1)
   pg
   rails (= 3.2.3)
   rspec-rails

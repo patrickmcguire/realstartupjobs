@@ -95,3 +95,41 @@ $.extend( $.fn.dataTableExt.oPagination, {
 } );
 
 /* Table initialisation */
+$(document).ready(function() {	
+		$('#jobstable').dataTable( {
+			"sDom": "<'row'<'span9'l>r>t<'row'<'span9'i><'span9'>p>",
+			"sPaginationType": "bootstrap",
+			"iDisplayLength": 10,
+			"oLanguage": {
+				"sLengthMenu": ""
+			},
+			"aoColumnDefs": [ 
+
+					{ "sWidth": "5%", "aTargets": [ 4 ] } 
+
+					]
+
+		} )
+		.columnFilter({aoColumns:[
+			{ sSelector: "#titleFilter",},
+			{ type:"select",  sSelector: "#typeFilter" },
+			{ type:"select", sSelector: "#technicalFilter" },
+			{ sSelector: "#companyFilter" },
+			null,
+			null,
+			null,
+			]}
+		);	
+		$('#companytable').dataTable(
+		 {
+			"sDom": "<'row'<'span9'l>r>t<'row'<'span9'i><'span9'>p>",
+			"sPaginationType": "bootstrap",
+			"iDisplayLength": 10,
+			"oLanguage": {
+				"sLengthMenu": ""
+			},
+
+			});
+		
+
+	});

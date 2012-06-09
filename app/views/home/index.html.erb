@@ -1,9 +1,8 @@
-<%= content_for :head do %>
-<% end %>
-<div class='row'>
-	<div class='span8'>
-		<h1>StartupNYC.org - Jobs at NYC startups that don't suck</h1> 
-		
+		<div class='span8'>
+			<h1>Welcome <%= current_user.email %></h1> 
+			<br>
+			<h2>Your saved jobs</h2>
+			<%= render 'saved_jobs/table' %>
 	</div>
 	<div class='span4'>
 		<%= if !user_signed_in?
@@ -12,5 +11,6 @@
 			current_user.id
 		end
 		%>
+		
 	</div>
 

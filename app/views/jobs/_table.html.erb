@@ -1,41 +1,56 @@
-<div class="span9">
-	<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example" width='100%'>
+	<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="jobstable" width='100%'>
 		<thead>
 			<tr>
-				<th width="50%">Job Title</th > 
-					<th>Type</th>
+				<th>Job Title</th > 
+				<th>Type</th>
 				<th>Techie Only?</th>
-				<th width="50%">Company Name</th>
-				<th>Est.</th>
+				<th>Company</th>
+				<th>Founded</th>
 				<th># of ppl</th>
 				<th>VC</th>
+				<th>Save</th>
 			</tr>
 		</thead>
 		<tbody>
 			<% @jobs.each do |job| %>
-			<tr>
-			<td><%= job.title %></td>
-			<td><%= job.internship %></td>
-			<td><%= job.technical %></td>	
-			<td><%= job.company.name unless job.company.nil? %></td>	
-			<td><%= job.company.name unless job.company.nil? %></td>	
-			<td>efawfaw</td>
-			
-			
-			</tr>
+				<tr>
+					
+					<td><%= job.id %> <a href='<%= job.url %>'> <%= job.title %></a></td>
+					<td><%= if job.internship == true
+						"Internship"
+					else 
+						"Job"
+					end
+							 %></td>
+					<td><%= if job.technical == true 
+						 	"Technical"
+						else
+							"Not"
+							end %></td>
+					<td><a href='<%=job.company.url unless job.company.nil? %>'><%= job.company.name unless job.company.nil? %> </a></td>
+					<td><%= job.company.founded unless job.company.nil? %> </td>
+					<td><%= job.company.employees unless job.company.nil? %> </td>
+					<td><%= job.company.funding_string unless job.company.nil? %> </td>
+					<td><%= if  user_signed_in?  
+						button_to 'save job', saved_jobs_path(job_id: job, user_id: current_user.id  )
+						else 
+							 "sign in to save jobs" 
+						end %></td>
+				
+				</tr>
 			<% end %>
-			
+
 		</tbody>
 		<tfoot style="display:none;">
 			<tr>
-				<th width="50%">Job Title</th > 
-					<th>Type</th>
+				<th>Job Title</th > 
+				<th>Type</th>
 				<th>Techie Only?</th>
-				<th width="50%">Company Name</th>
-				<th>Est.</th>
+				<th>Company</th>
+				<th>Founded</th>
 				<th># of ppl</th>
 				<th>VC</th>
+				<th>Save</th>
 			</tr>
 		</tfoot>
 	</table>
-</div>

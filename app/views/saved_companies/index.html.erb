@@ -1,0 +1,25 @@
+<h1>Listing saved_companies</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Company</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @saved_companies.each do |saved_company| %>
+  <tr>
+    <td><%= saved_company.user_id %></td>
+    <td><%= saved_company.company_id %></td>
+    <td><%= link_to 'Show', saved_company %></td>
+    <td><%= link_to 'Edit', edit_saved_company_path(saved_company) %></td>
+    <td><%= link_to 'Destroy', saved_company, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Saved company', new_saved_company_path %>

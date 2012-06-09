@@ -1,0 +1,31 @@
+
+<table>
+
+  <thead>
+    <th>Job Title</th>
+    <th>Company</th>
+    <th>Founded</th>
+    <th>Employees</th>
+    <th>Funding String</th>
+	<th>Delete</th>
+  </thead>
+<% @saved_jobs.each do |saved_job| %>
+  <tr>
+    <td><%= link_to saved_job.job.title, saved_job.job.url %></td> 
+	<td><a href='<%= saved_job.job.company.url unless saved_job.job.company.nil? %>'><%= saved_job.job.company.name unless saved_job.job.company.nil? %> </a></td>
+	<td><%= saved_job.job.company.founded unless saved_job.job.company.nil? %> </td>
+	<td><%= saved_job.job.company.employees unless saved_job.job.company.nil? %> </td>
+	<td><%= saved_job.job.company.funding_string unless saved_job.job.company.nil? %> </td>
+
+    <td><%= link_to 'Delete', saved_job, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+<tfoot>
+  <th>Job Title</th>
+  <th>Company</th>
+  <th>Founded</th>
+  <th>Employees</th>
+  <th>Funding String</th>
+<tfoot>
+
+</table>

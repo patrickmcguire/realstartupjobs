@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @saved_company.user_id %>
+</p>
+
+<p>
+  <b>Company:</b>
+  <%= @saved_company.company_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_saved_company_path(@saved_company) %> |
+<%= link_to 'Back', saved_companies_path %>
