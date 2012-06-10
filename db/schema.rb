@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,25 +11,30 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120513051938) do
+ActiveRecord::Schema.define(:version => 20120610063424) do
 
   create_table "companies", :force => true do |t|
-    t.text     "name"
-    t.text     "url"
-    t.integer  "funding"
-    t.integer  "employees"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
-    t.text     "description"
-    t.boolean  "hiring"
-    t.text     "jobs_url"
-    t.text     "overview"
-    t.boolean  "crunchbase"
-    t.datetime "founded"
-    t.text     "twitter_name"
-    t.text     "blog_url"
-    t.text     "category"
-    t.text     "crunchbase_url"
+    t.text    "name"
+    t.text    "url"
+    t.integer "funding",         :limit => 8
+    t.integer "employees"
+    t.text    "description"
+    t.string  "hiring",          :limit => 1
+    t.text    "jobs_url"
+    t.text    "overview"
+    t.boolean "crunchbase"
+    t.text    "founded"
+    t.text    "twitter_name"
+    t.text    "blog_url"
+    t.text    "category"
+    t.string  "crunchbase_url",  :limit => nil
+    t.integer "angel_id",        :limit => 8,   :null => false
+    t.text    "jobs_page"
+    t.integer "stage",           :limit => 2
+    t.text    "jobs_email"
+    t.text    "why_us"
+    t.text    "crunchbase_slug"
+    t.text    "jobs_page_type"
   end
 
   create_table "company_tags", :force => true do |t|
@@ -50,10 +56,26 @@ ActiveRecord::Schema.define(:version => 20120513051938) do
     t.text     "title"
     t.text     "url"
     t.boolean  "technical"
-    t.boolean  "type"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.boolean  "internship"
+    t.text     "created_at",   :null => false
+    t.text     "updated_at",   :null => false
     t.datetime "last_updated"
+  end
+
+  create_table "jobs2", :id => false, :force => true do |t|
+    t.string "jid",        :limit => 25,  :null => false
+    t.string "company_id", :limit => 25
+    t.string "title",      :limit => 100
+    t.string "internship", :limit => 1
+    t.string "technical",  :limit => 1
+    t.string "job_url",    :limit => 250
+  end
+
+  create_table "saved_companies", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "company_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "saved_jobs", :force => true do |t|
@@ -90,6 +112,12 @@ ActiveRecord::Schema.define(:version => 20120513051938) do
     t.text     "blog_url"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
+  end
+
+  create_table "user_ids", :force => true do |t|
+    t.string   "company_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|

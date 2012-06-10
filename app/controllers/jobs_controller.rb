@@ -2,7 +2,7 @@ class JobsController < ApplicationController
   # GET /jobs
   # GET /jobs.json
   def index
-    @jobs = Job.all
+    @jobs = Job.includes(:company).all
     @user = current_user
     respond_to do |format|
       format.html # index.html.erb

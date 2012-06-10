@@ -1,9 +1,8 @@
 class SavedCompaniesController < ApplicationController
   # GET /saved_companies
   # GET /saved_companies.json
-  def index
-    @saved_companies = SavedCompany.where(:user_id => current_user.id)
-
+  def index    
+    @saved_companies = SavedCompany.where(:user_id => current_user.id) 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @saved_companies }
@@ -14,8 +13,6 @@ class SavedCompaniesController < ApplicationController
   # GET /saved_companies/1.json
   def show
     @saved_company = SavedCompany.find(params[:id])
-    @company = Company.find(params[:id])
-    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @saved_company }
@@ -41,7 +38,8 @@ class SavedCompaniesController < ApplicationController
   # POST /saved_companies
   # POST /saved_companies.json
   def create
-    @saved_company = SavedCompany.new(params[:saved_company])
+    company = Company.find(params[:company_id])
+    @saved_company = SavedCompany.new(:company_id => params[:company_id], :user_id => current_user().id)
 
     respond_to do |format|
       if @saved_company.save

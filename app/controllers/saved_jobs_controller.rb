@@ -13,7 +13,6 @@ class SavedJobsController < ApplicationController
   # GET /saved_jobs/1.json
   def show
     @saved_job = SavedJob.find(params[:id])
-    @job = Job.find(params[:id])
     respond_to do |format|
       format.html # show.html.erb
       format.json { render :json => @saved_job }

@@ -3,7 +3,7 @@ class CompaniesController < ApplicationController
   # GET /companies.json
   def index
     @companies = Company.includes(:jobs).all
-
+    @user = current_user
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @companies }

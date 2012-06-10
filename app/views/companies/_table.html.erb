@@ -5,6 +5,7 @@
 		<th>Funding</th>
 		<th>Employees</th>
 		<th># of jobs</th>
+		<th>Save Company</th>
   	</thead>
 
 	<tbody>
@@ -15,6 +16,11 @@
 				<td><%= company.funding_string %></td>
 				<td><%= company.founded %></td>
 				<td><%= company.jobs.count %></td>
+				<td><%= if  user_signed_in?  
+					button_to 'save company', saved_companies_path(company_id: company, user_id: current_user.id  )
+					else 
+						 "sign in to save jobs" 
+					end %></td>
 			</tr>
 		<% end %>
 	</tbody>
@@ -24,5 +30,6 @@
 		<th>Funding</th>
 		<th>Employees</th>
 		<th> # of jobs </th>
+		<th></th>
 	</tfoot>	
 </table>
