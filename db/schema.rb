@@ -31,7 +31,6 @@ ActiveRecord::Schema.define(:version => 20120612092727) do
     t.integer  "angel_id",          :limit => 8,   :null => false
     t.text     "jobs_page"
     t.integer  "stage",             :limit => 2
-    t.text     "jobs_email"
     t.text     "why_us"
     t.text     "crunchbase_slug"
     t.text     "jobs_page_type"
