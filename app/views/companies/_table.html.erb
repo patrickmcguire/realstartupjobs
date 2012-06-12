@@ -12,7 +12,7 @@
 	<tbody>
 		<% @companies.each do |company | %>
 			<tr>
-  				<td><a href='companies/<%= company.id %>'> <%= company.name %></a></td>
+  				<td><a href='/companies/<%= company.id %>'> <%= company.name %></a></td>
 				<td><%= company.description %></td>
 				<td><%= company.funding_string %></td>
 				<td><%= company.founded %></td>
