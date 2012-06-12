@@ -11,30 +11,34 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120610063424) do
+ActiveRecord::Schema.define(:version => 20120612092727) do
 
   create_table "companies", :force => true do |t|
-    t.text    "name"
-    t.text    "url"
-    t.integer "funding",         :limit => 8
-    t.integer "employees"
-    t.text    "description"
-    t.string  "hiring",          :limit => 1
-    t.text    "jobs_url"
-    t.text    "overview"
-    t.boolean "crunchbase"
-    t.text    "founded"
-    t.text    "twitter_name"
-    t.text    "blog_url"
-    t.text    "category"
-    t.string  "crunchbase_url",  :limit => nil
-    t.integer "angel_id",        :limit => 8,   :null => false
-    t.text    "jobs_page"
-    t.integer "stage",           :limit => 2
-    t.text    "jobs_email"
-    t.text    "why_us"
-    t.text    "crunchbase_slug"
-    t.text    "jobs_page_type"
+    t.text     "name"
+    t.text     "url"
+    t.integer  "funding",           :limit => 8
+    t.integer  "employees"
+    t.text     "description"
+    t.string   "hiring",            :limit => 1
+    t.text     "jobs_url"
+    t.text     "overview"
+    t.boolean  "crunchbase"
+    t.text     "founded"
+    t.text     "twitter_name"
+    t.text     "blog_url"
+    t.text     "category"
+    t.string   "crunchbase_url",    :limit => nil
+    t.integer  "angel_id",          :limit => 8,   :null => false
+    t.text     "jobs_page"
+    t.integer  "stage",             :limit => 2
+    t.text     "jobs_email"
+    t.text     "why_us"
+    t.text     "crunchbase_slug"
+    t.text     "jobs_page_type"
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
   end
 
   create_table "company_tags", :force => true do |t|

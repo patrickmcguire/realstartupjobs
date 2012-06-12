@@ -1,10 +1,11 @@
-	<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="companytable" width='100%'>
+<div class="span8">
+	<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="companytable">
   	<thead>
 		<th>Name</th>
 		<th>Description</th>
 		<th>Funding</th>
+		<th>Founded
 		<th>Employees</th>
-		<th># of jobs</th>
 		<th>Save Company</th>
   	</thead>
 
@@ -15,7 +16,7 @@
 				<td><%= company.description %></td>
 				<td><%= company.funding_string %></td>
 				<td><%= company.founded %></td>
-				<td><%= company.jobs.count %></td>
+				<td><%= company.employees %></td>
 				<td><%= if  user_signed_in?  
 					button_to 'save company', saved_companies_path(company_id: company, user_id: current_user.id  )
 					else 
@@ -33,3 +34,4 @@
 		<th></th>
 	</tfoot>	
 </table>
+</div>

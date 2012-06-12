@@ -1,8 +1,44 @@
 <% content_for :head do %>
 <% end %>
 <script>
-	</script>
-	<div class="row">
+$(document).ready(function() {	
+		$('#jobstable').dataTable(  {
+			"sDom": "<'row2'<'span8'l>r>t<'row2'<'span8'i><'span8'>p>",
+			"sPaginationType": "bootstrap",
+			"iDisplayLength": 10,
+			"oLanguage": {
+				"sLengthMenu": ""
+			}}
+
+			)
+			.columnFilter({
+				aoColumns:[
+				{ sSelector: "#titleFilter",},
+				{ type:"select",  sSelector: "#typeFilter" },
+				{ type:"select", sSelector: "#technicalFilter" },
+				{ sSelector: "#companyFilter" },
+				null,
+				null,
+				null,
+				null,
+				]}
+			);	
+		
+
+		$('#companytable').dataTable(
+		 {
+			"sDom": "<'row'<'span9'l>r>t<'row'<'span9'i><'span9'>p>",
+			"sPaginationType": "bootstrap",
+			"iDisplayLength": 10,
+			"oLanguage": {
+				"sLengthMenu": ""
+			},
+
+			});
+		
+
+	});
+</script>
 		<div class="span3">
 			<%= render  'shared/jobs_filter' %>
 		</div>
@@ -11,4 +47,3 @@
 			<%= render 'table' %>
 			
 		</div>
-	</div>

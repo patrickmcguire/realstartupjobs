@@ -1,38 +1,53 @@
 <p id="notice"><%= notice %></p>
+<div class="span12">
+  <h2><%= @company.name %></h2>
 
-<p>
-  <b>Name:</b>
-  <%= @company.name %>
-</p>
+</div>
+<div class="span6">
+<img src="<%= @company.image_url_large %>"></img>
+<table id="companystats" class="table table-striped table-bordered" >
+	<tr>
+		<td> <b>Founded</b></td>
+		<td><%= @company.founded %></td>
+	</tr>
+	<tr>
+		<td> <b>Employees</b></td>
+		<td><%= @company.number_of_employees %></td>
+	</tr>
+	<tr>
+		<td><b>Funding</b></td>
+		<td><%= @company.funding_string %></td>
+	</tr>
+	<tr>
+		<td><b>Website</b></td>
+		<td><%= link_to  @company.name+" Site", @company.url %><br>
+	  </td>
+	</tr>
+	<tr>
+		<td><b>Jobs page:</b></td>
+	  <td><%= link_to @company.name+" Job Page", @company.jobs_url %><br></td>
+	</tr>
+	<tr><td><b>Twitter</td>
+		<td> <%= link_to "twitter", @company.twitter_url %></td>
+		</tr>
+	  
+ </table>
 
-<p>
-  <b>Description</b>
-  <%= @company.overview %>
-</p>
-<p>
-  <b>Founded</b>
-  <%= @company.founded %>
-</p>
-
-
-<p>
-  <b>Url:</b>
-  <%= @company.url %>
-</p>
-
-<p>
-  <b>Funding:</b>
-  <%= @company.funding %>
-</p>
-
-<p>
-  <b>Employees:</b>
-  <%= @company.employees %>
-</p>
-<p>
-	Jobs Page:  <%= @company.jobs_url %>
-</p>
-<p>Stage (1-3): <%= @company.stage %><p>
-
-<%= link_to 'Edit', edit_company_path(@company) %> |
-<%= link_to 'Back', companies_path %>
+</div>
+<div class="span6">
+	<p>
+  		<h2>Overview</h2>
+  		<%= raw @company.company_overview %>
+	</p>
+</div>
+<div class="row">
+	<div class="span6">
+		</div>
+	<div class="span2">
+	</div>
+	<div class="span4">
+	</div>
+		<%= link_to 'Edit', edit_company_path(@company) %> |
+		<%= link_to 'Back', companies_path %>
+		
+</div>

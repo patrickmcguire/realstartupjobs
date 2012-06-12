@@ -8,6 +8,12 @@ GIT
       railties (>= 3.1)
       therubyracer (~> 0.10.1)
 
+GIT
+  remote: git://github.com/tylercunnion/crunchbase.git
+  revision: 301d3e7eebfa59d18a4952d37c915c6be7230ccf
+  specs:
+    crunchbase (0.2.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -41,6 +47,7 @@ GEM
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
     builder (3.0.0)
+    cocaine (0.2.1)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -81,6 +88,12 @@ GEM
     mime-types (1.18)
     multi_json (1.3.4)
     orm_adapter (0.0.7)
+    paperclip (3.0.4)
+      activemodel (>= 3.0.0)
+      activerecord (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      cocaine (>= 0.0.2)
+      mime-types
     pg (0.13.2)
     polyglot (0.3.3)
     rack (1.4.1)
@@ -152,12 +165,14 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
+  crunchbase!
   delayed_job
   devise
   fastercsv
   jquery-rails
   json
   less (~> 2.2.1)
+  paperclip (~> 3.0.4)
   pg
   rails (= 3.2.3)
   rspec-rails

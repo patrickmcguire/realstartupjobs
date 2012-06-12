@@ -1,6 +1,5 @@
 @import "twitter/bootstrap/bootstrap";
 
-@import "twitter/bootstrap/responsive";
 
 // Set the correct sprite paths
 @iconSpritePath: asset-path('twitter/bootstrap/glyphicons-halflings.png');
@@ -56,7 +55,9 @@
 
 // Scaffolding
 // -------------------------
-@bodyBackground:        #fff;
+@bodyBackground:        lighten(@linkColor, 40%);
+@containerBackground:   #fff;
+
 @textColor:             @black;
 
 
@@ -162,13 +163,13 @@
 
 // Hr border color
 // -------------------------
-@hrBorder:                @bodyBackground;
+@hrBorder:                @containerBackground;
 
 
 // Navbar
 // -------------------------
 @navbarHeight:                    100px;
-@navbarBackground:                @bodyBackground;
+@navbarBackground:                @containerBackground;
 @navbarBackgroundHighlight:       @navbarBackground;
 
 @navbarText:                      @black;
@@ -180,7 +181,7 @@
 
 @navbarSearchBackground:          lighten(@navbarBackground, 25%);
 @navbarSearchBackgroundFocus:     @white;
-@navbarSearchBorder:              @bodyBackground;
+@navbarSearchBorder:              @containerBackground;
 @navbarSearchPlaceholderColor:    @white;
 @navbarBrandColor:                @navbarLinkColor;
 
@@ -227,6 +228,23 @@
 @fluidGridColumnWidth:    6.382978723%;
 @fluidGridGutterWidth:    2.127659574%;
 
+.container {
+	width: 960px;
+	background-color: @containerBackground;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+.row {
+ 	width: auto;
+	
+}
+.footer
+{
+	margin-top: 200px;
+}
+body {
+	background-color: @bodyBackground;
+}
 .navbar .brand {
   float: left;
   display: block;
@@ -266,3 +284,8 @@ tfoot
   -moz-box-shadow: 0px;
   box-shadow: 0px;
 }
+#companytable
+{
+	width: 650px;
+}
+	

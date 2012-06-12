@@ -28,6 +28,8 @@ end
 gem 'devise'
 gem 'jquery-rails'
 gem 'fastercsv'
+gem "paperclip", "~> 3.0.4"
+gem 'crunchbase', :git => 'git://github.com/tylercunnion/crunchbase.git'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
