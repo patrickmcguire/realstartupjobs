@@ -13,6 +13,7 @@ gem 'therubyrhino'
 gem 'delayed_job'
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 gem "less", "~> 2.2.1"
+gem "feedzirra", "~> 0.2.0.rc2"
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -30,6 +31,7 @@ gem 'jquery-rails'
 gem 'fastercsv'
 gem "paperclip", "~> 3.0.4"
 gem 'crunchbase', :git => 'git://github.com/tylercunnion/crunchbase.git'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

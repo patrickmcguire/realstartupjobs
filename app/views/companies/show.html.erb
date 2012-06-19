@@ -35,7 +35,11 @@
 		</tr>
 	  
  </table>
+<%=  @company.blog_feed_url
 
+
+ feed = Feedzirra::Feed.fetch_and_parse(@company.blog_feed_url)
+ %>
 </div>
 <div class="span6">
 	<p>
