@@ -2,17 +2,19 @@
 			<h1>Welcome <%= current_user.email %></h1> 
 			<br>
 			<h2>Your saved jobs</h2>
-			<%= render 'saved_jobs/table' %>
+
 			<h2>Your saved companies</h2>
-			<%= render 'saved_companies/table' %>
 			
 	</div>
 	<div class='span4'>
 		<%= if !user_signed_in?
 	     render :template => "/devise/registrations/new"
 		else
-			current_user.id
+		  render 'saved_companies/sidebartable'
 		end
+		%>
+		<%=  
+		render 'saved_jobs/sidebartable'
 		%>
 		
 	</div>
