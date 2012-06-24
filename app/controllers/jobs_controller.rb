@@ -12,15 +12,12 @@ class JobsController < ApplicationController
     end
 
     internship = []
-    if (params[:job] == 1 && params[:internship] == 1)
-      internship << true OR false
+    if '1' == params[:job] 
+      internship << false
     end
-        if '1' == params[:job]
-          internship << false
-        end
-        if '1' == params[:internship]
-          internship << true
-        end
+    if '1' == params[:internship]
+      internship << true
+    end
     
     stage = []
     if '1' == params[:stage_one]
