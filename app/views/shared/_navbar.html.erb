@@ -20,7 +20,8 @@
 					</li>
 
 				</ul>
-				  <p class="navbar-text pull-right">	<%= if user_signed_in? 
+				  <p class="navbar-text pull-right"> 	<%= current_user.email unless current_user.nil? %>
+				 	<%= if user_signed_in?
 							link_to "Signout", destroy_user_session_url, :method => :delete 
 						else
 							link_to "Sign in", new_session_path(resource_name)

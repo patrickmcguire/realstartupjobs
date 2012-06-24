@@ -1182,13 +1182,13 @@ legend + .control-group {
   padding-left: 160px;
 }
 table {
-  max-width: 100%;
+  max-width: 90%;
   border-collapse: collapse;
   border-spacing: 0;
   background-color: transparent;
 }
 .table {
-  width: 100%;
+ 	width: 100%;
   margin-bottom: 18px;
 }
 .table th,

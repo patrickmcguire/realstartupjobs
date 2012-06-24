@@ -1,21 +1,16 @@
-		<div class='span8'>
-			<h1>Welcome <%= current_user.email %></h1> 
+		<div class='span9'>
 			<br>
-			<h2>Your saved jobs</h2>
-
-			<h2>Your saved companies</h2>
 			
+<%= render 'jobs/search'%>
+	
 	</div>
-	<div class='span4'>
+<div class='span3'>
+	<div class="well sidebar-nav">
 		<%= if !user_signed_in?
-	     render :template => "/devise/registrations/new"
-		else
-		  render 'saved_companies/sidebartable'
-		end
+	    		render :template => "/devise/registrations/new"
+			else
+				render 'shared/sidebar'
+			end
 		%>
-		<%=  
-		render 'saved_jobs/sidebartable'
-		%>
-		
-	</div>
-
+	</div>	
+</div>

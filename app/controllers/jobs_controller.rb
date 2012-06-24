@@ -1,9 +1,64 @@
 class JobsController < ApplicationController
   # GET /jobs
   # GET /jobs.json
+  def search
+    if !user_signed_in?
+    
+    else
+      @user = current_user
+    
+      @saved_jobs = SavedJob.where(:user_id => current_user.id)
+      @saved_companies = SavedCompany.where(:user_id => current_user.id)
+    end
+
+    internship = []
+    if (params[:job] == 1 && params[:internship] == 1)
+      internship << true OR false
+    end
+        if '1' == params[:job]
+          internship << false
+        end
+        if '1' == params[:internship]
+          internship << true
+        end
+    
+    stage = []
+    if '1' == params[:stage_one]
+      stage << 1
+    end
+    if '1' == params[:stage_two]
+      stage << 2
+    end
+    if '1' == params[:stage_three]
+      stage << 3
+    end
+    
+    technical = []
+    if '1' == params[:not_technical]
+      technical << false
+    end
+    if '1' == params[:technical]
+      technical << true
+    end
+    
+    @jobs = Job.joins(:company).where("jobs.internship in (?) AND companies.stage in (?) and jobs.technical in (?)", internship, stage, technical)
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render :json => @jobs }
+    end
+  end
+
   def index
+    if !user_signed_in?
+    
+    else
+      @user = current_user
+    
+      @saved_jobs = SavedJob.where(:user_id => current_user.id)
+      @saved_companies = SavedCompany.where(:user_id => current_user.id)
+    end
+    
     @jobs = Job.includes(:company).all
-    @user = current_user
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @jobs }

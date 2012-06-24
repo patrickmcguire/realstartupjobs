@@ -3,7 +3,14 @@ class CompaniesController < ApplicationController
   # GET /companies.json
   def index
     @companies = Company.includes(:jobs).all
-    @user = current_user
+      if !user_signed_in?
+      else
+      @user = current_user
+
+      @saved_jobs = SavedJob.where(:user_id => current_user.id)
+      @saved_companies = SavedCompany.where(:user_id => current_user.id)
+    end
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @companies }

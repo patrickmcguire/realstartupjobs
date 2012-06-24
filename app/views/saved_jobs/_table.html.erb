@@ -12,7 +12,7 @@
 <% @saved_jobs.each do |saved_job| %>
   <tr>
     <td><%= link_to saved_job.job.title, saved_job.job.url %></td> 
-	<td><a href='<%= saved_job.job.company.url unless saved_job.job.company.nil? %>'><%= saved_job.job.company.name unless saved_job.job.company.nil? %> </a></td>
+	<td><a href='/companies/<%= saved_job.job.company.id %>'> <%= saved_job.job.company.name %></a></td>
 	<td><%= saved_job.job.company.founded unless saved_job.job.company.nil? %> </td>
 	<td><%= saved_job.job.company.employees unless saved_job.job.company.nil? %> </td>
 	<td><%= saved_job.job.company.funding_string unless saved_job.job.company.nil? %> </td>

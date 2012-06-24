@@ -1,0 +1,22 @@
+<%= semantic_form_for(:job, :url => search_jobs_url, :html => {:method => :GET, :class => "form-inline"} ) do %>
+<h2>First, do you want a job or internship?</h2>
+<%= check_box_tag(:internship, 1, true) %>
+<%=	label_tag(:internship, "internship") %>
+<%=		check_box_tag(:job,1, true) %>
+<%=		label_tag(:job, "job")
+%>
+<h2> Baller. Should they be technical or nontechnical jobs? </h2>
+<%= check_box_tag (:technical) %>
+<%= label_tag(:technical, "technical") %>
+<%= check_box_tag (:not_technical) %>
+<%= label_tag(:not_technical, "fuck that, I can't code")%>
+<h2>Last Question! What stage startup do you want to work at?</h2>
+<%= check_box_tag(:stage_one, 1, true) %>
+<%=	label_tag(:stage_one, "Early") %>
+<%=	check_box_tag(:stage_two, 1, true) %>
+<%=	label_tag(:stage_two, "Mid") %>
+<%=	check_box_tag(:stage_three, 1, true) %>
+<%=	label_tag(:stage_three, "late") %>
+<br>
+<%= submit_tag("Find jobs!") %>
+<% end %>

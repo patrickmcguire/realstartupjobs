@@ -1,21 +1,13 @@
-
-
-<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="sidebarcompanies">
-
-  <thead>
-    <th>Company</th>
-	<th>Delete</th>
-  </thead>
-
-<% @saved_companies.each do |saved_company| %>
-<tr>
-	<td><a href='companies/<%= saved_company.company.id %>'> <%= saved_company.company.name %></a></td>
-    <td><%= link_to 'Delete', saved_company, :confirm => 'Are you sure?', :method => :delete %></td>
-</tr>
+<h3>Saved Companies</h3>
+<ul>
+<% @user.saved_companies.limit(5).order(:created_at).reverse_order.each do |saved_company| %>
+<li>
+	<a href='companies/<%= saved_company.company.id %>'> <%= saved_company.company.name %></a>
+	<span class="delete_button">
+    	<%= link_to 'X', saved_company, :confirm => 'Are you sure?', :method => :delete %>
+	</span>
+</li>
+	
 <% end %>
-<tfoot>
-  <th>Job Title</th>
-  <th>Delete</th>
-<tfoot>
-
-</table>
+</ul>
+<%= link_to "see all", saved_companies_path %>

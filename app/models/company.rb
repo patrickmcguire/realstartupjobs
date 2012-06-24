@@ -21,9 +21,9 @@ class Company < ActiveRecord::Base
     end
   end
   
-  def blog_url 
-    Crunchbase::Company.get(crunchbase_slug).blog_url unless Crunchbase::Company.get(crunchbase_slug).blog_url.nil? " "
-  end
+ # def blog_url 
+  #  Crunchbase::Company.get(crunchbase_slug).blog_url
+#end
  
   def blog_feed_url 
     if Crunchbase::Company.get(crunchbase_slug).blog_feed_url.nil?

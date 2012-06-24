@@ -4,7 +4,6 @@ gem 'rails', '3.2.3'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-
 gem 'pg'
 gem 'typhoeus'
 gem 'rspec-rails'
@@ -14,6 +13,8 @@ gem 'delayed_job'
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 gem "less", "~> 2.2.1"
 gem "feedzirra", "~> 0.2.0.rc2"
+gem 'formtastic'
+gem 'simple_form'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -31,6 +32,8 @@ gem 'jquery-rails'
 gem 'fastercsv'
 gem "paperclip", "~> 3.0.4"
 gem 'crunchbase', :git => 'git://github.com/tylercunnion/crunchbase.git'
+gem 'activeadmin'
+gem "meta_search",    '>= 1.1.0.pre'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

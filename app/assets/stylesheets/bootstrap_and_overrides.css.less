@@ -233,7 +233,7 @@
   
 }
 .container {
-	width: 1170px;
+	width: 1000px;
 	background-color: @containerBackground;
 	margin-top: 50px;
 	margin-bottom: 50px;
@@ -289,8 +289,16 @@ tfoot
   -moz-box-shadow: 0px;
   box-shadow: 0px;
 }
-#companytable
+#companytable, #jobstable
 {
 	width: 650px;
+	margin-top: -18px;
 }
-	
+.delete_button > a
+{
+	color: @red;
+}
+.dataTables_wrapper, .form-inline
+{
+	display: inline;
+}

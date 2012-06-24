@@ -1,20 +1,10 @@
-			<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="sidebarjobstable">
-			  <thead>
-			    <th>Job Title</th>
-			    <th>Company</th>
-				<th>Delete</th>
-			  </thead>
-			<% @saved_jobs.each do |saved_job| %>
-			  <tr>
-			    <td><%= link_to saved_job.job.title, saved_job.job.url %></td> 
-				<td><a href='/companies/<%= saved_job.job.company.id %>'> <%= saved_job.job.company.name %></a></td>
-			    <td><%= link_to 'Delete', saved_job, :confirm => 'Are you sure?', :method => :delete %></td>
-			  </tr>
+<h3>Saved Jobs</h3>
+<ul>
+		<% @user.saved_jobs.limit(5).order(:created_at).reverse_order.each  do |saved_job| %>
+				<li><%= link_to saved_job.job.title, saved_job.job.url %> at 
+				<a href='/companies/<%= saved_job.job.company.id %>'> <%= saved_job.job.company.name %></a>
+			    <span class="delete_button">		    	
+			    <%= link_to "X", saved_job, :method => :delete, :remote => true %></span></li>
 			<% end %>
-			<tfoot>
-			  <th>Job Title</th>
-			  <th>Company</th>
-			  <th>Delete</th>
-			<tfoot>
-
-			</table>
+</ul>
+<%= link_to "see all", saved_jobs_path %>

@@ -1,2 +1,13 @@
-<%= render 'saved_jobs/table' %>
-<%= render 'saved_companies/table'%>
+ <%=  if !user_signed_in?
+	 	render "devise/links"
+		else
+			render :partial => 'saved_companies/sidebartable'  
+			
+		end
+
+%>
+<div id="saved_jobs_sidebar">
+<%= if user_signed_in?
+	render :partial =>'saved_jobs/sidebartable' 
+	end %>
+</div>

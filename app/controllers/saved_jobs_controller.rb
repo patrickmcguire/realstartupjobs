@@ -12,6 +12,8 @@ class SavedJobsController < ApplicationController
   # GET /saved_jobs/1
   # GET /saved_jobs/1.json
   def show
+    @saved_jobs = SavedJob.where(:user_id => current_user.id).order("created_at DESC")
+
     @saved_job = SavedJob.find(params[:id])
     respond_to do |format|
       format.html # show.html.erb
@@ -44,6 +46,7 @@ class SavedJobsController < ApplicationController
     respond_to do |format|
       if @saved_job.save
         format.html { redirect_to @saved_job, :notice => 'Saved job was successfully created.' }
+        format.js
         format.json { render :json => @saved_job, :status => :created, :location => @saved_job }
       else
         format.html { render :action => "new" }

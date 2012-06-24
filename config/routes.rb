@@ -1,4 +1,8 @@
 Realstartupjobs::Application.routes.draw do
+  ActiveAdmin.routes(self)
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+
   resources :saved_companies
 
   resources :user_ids
@@ -13,8 +17,11 @@ Realstartupjobs::Application.routes.draw do
 
   devise_for :users
 
-  resources :jobs
-
+  resources :jobs do
+    collection do 
+     get "search"
+    end
+  end
   resources :companies
 
   root :to => "home#index"

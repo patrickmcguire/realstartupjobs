@@ -1,6 +1,7 @@
 class SavedCompaniesController < ApplicationController
   # GET /saved_companies
   # GET /saved_companies.json
+  
   def index    
     @saved_companies = SavedCompany.where(:user_id => current_user.id) 
     respond_to do |format|
