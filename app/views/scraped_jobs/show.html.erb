@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @scraped_job.title %>
+</p>
+
+<p>
+  <b>Company:</b>
+  <%= @scraped_job.company_id %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @scraped_job.title %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%= @scraped_job.url %>
+</p>
+
+<p>
+  <b>Last checked:</b>
+  <%= @scraped_job.last_checked %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @scraped_job.description %>
+</p>
+
+<p>
+  <b>Experience required:</b>
+  <%= @scraped_job.experience_required %>
+</p>
+
+<p>
+  <b>Date posted:</b>
+  <%= @scraped_job.date_posted %>
+</p>
+
+<p>
+  <b>Source:</b>
+  <%= @scraped_job.source %>
+</p>
+
+<p>
+  <b>Source unique:</b>
+  <%= @scraped_job.source_unique_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_scraped_job_path(@scraped_job) %> |
+<%= link_to 'Back', scraped_jobs_path %>

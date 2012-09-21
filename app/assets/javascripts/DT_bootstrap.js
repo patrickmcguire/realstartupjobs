@@ -41,7 +41,7 @@ $.extend( $.fn.dataTableExt.oPagination, {
 		},
 
 		"fnUpdate": function ( oSettings, fnDraw ) {
-			var iListLength = 5;
+			var iListLength = 200;
 			var oPaging = oSettings.oInstance.fnPagingInfo();
 			var an = oSettings.aanFeatures.p;
 			var i, j, sClass, iStart, iEnd, iHalf=Math.floor(iListLength/2);
@@ -72,7 +72,7 @@ $.extend( $.fn.dataTableExt.oPagination, {
 						.insertBefore( $('li:last', an[i])[0] )
 						.bind('click', function (e) {
 							e.preventDefault();
-							oSettings._iDisplayStart = (parseInt($('a', this).text(),10)-1) * oPaging.iLength;
+							oSettings._iDisplayStart = (parseInt($('a', this).text(),1000)-1) * oPaging.iLength;
 							fnDraw( oSettings );
 						} );
 				}
@@ -124,7 +124,7 @@ $(document).ready(function() {
 		 {
 			"sDom": "<'row'<'span9'l>r>t<'row'<'span9'i><'span9'>p>",
 			"sPaginationType": "bootstrap",
-			"iDisplayLength": 10,
+			"iDisplayLength": 100,
 			"oLanguage": {
 				"sLengthMenu": ""
 			},

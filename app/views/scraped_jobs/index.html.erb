@@ -1,0 +1,41 @@
+<h1>Listing scraped_jobs</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Company</th>
+    <th>Title</th>
+    <th>Url</th>
+    <th>Last checked</th>
+    <th>Description</th>
+    <th>Experience required</th>
+    <th>Date posted</th>
+    <th>Source</th>
+    <th>Source unique</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @scraped_jobs.each do |scraped_job| %>
+  <tr>
+    <td><%= scraped_job.title %></td>
+    <td><%= scraped_job.company_id %></td>
+    <td><%= scraped_job.title %></td>
+    <td><%= scraped_job.url %></td>
+    <td><%= scraped_job.last_checked %></td>
+    <td><%= scraped_job.description %></td>
+    <td><%= scraped_job.experience_required %></td>
+    <td><%= scraped_job.date_posted %></td>
+    <td><%= scraped_job.source %></td>
+    <td><%= scraped_job.source_unique_id %></td>
+    <td><%= link_to 'Show', scraped_job %></td>
+    <td><%= link_to 'Edit', edit_scraped_job_path(scraped_job) %></td>
+    <td><%= link_to 'Destroy', scraped_job, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Scraped job', new_scraped_job_path %>

@@ -2,7 +2,7 @@ class Job < ActiveRecord::Base
   belongs_to :company 
   belongs_to :user
   has_many :saved_jobs
-attr_accessible :id, :company_id, :url, :technical, :internship, :created_at, :updated_at, :last_updated, 
+attr_accessible :id, :company_id, :title, :url, :technical, :internship, :created_at, :updated_at, :last_updated, :description, :date_posted, :last_checked, :experience_required, :kind, :source, :source_unique_id, :approved
   
   def company_stage
     company.stage

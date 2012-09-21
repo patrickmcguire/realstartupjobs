@@ -84,7 +84,7 @@
 						"Not"
 						end %></td>
 				<td><%= if  user_signed_in?  
-					button_to 'save job', saved_jobs_path(job_id: job, user_id: current_user.id  )
+					button_to 'save job', saved_jobs_path(job_id: job, user_id: current_user  )
 					else 
 						 "sign in to save jobs" 
 					end %></td>

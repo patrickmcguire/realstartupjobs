@@ -6,7 +6,7 @@ class HomeController < ApplicationController
   end
   def index
     if !user_signed_in?
-     render :prelaunch, :layout => false
+     #render :prelaunch, :layout => false
     else
       @user = current_user
       @jobs = Job.all(:include => :company)

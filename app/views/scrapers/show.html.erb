@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @scraper.title %>
+</p>
+
+<p>
+  <b>Company:</b>
+  <%= @scraper.company_id %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @scraper.title %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%= @scraper.url %>
+</p>
+
+<p>
+  <b>Last checked:</b>
+  <%= @scraper.last_checked %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @scraper.description %>
+</p>
+
+<p>
+  <b>Experience required:</b>
+  <%= @scraper.experience_required %>
+</p>
+
+<p>
+  <b>Date pos:</b>
+  <%= @scraper.date_pos %>
+</p>
+
+
+<%= link_to 'Edit', edit_scraper_path(@scraper) %> |
+<%= link_to 'Back', scrapers_path %>

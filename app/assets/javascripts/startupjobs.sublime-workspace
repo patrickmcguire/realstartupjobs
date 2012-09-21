@@ -1,0 +1,317 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"total_",
+				"total_price"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/Users/nsp2115/startupjobs/lib/tasks/jobs.rake",
+			"settings":
+			{
+				"buffer_size": 6698,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 360.0,
+		"selected_items":
+		[
+			[
+				"",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 146.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/nsp2115/work/marketing/app/models/ad_group.rb",
+		"/Users/nsp2115/work/marketing/app/models/metrics.rb",
+		"/Users/nsp2115/work/marketing/app/views/ad_groups/index.html.erb",
+		"/Users/nsp2115/work/marketing/app/views/campaigns/index.html.erb",
+		"/Users/nsp2115/work/marketing/app/views/ads/_report.html.erb",
+		"/Users/nsp2115/work/marketing/app/helpers/application_helper.rb",
+		"/Users/nsp2115/work/marketing/app/models/affiliate.rb",
+		"/Users/nsp2115/work/marketing/app/controllers/campaigns_controller.rb",
+		"/Users/nsp2115/work/marketing/app/controllers/affiliates_controller.rb",
+		"/Users/nsp2115/work/marketing/db/migrate/20120907082837_devise_create_accounts.rb",
+		"/Users/nsp2115/work/marketing/app/admin/ads.rb",
+		"/Users/nsp2115/work/marketing/config/initializers/active_admin.rb",
+		"/Users/nsp2115/work/marketing/config/routes.rb",
+		"/Users/nsp2115/work/marketing/Gemfile",
+		"/Users/nsp2115/work/marketing/config/environment.rb",
+		"/Users/nsp2115/work/marketing/config/application.rb",
+		"/Users/nsp2115/work/marketing/app/controllers/reportings_controller.rb",
+		"/Users/nsp2115/work/marketing/app/admin/ad_groups.rb",
+		"/Users/nsp2115/work/marketing/app/admin/campaigns.rb",
+		"/Users/nsp2115/work/marketing/app/views/affiliates/index.html.erb",
+		"/Users/nsp2115/work/marketing/app/views/reports/index.html.erb",
+		"/Users/nsp2115/work/marketing/app/controllers/ads_controller.rb",
+		"/Users/nsp2115/work/marketing/app/views/ads/index.html.erb",
+		"/Users/nsp2115/work/marketing/app/controllers/reports_controller.rb",
+		"/Users/nsp2115/Dropbox/seatgeek/mysql queries/get events join performers and venue",
+		"/Users/nsp2115/work/marketing/app/models/entrance.rb",
+		"/Users/nsp2115/work/marketing/app/models/ad.rb",
+		"/Users/nsp2115/work/marketing/app/views/ads/_form.html.erb",
+		"/Users/nsp2115/work/marketing/app/views/reportings/index.html.erb",
+		"/Users/nsp2115/work/marketing/app/models/report.rb",
+		"/Users/nsp2115/work/marketing/app/assets/stylesheets/application.css.scss",
+		"/Users/nsp2115/work/marketing/app/assets/stylesheets/application.css",
+		"/Users/nsp2115/work/marketing/config/environments/development.rb",
+		"/Users/nsp2115/work/marketing/app/models/ad_network_report.rb",
+		"/Users/nsp2115/work/marketing/app/views/ad_network_reports/_form.html.erb",
+		"/Users/nsp2115/work/marketing/db/migrate/20120907050538_add_devise_to_users.rb",
+		"/Users/nsp2115/work/marketing/app/assets/stylesheets/affiliates.css.scss",
+		"/Users/nsp2115/work/marketing/config/database.yml",
+		"/Users/nsp2115/work/marketing/app/views/ads/show.html.erb",
+		"/Users/nsp2115/work/marketing/app/views/users/_form.html.erb",
+		"/Users/nsp2115/work/marketing/app/views/users/index.html.erb",
+		"/Users/nsp2115/work/marketing/app/views/reports/show.html.erb",
+		"/Users/nsp2115/work/marketing/app/models/user.rb",
+		"/Users/nsp2115/work/marketing/app/views/users/show.html.erb",
+		"/Users/nsp2115/work/marketing/app/models/campaign.rb",
+		"/Users/nsp2115/work/marketing/app/views/ads/new.html.erb",
+		"/Users/nsp2115/work/marketing/app/helpers/ads_helper.rb",
+		"/Users/nsp2115/work/marketing/app/models/transaction.rb",
+		"/Users/nsp2115/realstartupjobs/app/controllers/companies_controller.rb",
+		"/Users/nsp2115/work/marketing/app/views/entrances/edit.html.erb",
+		"/Users/nsp2115/work/marketing/app/views/reports/_form.html.erb",
+		"/Users/nsp2115/work/marketing/app/models/index.rb",
+		"/Users/nsp2115/work/marketing/app/views/ad_network_reports/index.html.erb",
+		"/Users/nsp2115/work/marketing/app/decorators/ad_decorator.rb",
+		"/Users/nsp2115/work/marketing/test/unit/campaign_test.rb",
+		"/Users/nsp2115/work/marketing/app/views/layouts/application.html.erb",
+		"/Users/nsp2115/work/marketing/app/views/campaigns/_form.html.erb",
+		"/Users/nsp2115/work/marketing/app/views/ad_groups/_form.html.erb",
+		"/Users/nsp2115/work/marketing/app/views/ad_groups/_form2.html.erb",
+		"/Users/nsp2115/work/marketing/app/views/affiliates/_form.html.erb",
+		"/Users/nsp2115/work/marketing/app/models/designer.rb",
+		"/Users/nsp2115/work/marketing/app/views/ads/_formtastic.html.erb",
+		"/Users/nsp2115/work/marketing/config/initializers/formtastic.rb",
+		"/Users/nsp2115/work/marketing/app/models/click.rb",
+		"/Users/nsp2115/work/marketing/app/views/entrances/index.html.erb",
+		"/Users/nsp2115/work/marketing/db/migrate/20120831174716_add_designer_id_to_ad.rb",
+		"/Users/nsp2115/work/marketing/db/migrate/20120831174653_create_designers.rb",
+		"/Users/nsp2115/work/marketing/app/views/clicks/index.html.erb",
+		"/Users/nsp2115/realstartupjobs/app/models/company.rb",
+		"/Users/nsp2115/work/marketing/app/controllers/entrances_controller.rb",
+		"/Users/nsp2115/work/marketing/app/assets/stylesheets/bootstrap_and_overrides.css.scss",
+		"/Users/nsp2115/realstartupjobs copy/app/models/saved_job.rb",
+		"/Users/nsp2115/work/marketing/app/assets/javascripts/transactions.js.coffee",
+		"/Users/nsp2115/realstartupjobs copy/app/models/company.rb",
+		"/Users/nsp2115/work/marketing/db/migrate/20120828094713_create_affiliates.rb",
+		"/Users/nsp2115/work/marketing/db/migrate/20120828094626_create_transactions.rb",
+		"/Users/nsp2115/work/marketing/db/migrate/20120828094601_create_clicks.rb",
+		"/Users/nsp2115/work/marketing/db/migrate/20120828094512_create_entrances.rb",
+		"/Users/nsp2115/work/marketing/app/assets/javascripts/application.js",
+		"/Users/nsp2115/work/depot/app/views/carts/_cart.html.erb",
+		"/Users/nsp2115/work/depot/app/views/line_items/_line_item.html.erb",
+		"/Users/nsp2115/work/depot/app/views/carts/show.html.erb",
+		"/Users/nsp2115/work/depot/app/models/cart.rb",
+		"/Users/nsp2115/work/depot/test/functional/store_controller_test.rb",
+		"/Users/nsp2115/work/depot/test/fixtures/line_items.yml",
+		"/Users/nsp2115/work/depot/app/models/line_item.rb",
+		"/Users/nsp2115/work/depot/app/controllers/products_controller.rb",
+		"/Users/nsp2115/work/depot/app/views/orders/_form.html.erb",
+		"/Users/nsp2115/work/depot/app/assets/stylesheets/application.css.scss",
+		"/Users/nsp2115/work/depot/test/fixtures/orders.yml",
+		"/Users/nsp2115/work/depot/app/controllers/orders_controller.rb",
+		"/Users/nsp2115/work/depot/test/functional/orders_controller_test.rb",
+		"/Users/nsp2115/work/depot/app/helpers/application_helper.rb",
+		"/Users/nsp2115/work/depot/db/migrate/20120824050916_add_quantity_to_line_items.rb",
+		"/Users/nsp2115/work/depot/app/controllers/store_controller.rb",
+		"/Users/nsp2115/work/depot/app/models/product.rb",
+		"/Users/nsp2115/work/depot/app/controllers/application_controller.rb",
+		"/Users/nsp2115/work/depot/app/views/store/index.html.erb",
+		"/Users/nsp2115/work/depot/app/views/layouts/application.html.erb",
+		"/Users/nsp2115/work/depot/app/controllers/carts_controller.rb",
+		"/Users/nsp2115/work/depot/app/controllers/line_items_controller.rb",
+		"/Users/nsp2115/work/depot/app/assets/stylesheets/store.css.scss",
+		"/Users/nsp2115/work/depot/db/migrate/20120824051606_combine_items_in_cart.rb",
+		"/Users/nsp2115/work/depot/test/functional/line_items_controller_test.rb",
+		"/Users/nsp2115/work/depot/test/unit/product_test.rb",
+		"/Users/nsp2115/work/depot/app/assets/stylesheets/products.css.scss",
+		"/Users/nsp2115/work/depot/test/fixtures/products.yml",
+		"/Users/nsp2115/work/depot/config/routes.rb",
+		"/Users/nsp2115/work/depot/app/views/products/index.html.erb",
+		"/Users/nsp2115/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/Users/nsp2115/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/nsp2115/work/depot/test/unit/helpers/products_helper_test.rb",
+		"/Users/nsp2115/Library/Application Support/Sublime Text 2/Packages/User/JSON.sublime-settings",
+		"/Users/nsp2115/work/depot/db/migrate/20120824021646_create_products.rb",
+		"/Users/nsp2115/work/depot/test/functional/products_controller_test.rb",
+		"/Users/nsp2115/work/depot/app/views/products/_form.html.erb",
+		"/Users/nsp2115/work/depot/db/seeds.rb",
+		"/Users/nsp2115/Desktop/.adriana",
+		"/Users/nsp2115/ruby/tweets.rb",
+		"/Users/nsp2115/python/test.py",
+		"/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rubygems/custom_require.rb",
+		"/Users/nsp2115/Library/Application Support/Sublime Text 2/Packages/Theme - Default/Widget.sublime-settings",
+		"/Users/nsp2115/ruby/rails_tutorial_sublime_text/README.md",
+		"/Users/nsp2115/affiliates/public/index.html",
+		"/Users/nsp2115/affiliates/app/views/affiliates/index.html.erb"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"ad.",
+			"file",
+			"dashb"
+		],
+		"highlight": true,
+		"in_selection": true,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/Users/nsp2115/startupjobs/lib/tasks/jobs.rake",
+					"settings":
+					{
+						"buffer_size": 6698,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6013,
+								6016
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 35.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 283.0
+	},
+	"output.tests":
+	{
+		"height": 186.0
+	},
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"",
+				"config/routes.rb"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 299.0,
+	"status_bar_visible": true
+}

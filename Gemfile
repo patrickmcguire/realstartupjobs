@@ -15,6 +15,10 @@ gem "less", "~> 2.2.1"
 gem "feedzirra", "~> 0.2.0.rc2"
 gem 'formtastic'
 gem 'simple_form'
+gem 'nokogiri'
+gem 'indeed'
+gem 'rails_admin'
+#gem 'jobviter', :git => 'git://github.com/jdpace/jobviter.git'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

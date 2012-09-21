@@ -25,16 +25,16 @@ ActiveAdmin.setup do |config|
   # will be added to.
   #
   # eg:
-  #   config.default_namespace = :hello_world
+ config.default_namespace = :hello_world
   #
   # This will create resources in the HelloWorld module and
   # will namespace routes to /hello_world/*
   #
   # To set no namespace by default, use:
-  #   config.default_namespace = false
+  #  config.default_namespace = false
   #
   # Default:
-  # config.default_namespace = :admin
+# config.default_namespace = :admin
   #
   # You can customize the settings for each namespace by using
   # a namespace block. For example, to change the site title
@@ -55,7 +55,7 @@ ActiveAdmin.setup do |config|
   #
   # This setting changes the method which Active Admin calls
   # within the controller.
-  config.authentication_method = :authenticate_admin_user!
+ # config.authentication_method = :authenticate_admin_user!
 
 
   # == Current User
@@ -65,7 +65,9 @@ ActiveAdmin.setup do |config|
   #
   # This setting changes the method which Active Admin calls
   # to return the currently logged in user.
-  config.current_user_method = :current_admin_user
+ # config.current_user_method = :current_admin_user
+  config.authentication_method = false
+  config.current_user_method   = false
 
 
   # == Logging Out
@@ -86,6 +88,13 @@ ActiveAdmin.setup do |config|
   # Default:
   # config.logout_link_method = :get
 
+  # == Root
+  #
+  # Set the action to call for the root path. You can set different
+  # roots for each namespace.
+  #
+  # Default:
+  # config.root_to = 'dashboard#index'
 
   # == Admin Comments
   #
@@ -104,6 +113,13 @@ ActiveAdmin.setup do |config|
   #   end
 
 
+  # == Batch Actions
+  #
+  # Enable and disable Batch Actions
+  #
+ # config.batch_actions = true
+  
+
   # == Controller Filters
   #
   # You can add before, after and around filters to all of your
@@ -120,10 +136,16 @@ ActiveAdmin.setup do |config|
   #
   # To load a stylesheet:
   #   config.register_stylesheet 'my_stylesheet.css'
-  #
+  
   # You can provide an options hash for more control, which is passed along to stylesheet_link_tag():
   #   config.register_stylesheet 'my_print_stylesheet.css', :media => :print
   #
   # To load a javascript file:
   #   config.register_javascript 'my_javascript.js'
+
+
+  # == CSV options
+  #
+  # Set the CSV builder separator (default is ",")
+  # config.csv_column_separator = ','
 end

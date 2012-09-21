@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120623064544) do
+ActiveRecord::Schema.define(:version => 20120920122144) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -60,10 +60,10 @@ ActiveRecord::Schema.define(:version => 20120623064544) do
     t.text     "twitter_name"
     t.text     "blog_url"
     t.text     "category"
-    t.string   "crunchbase_url",    :limit => nil
-    t.integer  "angel_id",          :limit => 8,   :null => false
+    t.text     "crunchbase_url"
+    t.integer  "angel_id",          :limit => 8, :null => false
     t.text     "jobs_page"
-    t.integer  "stage",             :limit => 2
+    t.integer  "stage"
     t.text     "why_us"
     t.text     "crunchbase_slug"
     t.text     "jobs_page_type"
@@ -71,6 +71,8 @@ ActiveRecord::Schema.define(:version => 20120623064544) do
     t.string   "logo_content_type"
     t.integer  "logo_file_size"
     t.datetime "logo_updated_at"
+    t.string   "resumator_feed"
+    t.string   "jobscore_feed"
   end
 
   create_table "company_tags", :force => true do |t|
@@ -93,9 +95,17 @@ ActiveRecord::Schema.define(:version => 20120623064544) do
     t.text     "url"
     t.boolean  "technical"
     t.boolean  "internship"
-    t.text     "created_at",   :null => false
-    t.text     "updated_at",   :null => false
+    t.text     "created_at",          :null => false
+    t.text     "updated_at",          :null => false
     t.datetime "last_updated"
+    t.date     "date_posted"
+    t.text     "description"
+    t.datetime "last_check"
+    t.string   "experience_required"
+    t.string   "kind"
+    t.string   "source"
+    t.string   "sorce_unique_id"
+    t.binary   "approved"
   end
 
   create_table "jobs2", :id => false, :force => true do |t|
@@ -119,6 +129,32 @@ ActiveRecord::Schema.define(:version => 20120623064544) do
     t.integer  "job_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "scraped_jobs", :force => true do |t|
+    t.string   "title"
+    t.integer  "company_id"
+    t.string   "url"
+    t.datetime "last_checked"
+    t.text     "description"
+    t.string   "experience_required"
+    t.datetime "date_posted"
+    t.string   "source"
+    t.string   "source_unique_id"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+  end
+
+  create_table "scrapers", :force => true do |t|
+    t.string   "title"
+    t.integer  "company_id"
+    t.string   "url"
+    t.datetime "last_checked"
+    t.text     "description"
+    t.string   "experience_required"
+    t.string   "date_pos"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
   end
 
   create_table "tags", :force => true do |t|

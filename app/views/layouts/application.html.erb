@@ -24,31 +24,25 @@
 		
 	</head>
 	<body>
+		<div id="top">
+		  <div class="container">
+						<%= render "shared/navbar" %>
+			</div>
+		</div>
+		<div id="main">
 		<div class="container">
-		<div class="row">
-			<div class="span12">
-				<%= render "shared/navbar" %>
-			</div>
-		</div>
-		<div class="row">
-			<div class="span9">
-				<%= yield %>
-			</div>
-			<div class="span9">
-			<%= render "shared/sidebar" %>
-			</div>	
-			<div class="row">
-				<div class="span12">
-					<div class="footer">
-						Copyright 2012 StartupNYC.org
-					</div>
+		
+						<%= yield %>
+
+		</div>	
+	</div>			
+		<div id="footer">
+		    <div class="row">
+								Copyright 2012 StartupNYC.org
 				</div>
-			</div>
-			
-			
 		</div>
+					
+					
 	</body>
-	
-	
-	
 </html>
+

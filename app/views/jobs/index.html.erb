@@ -1,44 +1,13 @@
-<script>
-$(document).ready(function() {	
-	
-	var jobstable =	$('#jobstable').dataTable(  {
-			"sDom": "<'row2'<'span8'l>r>t<'row2'<'span8'i><'span8'>p>",
-			"sPaginationType": "bootstrap",
-//			"bFilter": true, 
-			"iDisplayLength": 10,
-			"oLanguage": {
-				"sLengthMenu": ""
-			},
-			}
-
-			)
-			.columnFilter({
-				aoColumns:[
-				{ type:"select", sSelector: "#titleFilter" },
-				{ type:"select",  sSelector: "#typeFilter"  },
-				{ type:"select", sSelector: "#technicalFilter" },
-				{ sSelector: "#companyFilter" },
-				null,
-				null,
-				null,
-				null,
-				]}
-			);	
-				
-
-	});
-</script>
 <div class="row">
 		<div class="span4 offset4">
-			<h1>Search Jobs </h1>
+			<h1>Jobs </h1>
 	  	</div>
 	</div>
 	<div class="row">
-		<div class="span9">
+		<div class="span8">
 			<%= render 'table' %>			
 		</div>
-		<div class="span3">
-			<div class="well sidebar-nav">
+		<div class="span3 pull-right">
 				<h2>Filter Results</h2>
 				<%= render  'shared/jobs_filter' %>
 				<br>

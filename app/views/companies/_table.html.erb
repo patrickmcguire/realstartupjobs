@@ -4,9 +4,12 @@
 		<th>Name</th>
 		<th>Description</th>
 		<th>Funding</th>
-		<th>Founded
+		<th>Founded</th>
 		<th>Employees</th>
-		<th>Save Company</th>
+		<th># Jobs</th>
+		<% if user_signed_in? %>
+			<th>Save Company</th>
+			<% end %>
   	</thead>
 
 	<tbody>
@@ -17,11 +20,14 @@
 				<td><%= company.funding_string %></td>
 				<td><%= company.founded %></td>
 				<td><%= company.employees %></td>
-				<td><%= if  user_signed_in?  
-					button_to 'save company', saved_companies_path(company_id: company, user_id: current_user.id  )
-					else 
-						 "sign in to save jobs" 
-					end %></td>
+				<td><%= company.employees %></td>
+
+				<% if  user_signed_in?  %>
+						<td><%=
+					button_to 'save company', saved_companies_path(company_id: company, user_id: current_user.id  ) %></td>
+				<%	else 
+						
+					end  %>
 			</tr>
 		<% end %>
 	</tbody>

@@ -1,3 +1,5 @@
+<div class="sidebar">
+<div class="span3">
  <%=  if !user_signed_in?
 	 	render "devise/links"
 		else
@@ -10,4 +12,6 @@
 <%= if user_signed_in?
 	render :partial =>'saved_jobs/sidebartable' 
 	end %>
+</div>
+</span>
 </div>

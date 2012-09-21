@@ -3,6 +3,20 @@ Realstartupjobs::Application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
 
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+
+  #devise_for :admin_users, ActiveAdmin::Devise.config, ActiveAdmin::Devise.config
+
+  resources :scrapers
+  resources :admin
+ # devise_for :admin_users, ActiveAdmin::Devise.config, ActiveAdmin::Devise.config, ActiveAdmin::Devise.config
+
+  resources :scraped_jobs
+
+  #ActiveAdmin.routes(self)
+
+ # devise_for :admin_users, ActiveAdmin::Devise.config, ActiveAdmin::Devise.config, ActiveAdmin::Devise.config, ActiveAdmin::Devise.config
+
   resources :saved_companies
 
   resources :user_ids
