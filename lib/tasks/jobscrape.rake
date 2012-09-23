@@ -3,7 +3,7 @@ require "nokogiri"
 require 'indeed'
 Indeed.key = 9573432793094543;
 def is_internship(title)
-  if title.downcase.include? 'intern'
+  if (title =~ /intern|internship/i)
     return 1
   else
     return 0
@@ -17,25 +17,32 @@ def is_technical(title)
   end
 end
 
- def submit_job(company_id, title, description, experience_required, url, technical, internship,  source, source_unique_id, date_posted, time)
-    job_in_db = Job.find(:all, :conditions => {:source_unique_id => source_unique_id})
+ def submit_job(company_id, title, description, experience_required, url, source, source_unique_id, date_posted, time)
+      technical = is_technical(title)
+      isinternship = is_internship(title)
+      
 
+    job_in_db = Job.find(:all, :conditions => {:source_unique_id => source_unique_id}) # check to see if the job already exists in the database
+   if job_in_db.count > 0   #if the job exists, update it
 
-   if job_in_db.count > 0
+ #  puts ": source: " + source + " " + title + " intern: " + is_internship(title) + " technical: " + technical.to_s
+
       job_id =  job_in_db.first.id
       p = Job.find(job_id)
       p.last_checked = time
-      p.internship = internship
-      p.source = source
+      p.internship = is_internship(title)
       p.source_unique_id = source_unique_id
       p.technical = technical
-      p.save!
-    else
+      p.approved = "false"
+      p.update!
+
+
+    else #if it doesnt, add it
       Job.create ({
         :company_id => company_id,
         :title => title,
         :url => url,
-        :internship => internship,
+        :internship => is_internship(title),
         :technical => technical,
         :last_checked => time,
         :description => description,
@@ -43,22 +50,19 @@ end
         :date_posted => date_posted,
         :source =>  source,
         :source_unique_id => source_unique_id,
-        :approved => 0
+        :approved => "false"
       })
+     # puts "New: source: " + source + " " + title + " intern: " + is_internship + " technical: " + technical.to_s
+
     end
   end
-  
-desc "indeed jobs"
+
+desc "adding jobs to the database"
 task :jobs => [:environment] do
   companies_checked = 0
   companies_with_resumator = 0
   companies_with_jobscore = 0
-  total_jobscore_jobs_new = 0
-  total_jobscore_jobs_checked = 0
-  total_jobscore_jobs = total_jobscore_jobs_new + total_jobscore_jobs_checked
-  total_indeed_jobs_new = 0
-  total_indeed_jobs_checked = 0
-  total_indeed_jobs = total_indeed_jobs_new + total_indeed_jobs_checked
+
   companies_with_indeed = 0
   total_resumator_jobs_new = 0
   total_resumator_jobs_checked = 0
@@ -87,32 +91,16 @@ task :jobs => [:environment] do
         # kind = job.xpath("type").inner_text
         experience_required = job.xpath("experience").inner_text
         url = job.xpath("url").inner_text
-        internship = is_internship(title)
-        technical = is_technical(title)
         source_unique_id = job.xpath("url").inner_text
         date_posted = time
-        if internship == 1
-          puts title.to_s + " is an internship"
-        end
-        if technical == 1
-          puts title.to_s + " is technical"
-        end
         #city = job.xpath("city").inner_text
 
-        submit_job(company_id, title, description, experience_required, url, technical, internship,  source, source_unique_id, date_posted, time)
+        submit_job(company_id, title, description, experience_required, url, source, source_unique_id, date_posted, time)
       end
-
-   #   total_resumator_jobs_new += resumator_jobs_new_company
-    #  total_resumator_jobs_checked += resumator_jobs_old_company
-     # puts "new: " + resumator_jobs_new_company.to_s
-      #puts "verified: " + resumator_jobs_old_company.to_s
-      #jobscore
     elsif company.jobscore_feed.to_s.length >= 1
       puts  company.name + "- jobscore"
       source = "jobscore"
       companies_with_jobscore += 1
-     # jobscore_jobs_new_company = 0
-    #  jobscore_jobs_old_company = 0
       feed_url = company.jobscore_feed.to_s
       feed = Feedzirra::Feed.fetch_and_parse(feed_url)
       entries = feed.entries.sort {|a,b| b.published <=> a.published}
@@ -124,22 +112,11 @@ task :jobs => [:environment] do
           kind = job.categories.first.to_s
           url = job.url.to_s
           experience_required = ""
-          technical = is_technical(title)
-          internship = is_internship(title)
-          if internship == 1
-            puts title + " is an internship"
-          end
-          if technical == 1
-            puts title.to_s + " is technical"
-          end
+  
           source_unique_id = job.url.to_s
-          submit_job(company_id, title, description, experience_required, url, technical, internship,  source, source_unique_id, date_posted, time)
+          submit_job(company_id, title, description, experience_required, url, source, source_unique_id, date_posted, time)
         end
       end
-     # total_jobscore_jobs_new += jobscore_jobs_new_company
-    #  total_jobscore_jobs_checked += jobscore_jobs_old_company
-  #    puts "new: " + jobscore_jobs_new_company.to_s
-   #   puts "verified: " + jobscore_jobs_old_company.to_s
 
       #if no jobscore or resumator board, fallback to indeed
     elsif  company.resumator_feed.to_s.length == 0 && company.jobscore_feed.to_s.length == 0 && company.name.length >=1
@@ -147,47 +124,48 @@ task :jobs => [:environment] do
       if company_name
       else company_name = "fawefaw3rfq2" #this catches random edgecases where company names were giving errors.
       end
-      company_joined = "company:" + company_name
+      company_joined = "company:" + company_name #format for company_name queries in indeed
       zipcode = "10003"
       radius = "50"
       indeed_jobs_old_company = 0
       indeed_jobs_new_company = 0
-
       result = Indeed.search(:q =>  company_joined, :l => zipcode, :sort => "date", :radius => radius, :st => "employer", :limit => "500", :fromage => '30')
       if result.total > 0
         source = "indeed"
         puts  company.name + "- indeed"
 
         indeedjobs  =  JSON.parse(result.to_json)  #indeed returns number of results
-        #puts Indeed.get('7a1f8394a31bffeb').to_s
-     #   puts indeedjobs.count
         indeedjobs.each do |job|
-          title = job["jobtitle"]
-          description =  job["snippet"]
+          title = job["jobtitle"].to_s
+          description =  job["snippet"].to_s
           experience_required = ""
           url =  job["url"]
-          internship = is_internship(title.to_s)
-          technical = is_technical(title.to_s)
           source_unique_id = job["jobkey"]
           date_posted = job["date"]
-          submit_job(company_id, title, description, experience_required, url, technical, internship,  source, source_unique_id, date_posted, time)
-
-          if internship == 1
-            puts title.to_s + " is an internship"
-          end
-          if technical == 1
-            puts title.to_s + " is technical"
-          end
-          if internship == true
-            puts job.title.to_s + " is an internship"
-          end
+          submit_job(company_id, title, description, experience_required, url, source, source_unique_id, date_posted, time)
         end
+
+      else #worst case fallback to simplyhired
+
+          company_subbed = company.name.gsub(' ','_').gsub(',|.','') #makes the name fit indeeds syntax. They don't offer job filters for new grads with their API, so gotta use RSS feeds
+          doc = Nokogiri::XML(open("http://www.simplyhired.com/a/job-feed/rss/l-10003/fcn-"+company_subbed+"/frl-newgrad/fsr-primary/fem-employer"))
+          simply_jobs = doc.xpath("/rss/channel/item")
+          if simply_jobs.count > 0 
+            puts  company.name + "- simply_hired"
+            source = "simply"
+            simply_jobs.each do |job|
+              title = job.xpath("title").inner_text
+              description = job.xpath("description").inner_text
+              experience_required = " " 
+              date_posted = job.xpath("pubDate").inner_text
+              url = job.xpath("link").inner_text
+              source_unique_id = url
+              #puts title + " " + url + description + date_posted
+              submit_job(company_id, title, description, experience_required, url, source, source_unique_id, date_posted, time)
+            end
+          end 
       end
 
-  #  total_indeed_jobs_new += indeed_jobs_new_company
-   # total_indeed_jobs_checked += indeed_jobs_old_company
-   # puts "new: " + indeed_jobs_new_company.to_s
-   # puts "verified: " +indeed_jobs_old_company.to_s
   end
 end
 #total_new = total_resumator_jobs_new + total_jobscore_jobs_new + total_indeed_jobs_new
