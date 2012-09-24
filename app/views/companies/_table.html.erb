@@ -14,6 +14,7 @@
 
 	<tbody>
 		<% @companies.each do |company | %>
+		<% if company.employees > 0 && company.jobs.count > 0 %>
 			<tr>
   				<td><a href='/companies/<%= company.id %>'> <%= company.name %></a></td>
 				<td><%= company.description %></td>
@@ -27,7 +28,7 @@
 					button_to 'save company', saved_companies_path(company_id: company, user_id: current_user.id  ) %></td>
 				<%	else 
 						
-					end  %>
+					end end  %>
 			</tr>
 		<% end %>
 	</tbody>

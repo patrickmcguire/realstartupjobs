@@ -12,7 +12,9 @@
 			</tr>
 		</thead>
 		<tbody>
-			<% @jobs.each do |job| %>
+			<% @jobs.each do |job| 
+					if job.company.employees != 0 && job.company.founded.to_s.length > 2
+				%>
 				<tr id='job<%=job.id %>'>
 					
 					<td><a href='<%= job.url %>'> <%= job.title %></a> <%= raw job.internship_flag %> <%= raw job.technical_flag %></td>
@@ -27,10 +29,11 @@
 						button_to 'save', saved_jobs_path(job_id: job, user_id: current_user.id), remote: true
 						else 
 							 "" 
-						end %></td>
+						end 
+						 %></td>
 				
 				</tr>
-			<% end %>
+			<% end end %>
 
 		</tbody>
 		<tfoot style="display:none;">
