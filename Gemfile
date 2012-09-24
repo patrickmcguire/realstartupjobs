@@ -18,8 +18,12 @@ gem 'simple_form'
 gem 'nokogiri'
 gem 'indeed'
 gem 'rails_admin'
-gem 'taps'
-gem 'sqlite3', "~> 1.3.6"
+
+group :development do
+  gem 'taps'
+  gem 'rvm'
+end
+
 #gem 'jobviter', :git => 'git://github.com/jdpace/jobviter.git'
 # Gems used only for assets and not required
 # in production environments by default.
@@ -40,6 +44,9 @@ gem "paperclip", "~> 3.0.4"
 gem 'crunchbase', :git => 'git://github.com/tylercunnion/crunchbase.git'
 gem 'activeadmin'
 gem "meta_search",    '>= 1.1.0.pre'
+group :production do
+  gem 'pg'
+end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
