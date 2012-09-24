@@ -36,9 +36,9 @@ attr_accessible :id, :company_id, :title, :url, :technical, :internship, :create
 	end
 	def technical_flag
 	  if technical == true
-	    "technical"
+	    "yes"
 	  else
-	    "non-technical"
+	    "no"
 	  end
 	end
 end

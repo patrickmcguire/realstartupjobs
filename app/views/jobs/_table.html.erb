@@ -17,7 +17,7 @@
 				%>
 				<tr id='job<%=job.id %>'>
 					
-					<td><a href='<%= job.url %>'> <%= job.title %></a> <%= raw job.internship_flag %> <%= raw job.technical_flag %></td>
+					<td><a href='<%= job.url %>'> <%= job.title %></a></td>
 					<td><%= raw job.internship_flag  %> </td>
 					<td><%= raw job.technical_flag  %> </td>			
 					<td><a href='companies/<%= job.company.id %>'> <%= job.company.name %></a>

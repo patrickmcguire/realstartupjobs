@@ -1,6 +1,33 @@
 <script>
 $(document).ready(function() {	
-		$('#jobstable').dataTable( {
+	  $.fn.dataTableExt.afnFiltering.push(function(oSettings, aData, iDataIndex) {
+        var techchecked = $('#techcheckbox').is(':checked');
+				var notechchecked = $('#notechcheckbox').is(':checked');
+
+        if (techchecked && !notechchecked && aData[2].indexOf("yes") != -1) {
+            return true;
+        }
+        if (techchecked && notechchecked) {
+            return true;
+        }
+        if (!techchecked && aData[2])  {
+            return true;
+        }
+
+        return false;
+    });
+     $.fn.dataTableExt.afnFiltering.push(function(oSettings, aData, iDataIndex) {
+        var notechchecked = $('#notechcheckbox').is(':checked');
+
+        if (notechchecked && !techchecked && aData[2].indexOf("no") != -1) {
+            return true;
+        }
+        if (!notechchecked && aData[2])  {
+            return true;
+        }
+        return false;
+    });
+		var oTable = $('#jobstable').dataTable( {
 			"sDom": "<'row'<'span9'l>r>t<'row'<'span9'i><'span9'>p>",
 			"sPaginationType": "bootstrap",
 			"iDisplayLength": 10,
@@ -24,13 +51,24 @@ $(document).ready(function() {
 			null,
 			null,
 			]}
-		);	
+		);
+    $('#techcheckbox').on("click", function(e) {
+        console.log('click');
+        oTable.fnDraw();
+    });
+		$('#notechcheckbox').on("click", function(e) {
+        console.log('click');
+        oTable.fnDraw();
+    });
 
-	});
+		});
 </script>
+
 <div class="row">
 		<div class="span4 offset4">
 			<h1>Jobs </h1>
+			    <input id="techcheckbox" type="checkbox">
+			     <input id="notechcheckbox" type="checkbox">
 	  	</div>
 	</div>
 	<div class="row">
