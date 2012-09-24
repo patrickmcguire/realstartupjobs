@@ -96,7 +96,7 @@ $.extend( $.fn.dataTableExt.oPagination, {
 
 /* Table initialisation */
 $(document).ready(function() {	
-		$('#jobstable').dataTable( {
+		$('#jobstable1').dataTable( {
 			"sDom": "<'row'<'span9'l>r>t<'row'<'span9'i><'span9'>p>",
 			"sPaginationType": "bootstrap",
 			"iDisplayLength": 10,
