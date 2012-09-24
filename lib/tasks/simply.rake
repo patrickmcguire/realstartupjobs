@@ -79,6 +79,7 @@ task :simply => [:environment] do
 
     #Resumator
     if company.resumator_feed.to_s.length >= 1
+    
       puts  company.name + "- resumator"
       source = "resumator"
       companies_with_resumator += 1

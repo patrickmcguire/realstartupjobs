@@ -120,7 +120,7 @@ $(document).ready(function() {
 			null,
 			]}
 		);	
-		$('#companytable').dataTable(
+		$('#companytable1').dataTable(
 		 {
 			"sDom": "<'row'<'span9'l>r>t<'row'<'span9'i><'span9'>p>",
 			"sPaginationType": "bootstrap",

@@ -3,26 +3,28 @@ require "crunchbase"
 
 desc "Import companies from csv file"
 task :crunchbase => [:environment] do
-  file = "db/company3.csv"
+ # file = "db/company3.csv"
 
-  CSV.foreach(file, :headers => true) do |row|
-  exists = Company.find(:all, :conditions => {:crunchbase_slug => row[3]}) # check to see if the job already exists in the database
-  if exists.count == 0   #if the job exists, update it
+ # CSV.foreach(file, :headers => true) do |row|
+  companies = Company.all # check to see if the job already exists in the database
 
+  companies.each do |company|
+  if company.crunchbase_slug
+    begin
+    crunchbase = Crunchbase::Company.get(company.crunchbase_slug)
+  rescue
+    puts "prob getting crunchbase"
+  end
+      if crunchbase 
+          if company.funding_string.to_s.length < 3 && crunchbase.total_money_raised
 
+            company.funding_string = crunchbase.total_money_raised
+          elsif  company.funding_string.to_s.length < 3 && company.funding > 1
+            company.funding_string = company.funding
 
-    crunchbase = Crunchbase::Company.get(row[3])
-
-      if crunchbase
-          if crunchbase.total_money_raised
-            money_raised = crunchbase.total_money_raised
-          else
-            money_raised = "n/a"
           end
-          if crunchbase.number_of_employees
-            number_of_employees = crunchbase.number_of_employees
-          else
-            number_of_employees = "0"
+          if company.employees == 0 && crunchbase.number_of_employees
+            company.employees = crunchbase.number_of_employees
           end
           if crunchbase.description
             description = crunchbase.description
@@ -32,57 +34,35 @@ task :crunchbase => [:environment] do
             overview = crunchbase.overview
           else overview = "n/a"
           end
-          if crunchbase.twitter_username
-            twitter_username = crunchbase.twitter_username
+          if crunchbase.twitter_username && company.twitter_name.to_s.length < 2
+            company.twitter_name = crunchbase.twitter_username
           else
-            twitter_username = "n/a"
           end
-          if crunchbase.blog_url
-            blog_url = crunchbase.blog_url
+          if crunchbase.blog_url && company.blog_url.to_s.length < 2
+            company.blog_url = crunchbase.blog_url
           else
-            blog_url = "n/a"
           end
           if crunchbase.funding_rounds
             funding_rounds = crunchbase.funding_rounds.count
           else funding_rounds = 0
           end
-          if crunchbase.deadpooled_url
-            deadpooled_url = crunchbase.deadpooled_url
-          else
-            deadpooled_url = "n/a"
+          if crunchbase.founded && company.founded.to_s.length < 3
+            company.founded = crunchbase.founded
           end
-          if crunchbase.founded
-            founded = crunchbase.founded
-          else
-            founded = ""
-          end
+          begin
 
-          Company.create ({
-
-            :name => row[0],
-
-            :url => row[1],
-            :jobs_url => row[2],
-            :description => description,
-            :founded => crunchbase.founded,
-            :employees => number_of_employees.to_s,
-            :funding_string => money_raised,
-            :crunchbase_slug => row[3],
-            :funding_rounds => funding_rounds,
-            :overview => overview,
-            :twitter_name => twitter_username,
-            :blog_url => blog_url
-
-
-          })
-          puts row[0]
-          puts number_of_employees
+          company.save!
+          rescue 
+            puts  "prob saving"
+        end
+          puts company.name
+          puts company.employees
           puts "completed"
-          sleep(1/10)
+        #  sleep(1/10)
         else
-          puts row[0]
+         # puts row[0]
 
-          "skipped"
+         puts "skipped"
       end
     end
   end

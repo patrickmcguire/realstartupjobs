@@ -1,6 +1,25 @@
+<script>
+
+$(document).ready(function() {  
+
+$('#companytable').dataTable(
+     {
+      "sDom": "<'row'<'span9'l>r>t<'row'<'span9'i><'span9'>p>",
+      "sPaginationType": "bootstrap",
+      "iDisplayLength": 10,
+      "oLanguage": {
+        "sLengthMenu": ""
+      }
+
+      });
+});
+
+
+</script>
 <div class="span8">
 	<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered table-condensed" id="companytable">
   	<thead>
+  		<tr>
 		<th>Name</th>
 		<th>Description</th>
 		<th>Funding</th>
@@ -10,6 +29,7 @@
 		<% if user_signed_in? %>
 			<th>Save Company</th>
 			<% end %>
+		</tr>
   	</thead>
 
 	<tbody>
@@ -28,17 +48,23 @@
 					button_to 'save company', saved_companies_path(company_id: company, user_id: current_user.id  ) %></td>
 				<%	else 
 						
-					end end  %>
+					end  %>
 			</tr>
-		<% end %>
+
+		<% end end %>
 	</tbody>
 	<tfoot>
+		<tr>
 		<th>Name</th>
 		<th>Description</th>
 		<th>Funding</th>
+		<th>Founded</th>
 		<th>Employees</th>
-		<th> # of jobs </th>
-		<th></th>
+		<th># Jobs</th>
+		<% if user_signed_in? %>
+			<th>Save Company</th>
+			<% end %>
+		</tr>
 	</tfoot>	
 </table>
 </div>

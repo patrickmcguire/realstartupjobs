@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120923230234) do
+ActiveRecord::Schema.define(:version => 20120924160303) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(:version => 20120923230234) do
     t.text     "blog_url"
     t.text     "category"
     t.text     "crunchbase_url"
-    t.integer  "angel_id",          :limit => 8, :null => false
+    t.integer  "angel_id",          :limit => 8
     t.text     "jobs_page"
     t.integer  "stage"
     t.text     "why_us"
@@ -75,6 +75,8 @@ ActiveRecord::Schema.define(:version => 20120923230234) do
     t.string   "jobscore_feed"
     t.string   "funding_string"
     t.integer  "funding_rounds"
+    t.string   "angel_logo_url"
+    t.string   "angel_thumb_url"
   end
 
   create_table "company_tags", :force => true do |t|
@@ -97,8 +99,8 @@ ActiveRecord::Schema.define(:version => 20120923230234) do
     t.text     "url"
     t.boolean  "technical"
     t.boolean  "internship"
-    t.text     "created_at",                             :null => false
-    t.text     "updated_at",                             :null => false
+    t.text     "created_at",                                           :null => false
+    t.text     "updated_at",                                           :null => false
     t.datetime "last_updated"
     t.date     "date_posted"
     t.text     "description"
@@ -107,7 +109,12 @@ ActiveRecord::Schema.define(:version => 20120923230234) do
     t.string   "kind"
     t.string   "source"
     t.string   "source_unique_id"
-    t.string   "approved",            :default => false
+    t.string   "approved",                          :default => false
+    t.string   "equity_min"
+    t.string   "equity_max",          :limit => 25
+    t.string   "equity_cliff"
+    t.string   "salary_min"
+    t.string   "salary_max"
   end
 
   create_table "jobs2", :id => false, :force => true do |t|
