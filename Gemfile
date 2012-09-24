@@ -19,6 +19,7 @@ gem 'nokogiri'
 gem 'indeed'
 gem 'rails_admin'
 gem 'heroku'
+gem 'thin'
 group :development do
   gem 'taps'
   gem 'rvm'
