@@ -20,7 +20,7 @@
 				<td><%= company.funding_string %></td>
 				<td><%= company.founded %></td>
 				<td><%= company.employees %></td>
-				<td><%= company.employees %></td>
+				<td><%= company.jobs.count %></td>
 
 				<% if  user_signed_in?  %>
 						<td><%=
