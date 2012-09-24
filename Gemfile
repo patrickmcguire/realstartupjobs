@@ -23,6 +23,7 @@ group :development do
   gem 'taps'
   gem 'rvm'
 end
+gem 'sqlite3', :group => [:development, :test]
 
 #gem 'jobviter', :git => 'git://github.com/jdpace/jobviter.git'
 # Gems used only for assets and not required
