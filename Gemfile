@@ -18,7 +18,7 @@ gem 'simple_form'
 gem 'nokogiri'
 gem 'indeed'
 gem 'rails_admin'
-
+gem 'heroku'
 group :development do
   gem 'taps'
   gem 'rvm'
