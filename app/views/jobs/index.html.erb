@@ -28,12 +28,11 @@ $(document).ready(function() {
         return false;
     });
 		var oTable = $('#jobstable').dataTable( {
-			"sDom": "<'row'<'span9'l>r>t<'row'<'span9'i><'span9'>p>",
-			"sPaginationType": "bootstrap",
-			"iDisplayLength": 10,
-			"bSort": true,
-			"oLanguage": {
-				"sLengthMenu": ""
+		"sDom": "<'row'<'span9'l>r>t<'row'<'span9'i><'span9'>p>",
+      "sPaginationType": "bootstrap",
+      "iDisplayLength": 10,
+      "oLanguage": {
+        "sLengthMenu": ""
 			},
 			"aoColumnDefs": [ 
 
@@ -73,7 +72,7 @@ $(document).ready(function() {
 	</div>
 	<div class="row">
 		<div class="span8">
-			<%= render 'table' %>			
+			<%= render 'latestjobs' %>			
 		</div>
 		<div class="span3 pull-right">
 				<h2>Filter Results</h2>
