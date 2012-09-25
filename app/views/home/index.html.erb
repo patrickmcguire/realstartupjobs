@@ -188,8 +188,8 @@
                                 <a href="http://wbpreview.com/previews/WB02793H5/property.html" style=""><img src="http://static2.businessinsider.com/image/50346093ecad042d7600000d-650/foursquare-office-tour.jpg" alt=""></a>
                             </div>
                             <div class="showcase-caption carousel-caption" style="">
-                                <a href="http://wbpreview.com/previews/WB02793H5/property.html"><h4>View a property</h4>
-          <p>This is our featured house of the day, good value and spacious enough for a family of 5</p></a>
+                                <a href="http://wbpreview.com/previews/WB02793H5/property.html"><h4>FourSquare</h4>
+          <p>5</p></a>
                             </div>
                         </div>
                     </div>
@@ -206,7 +206,8 @@
                     Jobs
                 </h3>
                 <p>
-                    Latest Jobs.
+                                            <%= render "/jobs/latestjobs" %>
+
                     <a href="http://wbpreview.com/previews/WB02793H5/map_properties.html"
                     class="pull-right">more...</a>
                 </p>
@@ -219,8 +220,15 @@
                     Companies
                 </h3>
                 <p>
-                    Companies.
-                    <a href="http://wbpreview.com/previews/WB02793H5/listings.html" class="pull-right">more...</a>
+ <%  companies = Company.find(:all, :limit => 10, :order => :id)
+
+                            companies.each do |company| 
+                %>
+                    
+                    <li> <a href='companies/<%= company.id %>'>  <%= company.name %></a> Jobs: <%= company.jobs.count %> </li>
+              
+                
+            <% end  %>                    <a href="http://wbpreview.com/previews/WB02793H5/listings.html" class="pull-right">more...</a>
                 </p>
             </div>
             <div class="span4">
