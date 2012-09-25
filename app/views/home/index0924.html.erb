@@ -1,0 +1,15 @@
+<div class='span9'>
+      
+<%= render 'jobs/search'%>
+  
+  </div>
+<div class='span3'>
+  <div class="sidebar-nav">
+    <%= if !user_signed_in?
+          render :template => "/devise/registrations/new"
+      else
+       render 'shared/sidebar'
+      end
+    %>
+  </div>  
+</div>

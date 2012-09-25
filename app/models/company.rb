@@ -6,9 +6,10 @@ class Company < ActiveRecord::Base
   has_many :company_tags
   has_many :tags, :through => :company_tags
   attr_protected
-  has_attached_file :logo,
-                    :styles => { :medium => "300x300>",
-                                                    :thumb => "100x100>" }
+  #before_validation :download_profile_pic
+
+  has_attached_file :logo, :styles => {:thumb => 'x100', :croppable => '600x600>', :big => '1000x1000>'}
+
   def funding_string
     return nil if funding.nil?
     if funding > 1000000

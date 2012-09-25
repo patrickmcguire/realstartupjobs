@@ -42,7 +42,7 @@ end
 gem 'devise'
 gem 'jquery-rails'
 gem 'fastercsv'
-gem "paperclip", "~> 3.0.4"
+gem "paperclip"
 gem 'crunchbase', :git => 'git://github.com/tylercunnion/crunchbase.git'
 gem 'activeadmin'
 gem "meta_search",    '>= 1.1.0.pre'

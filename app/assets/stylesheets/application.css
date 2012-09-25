@@ -10,6 +10,9 @@
  *
  *= require_self
  *= require_tree .
+ *= require application.css
+ *= require bootstrap.css
+ *= require real_estate.css
 
 */
 /*

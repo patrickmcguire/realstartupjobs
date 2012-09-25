@@ -2,7 +2,12 @@
 <div class="span12">
 	<span class="center-align">
   <h2><%= @company.name %></h2><p>
-<img src="<%= @company.image_url_large %>"></img>
+<%
+str =  @company.angel_logo_url.to_s
+logo = str.slice(0..(str.index('g?buster')))
+%>
+<%= image_tag logo %>
+ "></img>
 </span>
 </p>
 
@@ -35,11 +40,7 @@
 		</tr>
 	  
  </table>
-<%=  @company.blog_feed_url
 
-
- feed = Feedzirra::Feed.fetch_and_parse(@company.blog_feed_url)
- %>
 </div>
 <div class="span6">
 	<p>

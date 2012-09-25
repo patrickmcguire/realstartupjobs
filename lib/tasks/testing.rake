@@ -12,6 +12,11 @@ def is_technical(title)
     return 0
   end
 end
+def logo_from_url(url)
+  io = open(url)
+  io.original_filename = "foo.png"
+  self.logo = io
+end
 
 def  submit_job(company_id, title, description, experience_required, equity_min, equity_max, equity_cliff, salary_min, salary_max, url, source, source_unique_id, date_posted, time)
   
@@ -23,7 +28,7 @@ def  submit_job(company_id, title, description, experience_required, equity_min,
   if job_in_db.count > 0   #if the job exists, update it
 
     puts "Verified: source: " + source + " " + title + " intern: " + is_internship(title).to_s + " technical: "
-
+    
     job_id =  job_in_db.first.id
     p = Job.find(job_id)
     p.last_checked = time

@@ -1,48 +1,80 @@
+
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>StartupNYC.org</title>
-		<%= stylesheet_link_tag    "application", :media => "all" %>
-		<%= javascript_include_tag "application" %>
-		<%= csrf_meta_tags %>
-		
-		<meta name="google-site-verification" content="Rp5S5lygOd8hSVIBYIkwvGYDiEPNU7aLB7Jk2tihJZo" />
-		<script type="text/javascript">
+<html lang="en"><head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Real estate - Bootstrap</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-		  var _gaq = _gaq || [];
-		  _gaq.push(['_setAccount', 'UA-32119958-1']);
-		  _gaq.push(['_trackPageview']);
 
-		  (function() {
-		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		  })();
+		<link href="/assets/cerulean.css" rel="stylesheet">
 
-		</script>
-		<% yield :head %>
-		
-	</head>
-	<body>
-		<div id="top">
-		  <div class="container">
-						<%= render "shared/navbar" %>
-			</div>
-		</div>
-		<div id="main">
-		<div class="container">
-		
-						<%= yield %>
 
-		</div>	
-	</div>			
-		<div id="footer">
-		    <div class="row">
-								Copyright 2012 StartupNYC.org
-				</div>
-		</div>
-					
-					
-	</body>
+<script type="text/javascript" src="/assets/jquery.min.js"></script>
+<script type="text/javascript" src="/assets/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="/assets/jquery.aw-showcase.js"></script>
+<script type="text/javascript" src="/assets/jquery.dataTables.js"></script>
+<script type="text/javascript" src="/assets/jquery.dataTables.columnFilter.js"></script>
+<script type="text/javascript" src="/assets/DT_bootstrap.js"></script>
+<style>
+@import url('http://fonts.googleapis.com/css?family=Pontano+Sans');
+</style>
+    <!--[if lt IE 9]>
+		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	
+</head>
+
+<body>
+	
+    <div class="container">
+            <div class="row">
+                <!-- start header -->
+                <div class="span4 logo">
+                    <div class="row">
+                        <div class="span1">
+                            <a href="http://startupnyc.org">
+<img src="http://startupnyc.org/assets/nav_logo.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+              </div>
+
+            <!-- end header -->
+            <div class="row">
+                <!-- start nav -->
+          						<%= render "shared/navbar" %>
+
+                    <!-- /navbar -->
+                </div>
+            </div>		<div class="row">
+							<%= yield %>
+
+        </div>
+<footer>
+	<hr />	
+	<p class="pull-right"><a href="#">Back to top</a></p>
+	<p>
+		All content &copy; 2012 | StartupNYC.org
+	</p>
+</footer>
+
+</div> <!-- /container -->
+
+
+
+<link rel="stylesheet" href="/assets/badger.min.css" />
+<script type="text/javascript" src="/assets/badger.min.js" />
+<link rel="stylesheet" href="/assets/style.css" />
+
+<link rel="stylesheet" href="/assets/sticky.min.css" />
+<script type="text/javascript" src="/assets/sticky.min.js"></script>
+
+<script type="text/javascript" src="/assets/portamento-min.js"></script>
+<script type="text/javascript" src="/assets/global.js"></script>
+
+</body>
 </html>
-

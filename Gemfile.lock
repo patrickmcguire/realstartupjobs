@@ -155,7 +155,7 @@ GEM
     netrc (0.7.7)
     nokogiri (1.5.5)
     orm_adapter (0.4.0)
-    paperclip (3.0.4)
+    paperclip (3.2.0)
       activemodel (>= 3.0.0)
       activerecord (>= 3.0.0)
       activesupport (>= 3.0.0)
@@ -293,7 +293,7 @@ DEPENDENCIES
   less (~> 2.2.1)
   meta_search (>= 1.1.0.pre)
   nokogiri
-  paperclip (~> 3.0.4)
+  paperclip
   pg
   rails (= 3.2.3)
   rails_admin
