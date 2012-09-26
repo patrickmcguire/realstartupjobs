@@ -291,6 +291,7 @@ DEPENDENCIES
   nokogiri
   paperclip
   pg
+  rack-pjax
   rails (= 3.2.3)
   rails_admin
   rspec-rails

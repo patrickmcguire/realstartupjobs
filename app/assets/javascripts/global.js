@@ -1,5 +1,8 @@
 $(function() {
+
 	
+	    return $('.product a').pjax('[data-pjax-container]');
+
 	
 	$('#mapModal, #streetModal').modal({
 		backdrop: true,

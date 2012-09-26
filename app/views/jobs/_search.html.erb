@@ -5,7 +5,7 @@
 <%=		check_box_tag(:job, 1, true) %>
 <%=		label_tag(:job, "jobs")
 %>
- <h4>Include Technical Positions? </h4>
+ <h4>Technical or non-technical? </h4>
 <%= check_box_tag(:technical, 1, true) %>
 <%= label_tag(:technical, "technical") %>
 <%= check_box_tag(:not_technical, 1, true) %>
@@ -17,6 +17,6 @@
 <%=	label_tag(:stage_two, "Mid") %>
 <%=	check_box_tag(:stage_three, 1, true) %>
 <%=	label_tag(:stage_three, "late") %>
-<br>
+<br><br>
 <%= submit_tag("Find jobs!", :class => "btn btn-primary") %>
 <% end %>

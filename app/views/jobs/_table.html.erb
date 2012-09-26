@@ -3,7 +3,7 @@
 			<tr>
 				<th>Job Title</th > 
 				<th>Type</th>
-				<th>Techie Only?</th>
+				<th>Techincal?</th>
 				<th>Company</th>
 				<th>Founded</th>
 				<th># of ppl</th>
@@ -17,7 +17,7 @@
 				%>
 				<tr id='job<%=job.id %>'>
 					
-					<td><a href='<%= job.url %>'> <%= job.title %></a></td>
+					<td><%= link_to job.title, job.url %></td>
 					<td><%= raw job.internship_flag  %> </td>
 					<td><%= raw job.technical_flag  %> </td>			
 					<td><a href='companies/<%= job.company.id %>'> <%= job.company.name %></a>
@@ -38,9 +38,9 @@
 		</tbody>
 		<tfoot style="display:none;">
 			<tr>
-				<th>Job Title</th > 
+				<th>Job Title</th> 
 				<th>Type</th>
-				<th>Techie Only?</th>
+				<th>Techincal?</th>
 				<th>Company</th>
 				<th>Founded</th>
 				<th># of ppl</th>

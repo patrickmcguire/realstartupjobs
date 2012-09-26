@@ -1,5 +1,15 @@
-<div class="sidebar">
+<div class="sidebar pull-right">
 <div class="span3">
+    <% if @companies %>
+      <h2>Filter Companies</h2>
+        <%= render  'shared/companies_filter' %>
+
+       <% end %>
+       <% if @jobs %>
+             <h2>Filter Jobs</h2>
+
+          <%= render  'shared/jobs_filter' %>
+      <% end %>
  <%=  if !user_signed_in?
 	 	render "devise/links"
 		else

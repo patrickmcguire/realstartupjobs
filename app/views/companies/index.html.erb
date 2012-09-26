@@ -1,13 +1,22 @@
+      <script type="text/javascript">
+        $(function(){
+          $('a:not([data-remote]):not([data-behavior]):not([data-skip-pjax])').pjax('[data-pjax-container]')
+        })
+      </script>
 
 <div class="span9">
 	<h1>Listing companies</h1>
-	
+	   <div data-pjax-container>
+                      <% if @company %>
+  <span class="center-align">
+  <h2><%= @company.name %></h2><p>
+
+<% end %>
+</div>
+
 	<%= render 'table' %>
 </div>
 <div class ='span3'>
-	<div class="well sidebar-nav">
-		
 		<%= render 'shared/sidebar' %>
-	
+                 
 	</div>
-</div>

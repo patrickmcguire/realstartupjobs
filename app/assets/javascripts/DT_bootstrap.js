@@ -105,18 +105,13 @@ $(document).ready(function() {
       "oLanguage": {
         "sLengthMenu": ""
 			},
-			"aoColumnDefs": [ 
-
-					{ "sWidth": "5%", "aTargets": [ 4 ] } 
-
-					]
 
 		} )
 		.columnFilter({aoColumns:[
 			{ sSelector: "#titleFilter",},
 			{ type:"select",  sSelector: "#typeFilter" },
 			{ type:"select", sSelector: "#technicalFilter" },
-			{ sSelector: "#companyFilter" },
+			{ type:"text", sSelector: "#companyFilter" },
 			null,
 			null,
 			null,
@@ -124,14 +119,24 @@ $(document).ready(function() {
 		);
 		$('#companytable').dataTable(
 		 {
-			"sDom": "<'row'<'span9'l>r>t<'row'<'span8'i><'span8'>p>",
-			"sPaginationType": "bootstrap",
+			"sDom": "<'row'<'span9'l>r>t<'row'<'span8'p><'span8'>i>",
+	     "sPaginationType": "two_button",
 			"iDisplayLength": 10,
 			"oLanguage": {
 				"sLengthMenu": ""
-			},
+			}
 
-			});
+			}).columnFilter({aoColumns:[
+			{ sSelector: "#companyFilter",},
+			null,
+			null,
+			{ type:"number-range", sSelector: "#foundedFilter" },
+			null,
+			{ type:"number-range",  sSelector: "#employeeFilter" },
+
+			null,
+			]}
+		);
 		
 
 	});

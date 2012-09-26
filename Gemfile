@@ -19,6 +19,7 @@ gem 'indeed'
 gem 'rails_admin'
 gem 'heroku'
 gem 'thin'
+gem 'rack-pjax'
 group :development do
   gem 'taps'
   gem 'rvm'

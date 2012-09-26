@@ -17,11 +17,17 @@
 
 <script type="text/javascript" src="/assets/jquery.min.js"></script>
 <script type="text/javascript" src="/assets/bootstrap.min.js"></script>
+<script type="text/javascript" src="/assets/jquery.pjax.js"></script>
 
 <script type="text/javascript" src="/assets/jquery.aw-showcase.js"></script>
 <script type="text/javascript" src="/assets/jquery.dataTables.js"></script>
 <script type="text/javascript" src="/assets/jquery.dataTables.columnFilter.js"></script>
 <script type="text/javascript" src="/assets/DT_bootstrap.js"></script>
+      <script type="text/javascript">
+        $(function(){
+          $('a:not([data-remote]):not([data-behavior]):not([data-skip-pjax])').pjax('[data-pjax-container]')
+        })
+      </script>
 <style>
 @import url('http://fonts.googleapis.com/css?family=Pontano+Sans');
 </style>
@@ -35,6 +41,7 @@
 	
     <div class="container">
             <div class="row">
+
                 <!-- start header -->
                 <div class="span4 logo">
                     <div class="row">
@@ -54,8 +61,8 @@
                     <!-- /navbar -->
                 </div>
             </div>		<div class="row">
-							<%= yield %>
 
+							<%= yield %>
         </div>
 <footer>
 	<hr />	
