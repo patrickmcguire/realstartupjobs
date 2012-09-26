@@ -1,7 +1,7 @@
 class Job < ActiveRecord::Base
   belongs_to :company 
   belongs_to :user
-  has_many :saved_jobs
+  has_many :saved_jobs, :dependent => :destroy
 attr_accessible :id, :company_id, :title, :url, :technical, :internship, :created_at, :updated_at, :last_updated, :description, :date_posted, :last_checked, :experience_required, :kind, :source, :source_unique_id, :approved, :equity_min, :equity_max, :equity_cliff, :salary_min, :salary_max, :salary_cliff
   
   def company_stage

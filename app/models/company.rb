@@ -1,7 +1,7 @@
 class Company < ActiveRecord::Base
   belongs_to :user
-  has_many :saved_companies
-  has_many :jobs
+  has_many :saved_companies, :dependent => :destroy
+  has_many :jobs, :dependent => :destroy 
   #\has_many :saved_jobs
   has_many :company_tags
   has_many :tags, :through => :company_tags

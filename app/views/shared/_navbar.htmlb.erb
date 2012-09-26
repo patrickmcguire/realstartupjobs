@@ -41,16 +41,8 @@
                                             <a class="dropdown-toggle" href="http://wbpreview.com/previews/WB02793H5/#"
                                             data-toggle="dropdown">Sign In <strong class="caret"></strong></a>
                                             <div class="dropdown-menu">
-                                                <form action="http://wbpreview.com/previews/WB02793H5/index.html" method="post">
-                                                    <input type="text" name="user[username]" placeholder="Username or email"
-                                                    size="30">
-                                                    <input type="password" name="user[password]" placeholder="Password" size="30">
-                                                    <input id="remember_me" type="checkbox" name="user[remember_me]" value="1">
-                                                    <label class="string optional">
-                                                        Remember me
-                                                    </label>
-                                                    <input class="btn btn-primary" type="submit" name="commit" value="Sign In">
-                                                </form>
+                                            <%= render "devise/sessions/new" %>
+
                                             </div>
                                         </li>
                                         <% if user_signed_in? %>

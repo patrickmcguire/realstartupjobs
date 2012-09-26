@@ -6,14 +6,14 @@ class HomeController < ApplicationController
   end
   def index
 
-     render :prelaunch, :layout => false
+    # render :prelaunch, :layout => false
    # else
-    #  @user = current_user
+     @user = current_user
      # @jobs = Job.all(:include => :company)
       #@saved_jobs = SavedJob.where(:user_id => current_user.id)
       #@saved_companies = SavedCompany.where(:user_id => current_user.id)
       
-    #  render :index
+ #    render :index
    # end
   end
 end

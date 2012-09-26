@@ -1,15 +1,14 @@
 Realstartupjobs::Application.routes.draw do
+
   ActiveAdmin.routes(self)
 
-  devise_for :admin_users, ActiveAdmin::Devise.config
 
-  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
   #devise_for :admin_users, ActiveAdmin::Devise.config, ActiveAdmin::Devise.config
 
   resources :scrapers
   resources :admin
- # devise_for :admin_users, ActiveAdmin::Devise.config, ActiveAdmin::Devise.config, ActiveAdmin::Devise.config
+  # devise_for :admin_users, ActiveAdmin::Devise.config, ActiveAdmin::Devise.config, ActiveAdmin::Devise.config
 
   resources :scraped_jobs
 
@@ -19,7 +18,6 @@ Realstartupjobs::Application.routes.draw do
 
   resources :saved_companies
 
-  resources :user_ids
 
   resources :saved_jobs
 
@@ -27,10 +25,9 @@ Realstartupjobs::Application.routes.draw do
 
   resources :categories
 
-  resources :tags
-
   devise_for :users
 
+  resources :tags
   resources :jobs do
     collection do 
      get "search"

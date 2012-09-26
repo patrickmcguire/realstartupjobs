@@ -1,0 +1,11 @@
+
+<%= form_for(resource, :class => "form-inline", :as => resource_name, :url => new_session_path(resource_name)) do |f| %>
+  <%= f.email_field :email, :placeholder => "Email" %>
+  <%= f.password_field :password, :placeholder => "Password" %>
+  <% if devise_mapping.rememberable? %>
+   <%= f.check_box :remember_me  %> Remember Me
+  
+  <% end -%>
+
+  <%= f.submit "Sign in", :class => "btn btn-primary btn-small" %>
+<% end %>

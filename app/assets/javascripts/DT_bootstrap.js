@@ -41,7 +41,7 @@ $.extend( $.fn.dataTableExt.oPagination, {
 		},
 
 		"fnUpdate": function ( oSettings, fnDraw ) {
-			var iListLength = 200;
+			var iListLength = 10;
 			var oPaging = oSettings.oInstance.fnPagingInfo();
 			var an = oSettings.aanFeatures.p;
 			var i, j, sClass, iStart, iEnd, iHalf=Math.floor(iListLength/2);
@@ -96,12 +96,14 @@ $.extend( $.fn.dataTableExt.oPagination, {
 
 /* Table initialisation */
 $(document).ready(function() {	
-		$('#jobstable1').dataTable( {
-			"sDom": "<'row'<'span9'l>r>t<'row'<'span9'i><'span9'>p>",
-			"sPaginationType": "bootstrap",
-			"iDisplayLength": 10,
-			"oLanguage": {
-				"sLengthMenu": ""
+		$('#jobstable').dataTable( {
+			"sDom": "<'row'<'span9'l>r>t<'row'<'span8'p><'span8'>i>",
+
+	//		"sDom": "<'row'<'span9'l>r>t<'span8'p<'span8'i>>",
+      "sPaginationType": "two_button",
+      "iDisplayLength": 10,
+      "oLanguage": {
+        "sLengthMenu": ""
 			},
 			"aoColumnDefs": [ 
 
@@ -119,12 +121,12 @@ $(document).ready(function() {
 			null,
 			null,
 			]}
-		);	
-		$('#companytable1').dataTable(
+		);
+		$('#companytable').dataTable(
 		 {
-			"sDom": "<'row'<'span9'l>r>t<'row'<'span9'i><'span9'>p>",
+			"sDom": "<'row'<'span9'l>r>t<'row'<'span8'i><'span8'>p>",
 			"sPaginationType": "bootstrap",
-			"iDisplayLength": 100,
+			"iDisplayLength": 10,
 			"oLanguage": {
 				"sLengthMenu": ""
 			},

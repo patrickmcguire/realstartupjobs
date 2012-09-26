@@ -1081,3 +1081,25 @@ h3 span {
   float: left;
   margin-right: 10px;
 }
+.navbar label {
+  color: #317EAC;
+}
+.paginate_disabled_previous, .paginate_enabled_previous
+{
+  margin-left: 30px;
+  float: left;
+}
+.paginate_disabled_next, .paginate_enabled_next
+{
+  margin-right: -5px;
+  float: right;
+}
+.dataTables_info
+{
+  text-align: center; 
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+

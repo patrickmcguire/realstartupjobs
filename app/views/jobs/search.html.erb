@@ -1,48 +1,21 @@
-	<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered table-condensed span8" id="jobstable">
-		<thead>
-			<tr>
-				<th>Job Title</th > 
-				<th>Type</th>
-				<th>Techie Only?</th>
-				<th>Company</th>
-				<th>Founded</th>
-				<th># of ppl</th>
-				<th>VC</th>
-				<th>Save</th>
-			</tr>
-		</thead>
-		<tbody>
-			<% @jobs.each do |job| %>
-				<tr id='job<%=job.id %>'>
-					
-					<td><a href='<%= job.url %>'> <%= job.title %></a> <%= raw job.internship_flag %> <%= raw job.technical_flag %></td>
-					<td><%= raw job.internship_flag  %> </td>
-					<td><%= raw job.technical_flag  %> </td>			
-					<td><a href='companies/<%= job.company.id %>'> <%= job.company.name %></a>
-					 </a></td>
-					<td><%= job.company.founded unless job.company.nil? %> </td>
-					<td><%= job.company.employees unless job.company.nil? %> </td>
-					<td><%= job.company.funding_string unless job.company.nil? %> </td>
-					<td id='save<%=job.id %>'><%= if  user_signed_in?  
-						button_to 'save', saved_jobs_path(job_id: job, user_id: current_user.id), remote: true
-						else 
-							 "" 
-						end %></td>
-				
-				</tr>
-			<% end %>
 
-		</tbody>
-		<tfoot style="display:none;">
-			<tr>
-				<th>Job Title</th > 
-				<th>Type</th>
-				<th>Techie Only?</th>
-				<th>Company</th>
-				<th>Founded</th>
-				<th># of ppl</th>
-				<th>VC</th>
-				<th>Save</th>
-			</tr>
-		</tfoot>
-	</table>
+
+<div class="row">
+		<div class="span4 offset4">
+			<h1>Jobs </h1>
+			    <input id="techcheckbox" type="checkbox">
+			     <input id="notechcheckbox" type="checkbox">
+	  	</div>
+	</div>
+	<div class="row">
+		<div class="span8">
+			<%= render 'table' %>			
+		</div>
+		<div class="span3 pull-right">
+				<h2>Filter Results</h2>
+				<%= render  'shared/jobs_filter' %>
+				<br>
+				<%= render 'shared/sidebar' %>
+			</div>			
+		</div>
+	</div>

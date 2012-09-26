@@ -1,174 +1,6 @@
 <div class="span4 well lform">
-                    <form class="form-inline" action="http://wbpreview.com/previews/WB02793H5/listings.html">
-                        <fieldset>
-                            <div class="row">
-                                <div class="span4">
-                                    <div class="control-group">
-                                        <label for="focusedInput" class="control-label">
-                                            Job Title
-                                        </label>
-                                        <div class="controls">
-                                            <input type="text" value="" placeholder="Have a job title in mind?" id="focusedInput"
-                                            class="input-xlarge">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="span2">
-                                    <div class="control-group">
-                                        <label for="focusedInput" class="control-label">
-                                            Jobs or Internships?
-                                        </label>
-                                        <div class="controls">
-                                            <select class="input-medium focused">
-                                                <option>
-                                                    Any
-                                                </option>
-                                                <option>
-                                                    1
-                                                </option>
-                                                <option>
-                                                    2
-                                                </option>
-                                                <option>
-                                                    3
-                                                </option>
-                                                <option>
-                                                    4
-                                                </option>
-                                                <option>
-                                                    5+
-                                                </option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="span2">
-                                    <div class="control-group">
-                                        <label for="focusedInput" class="control-label">
-                                            Technical jobs?
-                                        </label>
-                                        <div class="controls">
-                                            <select class="input-medium focused">
-                                                <option>
-                                                    Show both
-                                                </option>
-                                                <option>
-                                                    Only Technical
-                                                </option>
-                                                <option>
-                                                    Only non-technical
-                                                </option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                              </div>
-                                <div class="row">
-                                    <div class="span2">
-                                        <div class="control-group">
-                                            <label for="focusedInput" class="control-label">
-                                                Employees:
-                                            </label>
-                                            <div class="controls">
-                                                <select class="input-medium focused">
-                                                    <option>
-                                                        Any
-                                                    </option>
-                                                    <option>
-                                                        1
-                                                    </option>
-                                                    <option>
-                                                        2
-                                                    </option>
-                                                    <option>
-                                                        3
-                                                    </option>
-                                                    <option>
-                                                        4
-                                                    </option>
-                                                    <option>
-                                                        5+
-                                                    </option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="span2">
-                                        <label for="focusedInput" class="control-label">
-                                            Funding
-                                        </label>
-                                        <div class="controls">
-                                            <select class="input-medium focused">
-                                                <option>
-                                                    Any
-                                                </option>
-                                                <option>
-                                                    Rent
-                                                </option>
-                                                <option>
-                                                    Buy
-                                                </option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="span2">
-                                        <div class="control-group">
-                                            <label for="focusedInput" class="control-label">
-                                                Industry
-                                            </label>
-                                            <div class="controls">
-                                                <select class="input-medium focused">
-                                                    <option selected="selected" value="">
-                                                        No min
-                                                    </option>
-                                                    <option value="50000">
-                                                        50,000
-                                                    </option>
-                                          
-                                                    <option value="">
-                                                        No min
-                                                    </option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="span2">
-                                        <label for="focusedInput" class="control-label">
-                                            All
-                                        </label>
-                                        <div class="controls">
-                                            <select class="input-medium focused">
-                                                <option selected="selected" value="">
-                                                    No min
-                                                </option>
-                                                <option value="50000">
-                                                    50,000
-                                                </option>
-                                              
-                                                <option value="3000000">
-                                                    3,000,000
-                                                </option>
-                                                <option value="">
-                                                    No min
-                                                </option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                            <div class="row">
-                                <div class="span2 pull-right" style="margin-top: 10px;">
-                                    <button class="btn btn-primary pull-right" type="submit">
-                                        Search
-                                    </button>
-                                </div>
-                                           </div>
+                   <%= render 'jobs/search'%>
 
-                </fieldset>
-                </form>
 </div>
             <div class="span7 home_carousel no_margin_left pull-right">
                 <!-- Start slideshow-carousel -->
@@ -239,8 +71,17 @@
                     
                 </h3>
                 <p>
-                    Sign up for our weekly newsletter and stay up-to-date with the latest
-                    offers, and newest products.
-                    <a href="http://wbpreview.com/previews/WB02793H5/listings.html" class="pull-right">more...</a>
+<div class='span3'>
+  <div id="user_nav">
+  <% if user_signed_in? %>
+    Signed in as <%= current_user.email %>. Not you?
+    <%= link_to "Sign out", destroy_user_session_path %>
+  <% else %>
+    <%= link_to "Sign up", new_user_registration_path %> or
+    <%= link_to "Sign in", new_user_session_path %>
+  <% end %>
+</div>
+
+</div>                    <a href="http://wbpreview.com/previews/WB02793H5/listings.html" class="pull-right">more...</a>
                 </p>
             </div>

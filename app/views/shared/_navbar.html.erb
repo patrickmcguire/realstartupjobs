@@ -13,7 +13,11 @@
                                         <li>
                                             <a href="/jobs">Jobs</a>
                                         </li>
-                                        <li class="dropdown">
+                                        
+                                    </ul>
+                                    <ul class="nav pull-right">
+                             <% if user_signed_in? %>
+                             <li class="dropdown">
                                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Saved <b class="caret"></b></a>
                                             <ul class="dropdown-menu">
                                                 <li>
@@ -24,42 +28,25 @@
                                                 </li>
                                             </ul>
                                         </li>
-                                    </ul>
-                                    <ul class="nav pull-right">
-                                                                                <% if user_signed_in? %>
-             <li> <%= link_to "Signout", destroy_user_session_url, :method => :delete %> </li>
-            <% else %>
-            <li><%=  link_to "Sign in", new_session_path(resource_name) %></li>
-          <%  end %>
-
+                                         <li> <%= link_to "Signout", destroy_user_session_url, :method => :delete %> </li>
+                                        <% else %>
                                         <li class="dropdown">
                                             <a class="dropdown-toggle" href="#" data-toggle="dropdown">Sign Up<strong class="caret"></strong></a>
                                             <div class="dropdown-menu">
-                                                <form action="/sign_up/" method="post">
-                                                    <input type="text" name="user[username]" placeholder="Full name" size="30">
-                                                    <input type="password" name="user[password]" placeholder="Email" size="30">
-                                                    <input type="password" name="user[password]" placeholder="Password" size="30">
-                                                    <input class="btn btn-primary" type="submit" name="commit" value="Sign Up">
-                                                </form>
+                                             <%= render "devise/registrations/signup" %>
+
                                             </div>
                                         </li>
-
                                         <li class="dropdown">
                                             <a class="dropdown-toggle" href="http://wbpreview.com/previews/WB02793H5/#"
                                             data-toggle="dropdown">Sign In <strong class="caret"></strong></a>
                                             <div class="dropdown-menu">
-                                                <form action="http://wbpreview.com/previews/WB02793H5/index.html" method="post">
-                                                    <input type="text" name="user[username]" placeholder="Username or email"
-                                                    size="30">
-                                                    <input type="password" name="user[password]" placeholder="Password" size="30">
-                                                    <input id="remember_me" type="checkbox" name="user[remember_me]" value="1">
-                                                    <label class="string optional">
-                                                        Remember me
-                                                    </label>
-                                                    <input class="btn btn-primary" type="submit" name="commit" value="Sign In">
-                                                </form>
+                                                 <%= render "devise/sessions/signin" %>
+
                                             </div>
                                         </li>
+                                                  <%  end %>
+
                                     </ul>
                                 </div>
                                 <!-- /.nav-collapse -->
