@@ -17,11 +17,10 @@
                         <div id="showcase-content-2" style="overflow: hidden; position: absolute; width: 590px; height: 326px; left: 0px; "
                         class="showcase-content">
                             <div class="showcase-content">
-                                <a href="http://wbpreview.com/previews/WB02793H5/property.html" style=""><img src="http://static2.businessinsider.com/image/50346093ecad042d7600000d-650/foursquare-office-tour.jpg" alt=""></a>
-                            </div>
+                                <img src="http://infochachkie.com/wp-content/uploads/2011/10/Silicon-Alley.jpg">            </div>
                             <div class="showcase-caption carousel-caption" style="">
-                                <a href="http://wbpreview.com/previews/WB02793H5/property.html"><h4>FourSquare</h4>
-          <p>5</p></a>
+                                <a href="/jobs"><h4>Jobs at tech startups in NYC</h4>
+          <p>Stop wasting your time with your school's terrible job board. Filter jobs by technical ability, type, and company info</p></a>
                             </div>
                         </div>
                     </div>
@@ -40,7 +39,7 @@
                 <p>
                                             <%= render "/jobs/latestjobs" %>
 
-                    <a href="http://wbpreview.com/previews/WB02793H5/map_properties.html"
+                    <a href="/jobs"
                     class="pull-right">more...</a>
                 </p>
             </div>
@@ -60,13 +59,13 @@
                     <li> <a href='companies/<%= company.id %>'>  <%= company.name %></a> Jobs: <%= company.jobs.count %> </li>
               
                 
-            <% end  %>                    <a href="http://wbpreview.com/previews/WB02793H5/listings.html" class="pull-right">more...</a>
+            <% end  %>                    <a href="/companies" class="pull-right">more...</a>
                 </p>
             </div>
             <div class="span4">
                 <h3>
                     <span>
-                        Featured Jobs
+                        Saved Jobs
                     </span>
                     
                 </h3>
@@ -76,12 +75,13 @@
   <% if user_signed_in? %>
     Signed in as <%= current_user.email %>. Not you?
     <%= link_to "Sign out", destroy_user_session_path %>
+    <% render '/saved_jobs/sidebartable' %>
   <% else %>
     <%= link_to "Sign up", new_user_registration_path %> or
     <%= link_to "Sign in", new_user_session_path %>
   <% end %>
 </div>
 
-</div>                    <a href="http://wbpreview.com/previews/WB02793H5/listings.html" class="pull-right">more...</a>
+</div>                   
                 </p>
             </div>

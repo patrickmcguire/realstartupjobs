@@ -97,7 +97,7 @@ $.extend( $.fn.dataTableExt.oPagination, {
 /* Table initialisation */
 $(document).ready(function() {	
 		$('#jobstable').dataTable( {
-			"sDom": "<'row'<'span9'l>r>t<'row'<'span8'p><'span8'>i>",
+			"sDom": "<'row'<'span7'l>r>t<'row'<'span7'p><'span7'>i>",
 
 	//		"sDom": "<'row'<'span9'l>r>t<'span8'p<'span8'i>>",
       "sPaginationType": "two_button",
@@ -112,14 +112,15 @@ $(document).ready(function() {
 			{ type:"select",  sSelector: "#typeFilter" },
 			{ type:"select", sSelector: "#technicalFilter" },
 			{ type:"text", sSelector: "#companyFilter" },
-			null,
-			null,
+			{ type:"number-range", sSelector: "#foundedFilter" },
+			{ type:"number-range",  sSelector: "#employeeFilter" },
+
 			null,
 			]}
 		);
 		$('#companytable').dataTable(
 		 {
-			"sDom": "<'row'<'span9'l>r>t<'row'<'span8'p><'span8'>i>",
+			"sDom": "<'row'<'span7'l>r>t<'row'<'span7'p><'span7'>i>",
 	     "sPaginationType": "two_button",
 			"iDisplayLength": 10,
 			"oLanguage": {
@@ -131,9 +132,7 @@ $(document).ready(function() {
 			null,
 			null,
 			{ type:"number-range", sSelector: "#foundedFilter" },
-			null,
 			{ type:"number-range",  sSelector: "#employeeFilter" },
-
 			null,
 			]}
 		);

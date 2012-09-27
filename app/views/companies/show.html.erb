@@ -43,6 +43,8 @@
   		<h2>Overview</h2>
   		<%= raw @company.company_overview %>
 	</p>
+			<%= link_to 'Back', companies_path %>
+
 </div>
 <div class="row">
 	<div class="span6">
@@ -51,16 +53,16 @@
 	</div>
 	<div class="span4">
 	</div>
-		<%= link_to 'Edit', edit_company_path(@company) %> |
-		<%= link_to 'Back', companies_path %>
+		<% link_to 'Edit', edit_company_path(@company) %> |
 		
 </div>
-<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered span8" id="jobstable">
+<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered span8" id="table">
 	<thead>
 		<tr>
 			<th>Job Title</th > 
 			<th>Type</th>
 			<th>Techie Only?</th>
+			<th>Created at</th>
 			<th>Save</th>
 		</tr>
 	</thead>
@@ -80,6 +82,8 @@
 					else
 						"Not"
 						end %></td>
+							<td><%= time_ago_in_words(job.created_at) %> ago</td>
+
 				<td><%= if  user_signed_in?  
 					button_to 'save job', saved_jobs_path(job_id: job, user_id: current_user  )
 					else 

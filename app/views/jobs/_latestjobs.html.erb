@@ -1,12 +1,13 @@
 <ul>
-			<%  jobs = Job.find(:all, :limit => 10, :order => :last_checked)
+
+			<%  jobs = Job.find(:all, :limit => 5, :order => :last_checked)
 
 							jobs.each do |job| 
 				%>
 					
 					<li><a href='<%= job.url %>'> <%= job.title %></a> 
-					at <a href='companies/<%= job.company.id %>'> <%= job.company.name %>
-					 </a></li>
+					at <a href='companies/<%= job.company.id %>'> <%= job.company.name %></a> <span class="muted"><%= time_ago_in_words(job.created_at) %>
+					  ago </span></li>
 				
 			<% end  %>
 

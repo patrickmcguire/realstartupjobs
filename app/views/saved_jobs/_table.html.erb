@@ -1,5 +1,5 @@
 
-<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="companytable" width='100%'>
+<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="saved_jobs" width='100%'>
 
   <thead>
     <th>Job Title</th>
@@ -20,7 +20,7 @@
     <td><%= link_to 'Delete', saved_job, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
-<tfoot>
+<tfoot style="display:none">
   <th>Job Title</th>
   <th>Company</th>
   <th>Founded</th>

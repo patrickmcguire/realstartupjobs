@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.3'
-
+gem 'simple_form'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 gem 'pg'
@@ -13,13 +13,15 @@ gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootst
 gem "less", "~> 2.2.1"
 gem "feedzirra", "~> 0.2.0.rc2"
 gem 'formtastic'
-gem 'simple_form'
 gem 'nokogiri'
 gem 'indeed'
 gem 'rails_admin'
 gem 'heroku'
 gem 'thin'
 gem 'rack-pjax'
+gem 'oauth'
+gem "linkedin", "~> 0.3.7"
+gem "turbolinks", "~> 0.1.1"
 group :development do
   gem 'taps'
   gem 'rvm'

@@ -6,7 +6,7 @@ def is_internship(title)
   end
 end
 def is_technical(title)
-  if (title.to_s =~ /developer|engineer|scientist|programmer|javascript|ruby|rails|java|systems|php|database|hacker/i)
+  if (title.to_s =~ /technical|developer|engineer|scientist|programmer|javascript|ruby|rails|java|systems|php|database|hacker/i)
     return 1
   else
     return 0
@@ -200,7 +200,19 @@ task :angeljobs => [:environment] do
           end
         end
       end
+      if company.resumator_feed.to_s.length == 0
+      company.jobs.each do |job|
 
+        if job.last_checked < (time - 1.day) 
+          puts job.title
+          puts job.last_checked
+           jobs = Job.destroy(job.id)
+    #       jobs.first.delete!
+           puts "success"
+
+        end
+      end
+    end
     end
 
   end
