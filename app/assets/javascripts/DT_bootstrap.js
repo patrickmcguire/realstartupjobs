@@ -118,8 +118,8 @@ $(document).ready(function() {
 			{ type:"select",  sSelector: "#ageFilter" },
 			null,
 			]}
-		).fnSort( [ [1,'desc']]);
-		$('#companytable').dataTable(
+		);
+$('#companytable').dataTable(
 		 {
 			"sDom": "<'row'<'span7'l>r>t<'row'<'span7'p><'span7'>i>",
 	     "sPaginationType": "two_button",
@@ -135,8 +135,8 @@ $(document).ready(function() {
 			{ type:"number-range", sSelector: "#foundedFilter" },
 			{ type:"number-range",  sSelector: "#employeeFilter" },
 			null,
+			null,
 			]}
 		);
-		
 
 	});
