@@ -17,6 +17,7 @@ Realstartupjobs::Application.routes.draw do
  # devise_for :admin_users, ActiveAdmin::Devise.config, ActiveAdmin::Devise.config, ActiveAdmin::Devise.config, ActiveAdmin::Devise.config
 
   resources :saved_companies
+  resources :home
 
 
   resources :saved_jobs

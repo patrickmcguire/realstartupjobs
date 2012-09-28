@@ -98,7 +98,6 @@ $.extend( $.fn.dataTableExt.oPagination, {
 $(document).ready(function() {	
 		$('#jobstable').dataTable( {
 			"sDom": "<'row'<'span7'l>r>t<'row'<'span7'p><'span7'>i>",
-
 	//		"sDom": "<'row'<'span9'l>r>t<'span8'p<'span8'i>>",
       "sPaginationType": "two_button",
       "iDisplayLength": 10,
@@ -108,16 +107,18 @@ $(document).ready(function() {
 
 		} )
 		.columnFilter({aoColumns:[
-			{ sSelector: "#titleFilter",},
+			null,
 			{ type:"select",  sSelector: "#typeFilter" },
-			{ type:"select", sSelector: "#technicalFilter" },
-			{ type:"text", sSelector: "#companyFilter" },
-			{ type:"number-range", sSelector: "#foundedFilter" },
-			{ type:"number-range",  sSelector: "#employeeFilter" },
+			{ type:"select",  sSelector: "#technicalFilter" },
+			null,
+			{ type:"select", sSelector: "#foundedFilter" },
+			{ type:"select",  sSelector: "#employeeFilter" },
 
 			null,
+			{ type:"select",  sSelector: "#ageFilter" },
+			null,
 			]}
-		);
+		).fnSort( [ [1,'desc']]);
 		$('#companytable').dataTable(
 		 {
 			"sDom": "<'row'<'span7'l>r>t<'row'<'span7'p><'span7'>i>",

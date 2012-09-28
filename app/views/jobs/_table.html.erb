@@ -1,33 +1,32 @@
 <div class="span7" style="margin-right: 20px;">
-
-	<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered table-condensed span8" id="jobstable">
+	<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered table-condensed" id="jobstable">
 		<thead>
 			<tr>
-				<th>Job Title</th > 
+				<th>Title</th> 
 				<th>Type</th>
-				<th>Techincal?</th>
+				<th>Technical?</th>
 				<th>Company</th>
 				<th>Founded</th>
 				<th># of ppl</th>
 				<th>VC</th>
+				<th>Posted</th>
 				<th>Save</th>
 			</tr>
 		</thead>
 		<tbody>
 			<% @jobs.each do |job| 
-					if job.company.employees != 0 && job.company.founded.to_s.length > 2
+					if job.company.employees != 0 && job.company.founded.to_s.length > 2 && job.company
 				%>
 				<tr id='job<%=job.id %>'>
 					
 					<td><%= link_to job.title, job.url %></td>
-					<td><%= raw job.internship_flag  %> </td>
-					<td><%= raw job.technical_flag  %> </td>			
-					<td><a href='companies/<%= job.company.id %>'> <%= job.company.name %></a>
-					 </a></td>
-					<td><%= job.company.founded unless job.company.nil? %> </td>
-					<td><%= job.company.employees unless job.company.nil? %> </td>
-					<td><%= job.company.funding_string unless job.company.nil? %> </td>
-
+					<td><%= job.internship_flag %></td>
+					<td><%= job.technical_flag %></td>			
+					<td><%= link_to job.company.name, job.company %></td>
+					<td><%= job.company.founded %></td>
+					<td><%= job.company.employees %></td>
+				<td><%= job.company.funding_string %></td>
+					<td><%= Date.parse(job.created_at) unless job.created_at.nil? %> </td>
 					<td id='save<%=job.id %>'><%= if  user_signed_in?  
 						button_to 'save', saved_jobs_path(job_id: job, user_id: current_user.id), remote: true
 						else 
@@ -43,11 +42,12 @@
 			<tr>
 				<th>Job Title</th> 
 				<th>Type</th>
-				<th>Techincal?</th>
+				<th>Technical?</th>
 				<th>Company</th>
 				<th>Founded</th>
 				<th># of ppl</th>
 				<th>VC</th>
+				<th>Posting age</th>
 				<th>Save</th>
 			</tr>
 		</tfoot>

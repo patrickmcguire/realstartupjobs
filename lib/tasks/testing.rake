@@ -204,7 +204,7 @@ task :angeljobs => [:environment] do
       company.jobs.each do |job|
 
         if job.last_checked < (time - 1.day) 
-          puts job.title
+          puts job.title 
           puts job.last_checked
            jobs = Job.destroy(job.id)
     #       jobs.first.delete!
