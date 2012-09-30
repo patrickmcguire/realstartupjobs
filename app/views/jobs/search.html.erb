@@ -1,14 +1,16 @@
-
-
+<div class="span12">
 <div class="row">
-		<div class="span4 offset4">
-			<h1>Jobs </h1>
-	  	</div>
-	</div>
-	<div class="row">
-		<div class="span8">
-			<%= render 'table' %>			
-		</div>
-				<%= render 'shared/sidebar' %>
-		</div>
-	</div>
+  <div class="span4">
+    <div class="row">
+      <div class="span3 well">
+        <%= render 'shared/sidebar' %>
+      </div>
+    </div>
+  </div>
+
+  <div class="span8">
+  	<h1> Jobs</h1>
+  	<%= render 'table' %>
+  </div>
+</div>
+</div>
