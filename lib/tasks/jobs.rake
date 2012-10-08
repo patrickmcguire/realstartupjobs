@@ -204,7 +204,7 @@ companies.each do |company|
     end
   end
 end
-  if company.resumator_feed.to_s.length == 0
+  if company.resumator_feed.to_s.length == 0 ##  Not deleting jobs right now for resumator because its borked
     company.jobs.each do |job|
 
       if job.last_checked < (time - 1.day)
