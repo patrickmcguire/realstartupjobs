@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @press.title %>
+</p>
+
+<p>
+  <b>Snippet:</b>
+  <%= @press.snippet %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%= @press.url %>
+</p>
+
+<p>
+  <b>Source:</b>
+  <%= @press.source %>
+</p>
+
+<p>
+  <b>Company:</b>
+  <%= @press.company_id %>
+</p>
+
+<p>
+  <b>Job:</b>
+  <%= @press.job_id %>
+</p>
+
+<p>
+  <b>Updated at:</b>
+  <%= @press.updated_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_press_path(@press) %> |
+<%= link_to 'Back', presses_path %>

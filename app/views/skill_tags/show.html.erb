@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @skill_tag.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @skill_tag.description %>
+</p>
+
+<p>
+  <b>Angel tag:</b>
+  <%= @skill_tag.angel_tag_id %>
+</p>
+
+<p>
+  <b>Agel tag url:</b>
+  <%= @skill_tag.agel_tag_url %>
+</p>
+
+<p>
+  <b>Crunchbase tag:</b>
+  <%= @skill_tag.crunchbase_tag_id %>
+</p>
+
+<p>
+  <b>Crunchbase tag url:</b>
+  <%= @skill_tag.crunchbase_tag_url %>
+</p>
+
+<p>
+  <b>Is technical:</b>
+  <%= @skill_tag.is_technical %>
+</p>
+
+
+<%= link_to 'Edit', edit_skill_tag_path(@skill_tag) %> |
+<%= link_to 'Back', skill_tags_path %>

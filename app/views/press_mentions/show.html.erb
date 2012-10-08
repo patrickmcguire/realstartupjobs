@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @press_mention.title %>
+</p>
+
+<p>
+  <b>Snippet:</b>
+  <%= @press_mention.snippet %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%= @press_mention.url %>
+</p>
+
+<p>
+  <b>Source:</b>
+  <%= @press_mention.source %>
+</p>
+
+<p>
+  <b>Company:</b>
+  <%= @press_mention.company_id %>
+</p>
+
+<p>
+  <b>Job:</b>
+  <%= @press_mention.job_id %>
+</p>
+
+<p>
+  <b>Updated at:</b>
+  <%= @press_mention.updated_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_press_mention_path(@press_mention) %> |
+<%= link_to 'Back', press_mentions_path %>

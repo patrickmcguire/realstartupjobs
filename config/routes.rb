@@ -1,5 +1,13 @@
 Realstartupjobs::Application.routes.draw do
 
+  resources :press_mentions
+
+  resources :presses
+
+  resources :jobs_tags
+
+  resources :skill_tags
+
   ActiveAdmin.routes(self)
 
 

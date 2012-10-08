@@ -1,0 +1,35 @@
+<h1>Listing skill_tags</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Angel tag</th>
+    <th>Agel tag url</th>
+    <th>Crunchbase tag</th>
+    <th>Crunchbase tag url</th>
+    <th>Is technical</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @skill_tags.each do |skill_tag| %>
+  <tr>
+    <td><%= skill_tag.name %></td>
+    <td><%= skill_tag.description %></td>
+    <td><%= skill_tag.angel_tag_id %></td>
+    <td><%= skill_tag.agel_tag_url %></td>
+    <td><%= skill_tag.crunchbase_tag_id %></td>
+    <td><%= skill_tag.crunchbase_tag_url %></td>
+    <td><%= skill_tag.is_technical %></td>
+    <td><%= link_to 'Show', skill_tag %></td>
+    <td><%= link_to 'Edit', edit_skill_tag_path(skill_tag) %></td>
+    <td><%= link_to 'Destroy', skill_tag, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Skill tag', new_skill_tag_path %>

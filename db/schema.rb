@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120924160303) do
+ActiveRecord::Schema.define(:version => 20120930002310) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -126,6 +126,35 @@ ActiveRecord::Schema.define(:version => 20120924160303) do
     t.string "job_url",    :limit => 250
   end
 
+  create_table "jobs_tags", :force => true do |t|
+    t.integer  "tag_id"
+    t.integer  "job_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "press_mentions", :force => true do |t|
+    t.string   "title"
+    t.text     "snippet"
+    t.string   "url"
+    t.string   "source"
+    t.string   "company_id"
+    t.string   "job_id"
+    t.datetime "updated_at", :null => false
+    t.datetime "created_at", :null => false
+  end
+
+  create_table "presses", :force => true do |t|
+    t.string   "title"
+    t.text     "snippet"
+    t.string   "url"
+    t.string   "source"
+    t.string   "company_id"
+    t.string   "job_id"
+    t.datetime "updated_at", :null => false
+    t.datetime "created_at", :null => false
+  end
+
   create_table "saved_companies", :force => true do |t|
     t.integer  "user_id"
     t.integer  "company_id"
@@ -164,6 +193,18 @@ ActiveRecord::Schema.define(:version => 20120924160303) do
     t.string   "date_pos"
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
+  end
+
+  create_table "skill_tags", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "angel_tag_id"
+    t.string   "angel_tag_url"
+    t.integer  "crunchbase_tag_id"
+    t.string   "crunchbase_tag_url"
+    t.boolean  "is_technical"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
   end
 
   create_table "tags", :force => true do |t|

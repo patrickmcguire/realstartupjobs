@@ -1,0 +1,2 @@
+module JobsTagsHelper
+end

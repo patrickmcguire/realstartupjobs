@@ -1,0 +1,17 @@
+<%= simple_form_for(@press) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :title %>
+    <%= f.input :snippet %>
+    <%= f.input :url %>
+    <%= f.input :source %>
+    <%= f.input :company_id %>
+    <%= f.input :job_id %>
+    <%= f.input :updated_at %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -1,0 +1,35 @@
+<h1>Listing press_mentions</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Snippet</th>
+    <th>Url</th>
+    <th>Source</th>
+    <th>Company</th>
+    <th>Job</th>
+    <th>Updated at</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @press_mentions.each do |press_mention| %>
+  <tr>
+    <td><%= press_mention.title %></td>
+    <td><%= press_mention.snippet %></td>
+    <td><%= press_mention.url %></td>
+    <td><%= press_mention.source %></td>
+    <td><%= press_mention.company_id %></td>
+    <td><%= press_mention.job_id %></td>
+    <td><%= press_mention.updated_at %></td>
+    <td><%= link_to 'Show', press_mention %></td>
+    <td><%= link_to 'Edit', edit_press_mention_path(press_mention) %></td>
+    <td><%= link_to 'Destroy', press_mention, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Press mention', new_press_mention_path %>

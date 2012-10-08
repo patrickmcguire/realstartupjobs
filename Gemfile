@@ -20,6 +20,7 @@ gem 'heroku'
 gem 'thin'
 gem 'rack-pjax'
 gem 'oauth'
+gem 'whenever'
 gem "linkedin", "~> 0.3.7"
 gem "turbolinks", "~> 0.1.1"
 group :development do
